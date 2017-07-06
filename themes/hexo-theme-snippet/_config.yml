@@ -239,6 +239,6 @@ baidu_site_verification:
 baidu_push: false
 
 #网站主题配置
-since: 2016-2019   fzg5_shelling
+since: Fzg5_Shelling
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.3
