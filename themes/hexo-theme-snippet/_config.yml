@@ -151,10 +151,10 @@ declaration:
       <img src='/img/wechat.png' style="width:66px;height:66px;float:right">
 
 ## 文章打赏
-reward:
-  alipay: ''
-  wepay: ''
-  tip: 赞赏是不耍流氓的鼓励
+reward: 
+  alipay: #'/img/alipay.png'
+  wepay: #'/img/wechat.png'
+  tip: #请博主喝一杯咖啡
 
 ## 主题评论
 
@@ -239,6 +239,6 @@ baidu_site_verification:
 baidu_push: false
 
 #网站主题配置
-since: 2016-2019   fzg5
+since: 2016-2019   fzg5_shelling
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.3
