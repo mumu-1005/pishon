@@ -44,33 +44,36 @@ img:
 ## CLASSES
 ### builtins.Exception(builtins.BaseException)
 - mysql.connector.errors.Error
-- mysql.connector.errors.DatabaseError
-- mysql.connector.errors.DataError
-- mysql.connector.errors.IntegrityError
-- mysql.connector.errors.InternalError
-- mysql.connector.errors.NotSupportedError
-- mysql.connector.errors.OperationalError
-- mysql.connector.errors.ProgrammingError
-- mysql.connector.errors.InterfaceError
+    - mysql.connector.errors.DatabaseError
+        - mysql.connector.errors.DataError
+        - mysql.connector.errors.IntegrityError
+        - mysql.connector.errors.InternalError
+        - mysql.connector.errors.NotSupportedError
+        - mysql.connector.errors.OperationalError
+        - mysql.connector.errors.ProgrammingError
+        - mysql.connector.errors.InterfaceError
 - mysql.connector.errors.Warning
 
 ### builtins.object
-        builtins.bytes
-        datetime.date
-            datetime.datetime
-        datetime.time
-    mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
-        mysql.connector.connection.MySQLConnection
-        mysql.connector.connection_cext.CMySQLConnection
-    mysql.connector.constants._Constants(builtins.object)
-        mysql.connector.constants.CharacterSet
-        mysql.connector.constants.FieldType
-        mysql.connector.constants.RefreshOption
-    mysql.connector.constants._Flags(mysql.connector.constants._Constants)
-        mysql.connector.constants.ClientFlag
-        mysql.connector.constants.FieldFlag
+- builtins.bytes
+- datetime.date
+    - datetime.datetime
+- datetime.time
+
+### mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
+- mysql.connector.connection.MySQLConnection
+- mysql.connector.connection_cext.CMySQLConnection
+
+### mysql.connector.constants._Constants(builtins.object)
+- mysql.connector.constants.CharacterSet
+- mysql.connector.constants.FieldType
+- mysql.connector.constants.RefreshOption
+
+### mysql.connector.constants._Flags(mysql.connector.constants._Constants)
+- mysql.connector.constants.ClientFlag
+- mysql.connector.constants.FieldFlag
     
-    Binary = class bytes(object)
+### Binary = class bytes(object)
      |  bytes(iterable_of_ints) -> bytes
      |  bytes(string, encoding[, errors]) -> bytes
      |  bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
@@ -3030,7 +3033,7 @@ img:
      |  
      |  args
 
-FUNCTIONS
+## FUNCTIONS
     Connect = connect(*args, **kwargs)
         Create or get a MySQL connection object
         
@@ -3097,7 +3100,7 @@ FUNCTIONS
         
         Returns a dictionary.
 
-DATA
+## DATA
     BINARY = <mysql.connector.dbapi._DBAPITypeObject object>
     DATETIME = <mysql.connector.dbapi._DBAPITypeObject object>
     HAVE_CEXT = True
@@ -3110,9 +3113,9 @@ DATA
     paramstyle = 'pyformat'
     threadsafety = 1
 
-VERSION
+## VERSION
     8.0.16
 
-FILE
+## FILE
     /home/shelling/env/lib/python3.7/site-packages/mysql/connector/__init__.py
 
