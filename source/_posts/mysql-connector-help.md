@@ -12,12 +12,12 @@ date: 2018-02-01 11:28:08
 updated: 2019-03-05 21:16:54
 img:
 ---
-Help on package mysql.connector in mysql:
+# Help on package mysql.connector in mysql:
 
-NAME
+## NAME
     mysql.connector - MySQL Connector/Python - MySQL driver written in Python
 
-PACKAGE CONTENTS
+## PACKAGE CONTENTS
     abstracts
     authentication
     catch23
@@ -41,19 +41,20 @@ PACKAGE CONTENTS
     utils
     version
 
-CLASSES
-    builtins.Exception(builtins.BaseException)
-        mysql.connector.errors.Error
-            mysql.connector.errors.DatabaseError
-                mysql.connector.errors.DataError
-                mysql.connector.errors.IntegrityError
-                mysql.connector.errors.InternalError
-                mysql.connector.errors.NotSupportedError
-                mysql.connector.errors.OperationalError
-                mysql.connector.errors.ProgrammingError
-            mysql.connector.errors.InterfaceError
-        mysql.connector.errors.Warning
-    builtins.object
+## CLASSES
+### builtins.Exception(builtins.BaseException)
+- mysql.connector.errors.Error
+- mysql.connector.errors.DatabaseError
+- mysql.connector.errors.DataError
+- mysql.connector.errors.IntegrityError
+- mysql.connector.errors.InternalError
+- mysql.connector.errors.NotSupportedError
+- mysql.connector.errors.OperationalError
+- mysql.connector.errors.ProgrammingError
+- mysql.connector.errors.InterfaceError
+- mysql.connector.errors.Warning
+
+### builtins.object
         builtins.bytes
         datetime.date
             datetime.datetime
