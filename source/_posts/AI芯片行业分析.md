@@ -6,7 +6,6 @@ tags:
 comments: false
 date: 2018-11-06 17:22:19
 updated: 2018-11-06 17:22:19
-img:
 ---
 {% asset_img 1_页面_1.png AI芯片行业分析 %}
 {% asset_img 1_页面_2.png AI芯片行业分析 %}

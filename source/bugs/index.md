@@ -3,6 +3,16 @@ title: bugs
 date: 2019-07-06 16:10:01
 ---
 
+## 2017-04-24 
+
+### ISSUE
+NameError: name '__main__' is not defined
+ 
+### SOLUTION
+- if __name__ == '__main__':
+
+<hr>
+
 ## 2016-03-16
 
 ### ISSUE
