@@ -1,5 +1,5 @@
 ---
-title: uwsgi-help
+title: uwsgi命令-帮助（纯手工翻译中）
 categories:
   - server
 tags:
@@ -16,24 +16,29 @@ UWSGI-CORE(1)                                User Commands
 NAME
        uwsgi-core - fast (pure C), self-healing, developer-friendly WSGI server
 
-SYNOPSIS
+SYNOPSIS（概要）
        uwsgi-core [options...]
 
-DESCRIPTION
+DESCRIPTION（描述）
        -s|--socket
               bind to the specified UNIX/TCP socket using default protocol
+              指定socket，使用默认协议
 
        -s|--uwsgi-socket
               bind to the specified UNIX/TCP socket using uwsgi protocol
+              指定socket，使用uwsgi协议
 
        --suwsgi-socket
               bind to the specified UNIX/TCP socket using uwsgi protocol over SSL
+              指定socket，使用uwsgi绑定通过SSL安全套接字层
 
        --ssl-socket
               bind to the specified UNIX/TCP socket using uwsgi protocol over SSL
+              指定socket，使用uwsgi协议通过SSL安全套接字层
 
        --http-socket
               bind to the specified UNIX/TCP socket using HTTP protocol
+              指定socket，使用HTTP协议
 
        --http-socket-modifier1
               force the specified modifier1 when using HTTP protocol
@@ -2297,36 +2302,44 @@ DESCRIPTION
 
        --dump-options
               dump the full list of available options
+              装在所有可用的选项
 
        --show-config
               show the current config reformatted as ini
+              显示当前重新初始化时的设置
 
        --binary-append-data
-              return  the  content of a resource to stdout for appending to a uwsgi binary (for data://
-              usage)
+              return  the  content of a resource to stdout for appending to a uwsgi binary (for data://usage)
 
        --print
               simple print
+              简易输出
 
        --iprint
               simple print (immediate version)
+              建议输出（当前生效）
 
        --exit force exit() of the instance
+              强制退出当前运行实例
 
        --cflags
               report uWSGI CFLAGS (useful for building external plugins)
+              创建拓展插件是报告uwsgi编译器选项
 
        --dot-h
               dump the uwsgi.h used for building the core  (useful for building external plugins)
+              创建时使用uwsgi.h
 
        --config-py
-              dump the uwsgiconfig.py used for building the core  (useful for building  external  plug‐
-              ins)
+              dump the uwsgiconfig.py used for building the core  (useful for building  external  plugins)
+              创建时使用uwsgiconfig.py
 
        --build-plugin
               build a uWSGI plugin for the current binary
+              为当前的执行文件中创建一个uwsgi的插件，即加载插件到uwsgi服务器上
 
        --version
               print uWSGI version
+              查看当前uwsgi版本
 
 uwsgi-core 2.0.15-debian                     September 2018                               UWSGI-CORE(1)
