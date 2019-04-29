@@ -30,7 +30,7 @@ html {
   /*color: #505050;*/
   color: #1d1f21;
   line-height: 1.75em;
-  background: #ebebeb;
+  background: #fafafa;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
@@ -38,7 +38,7 @@ body {
   /*color: #505050;*/
   color: #1d1f21;
   line-height: 1.75em;
-  background: #ebebeb;
+  background: #fafafa;
   /*background: url('/img/banner.jpg');*/
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
@@ -50,7 +50,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  color: #303030;
+  color: #c0a685;
 }
 h1 {
   font-size: 2em;
@@ -77,7 +77,7 @@ a {
 }
 a:hover {
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c0a685;
 }
 a:active {
   outline: none;
@@ -95,10 +95,10 @@ a img {
   border-radius: 2px;
 }
 .btn-default {
-  border: 1px solid #505050;
+  border: 1px solid #c0a685;
   /*background: #505050;*/
   background: #1d1f21;
-  color: #fff;
+  color: #c0a685;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -123,12 +123,12 @@ input[type="search"] {
   padding: 7px 11px 7px 7px;
   border-radius: 4px 0 0 4px;
   margin-bottom: 1em;
-  border: 1px solid #ebebeb;
+  border: 1px solid #c0a685;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 input[type="search"]:focus {
-  border: 1px solid #505050;
+  border: 1px solid #c0a685;
   outline: none;
 }
 input[type="text"] {
@@ -318,12 +318,11 @@ pre {
 .main-navigation {
   text-align: left;
   /*background: #fff;*/
-  background: #1d1f21;
-  border-top: 0px solid #ebebeb;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #e1e1e1;
+  background: #fafafa;
+  margin-bottom: 8px;
 }
 .main-navigation .navbar-collapse {
+  padding: 0;
   /*border-top: 1px solid #ebebeb;*/
 }
 .main-navigation .navbar-brand {
@@ -334,7 +333,7 @@ pre {
   padding: 19px 0 0 0;
   font-size: 16px;
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #363636;
   display: none;
 }
 .main-navigation .menu {
@@ -348,14 +347,14 @@ pre {
 }
 .main-navigation .menu li a {
   /*color: #505050;*/
-  color: white;
+  color: 363636;
   line-height: 4em;
   display: block;
   padding: 0 21px;
 }
 .main-navigation .menu li:hover > a {
   /*color: #505050;*/
-  color: yellow;
+  color: #c0a685;
   text-decoration: none;
 }
 .main-navigation .menu li:hover ul {
@@ -414,7 +413,7 @@ pre {
     main post area
 ====================================================*/
 #main {
-  background: #fff;
+  background: #1d1f21;
   padding: 10px 0;
   margin-bottom: 10px;
 }
@@ -425,16 +424,17 @@ pre {
 }
 .post {
   padding: 20px;
-  background: #fff;
+  background: #2d2d2d;
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
+  color: #c0a685;
 }
 .post .featured {
   position: absolute;
   /*background: #505050;*/
   background: #1d1f21;
-  color: #fff;
+  color: #c0a685;
   text-align: center;
   top: -12px;
   right: -32px;
@@ -456,23 +456,23 @@ pre {
   margin: 0;
 }
 .post .post-head .post-title a {
-  color: #303030;
+  color: #c0a685;
 }
 .post .post-head .post-title a:hover {
   text-decoration: none;
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c3a870;
 }
 .post .post-head .post-title a:focus {
   text-decoration: none;
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c3a870;
 }
 .post .post-head p.warning {
-  color: #f0ad4e;
+  color: #c0a685;
 }
 .post .post-head .post-meta {
-  color: #959595;
+  color: #c0a685;
   margin: 5px 0;
 }
 .post .post-head .post-meta span {
@@ -480,12 +480,12 @@ pre {
   white-space: nowrap;
 }
 .post .post-head .post-meta span a {
-  color: #959595;
+  color: #c0a685;
   margin-left: 3px;
 }
 .post .post-head .post-meta span a:hover {
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c3a870;
 }
 .post .post-media {
   position: relative;
@@ -504,13 +504,23 @@ pre {
 }
 .post .post-content p.brief {
   overflow: hidden;
-  color: #666666;
+  color: #c0a685;
 }
 .post .post-body {
   margin-top: 15px;
   padding: 25px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #c0a685;
   overflow: hidden;
+  color: #c0a685;
+}
+.post .post-body a {
+  color: #c0a685;
+}
+.post .post-body hr {
+  color: #c0a685;
+  height: 1px;
+  border: none;
+  background-color: #c0a685;
 }
 .post .post-body p {
   font-size: 1em;
@@ -520,12 +530,16 @@ pre {
   max-width: 100%;
 }
 .post .post-footer {
+  color: #c0a685
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #c0a685;
+}
+.post .post-footer a{
+  color: #c0a685;
 }
 .post .post-footer .tag-list {
-  color: #959595;
+  color: #c0a685;
   line-height: 28px;
 }
 .post .post-footer .tag-list .post-meta {
@@ -538,11 +552,11 @@ pre {
   margin-left: 4px;
 }
 .post .post-footer .tag-list a {
-  color: #959595;
+  color: #c0a685;
 }
 .post .post-footer .tag-list a:hover {
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c0a685;
 }
 .post .post-footer .post-permalink {
   text-align: right;
@@ -552,41 +566,41 @@ pre {
 ====================================================*/
 .post-content {
   font: 400 16px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-  color: #333;
+  color: #c0a685;
 }
 .post-content h1 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1.8em;
   margin: 0.67em 0;
 }
 .post-content h2 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 .post-content h3 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1.17em;
   margin: 1em 0;
 }
 .post-content h4 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1em;
   margin: 1.6em 0 1em 0;
 }
 .post-content h5 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1em;
   margin: 1.6em 0 1em 0;
 }
 .post-content h6 {
   font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", "SimSun", sans-serif;
-  color: #333;
+  color: #c0a685;
   font-size: 1em;
   margin: 1.6em 0 1em 0;
   font-weight: 500;
@@ -606,19 +620,19 @@ pre {
 }
 .post-content strong {
   font-weight: 700;
-  color: #333;
+  color: #c0a685;
 }
 .post-content b {
   font-weight: 700;
-  color: #333;
+  color: #c0a685;
 }
 .post-content em {
   font-style: italic;
-  color: #333;
+  color: #c0a685;
 }
 .post-content i {
   font-style: italic;
-  color: #333;
+  color: #c0a685;
 }
 .post-content img {
   max-width: 100%;
@@ -647,11 +661,11 @@ pre {
   margin-top: 10px;
   font-weight: 400;
   font-size: 14px;
-  color: #666666;
+  color: #373737;
 }
 .post-content figure figcaption a {
   text-decoration: none;
-  color: #666666;
+  color: #373737;
 }
 .post-content figure iframe {
   margin: auto;
@@ -663,10 +677,10 @@ pre {
   margin: 0 0 1.64em 0;
   border-left: 3px solid #505050;
   padding-left: 12px;
-  color: #666666;
+  color: #373737;
 }
 .post-content blockquote a {
-  color: #666666;
+  color: #373737;
 }
 .post-content ul {
   margin: 0 0 24px 6px;
@@ -704,9 +718,9 @@ pre {
   padding: 0;
 }
 .post-content code {
-  color: #808080;
+  color: white;
   font-size: 0.96em;
-  background-color: #f9f9f9;
+  background-color: #222321;
   padding: 1px 2px;
   border: 1px solid #dadada;
   -webkit-border-radius: 2px;
@@ -716,7 +730,7 @@ pre {
   word-wrap: break-word;
 }
 .post-content tt {
-  color: #808080;
+  color: white;
   font-size: 0.96em;
   background-color: #f9f9f9;
   padding: 1px 2px;
@@ -735,11 +749,11 @@ pre {
   overflow: auto;
   line-height: 1.5;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  color: #808080;
+  color: white;
   background-color: #f9f9f9;
 }
 .post-content pre code {
-  color: #808080;
+  color: white;
   border: none;
   background: none;
   padding: 0;
@@ -795,7 +809,7 @@ pre {
   display: block;
 }
 .pagination a {
-  background: #fff;
+  background: #c0a77f;
   color: #666666;
   text-align: center;
   display: inline-block;
@@ -805,7 +819,7 @@ pre {
 }
 .pagination a:hover {
   /*background: #505050;*/
-  background: #1d1f21;
+  background: #3d393a;
   color: #fff;
   text-decoration: none;
 }
@@ -831,7 +845,7 @@ pre {
 }
 .pagination .current {
   /*background: #505050;*/
-  background: #1d1f21;
+  background: #3d393a;
   color: #fff;
 }
 /*====================================================
@@ -893,8 +907,9 @@ pre {
   float: right;
 }
 .sidebar .widget {
-  background: #fff;
+  background: #fafafa;
   padding: 16px 25px;
+  border: 1px solid #c0a685;
 }
 .sidebar .widget ul {
   padding: 0;
@@ -919,8 +934,9 @@ pre {
   content: ")";
 }
 .sidebar .widget-box {
-  background: #fff;
+  background: #fafafa;
   padding: 0 25px 16px;
+  border: 1px solid #c0a685;
 }
 .main-footer {
   background: #202020;
@@ -935,24 +951,24 @@ pre {
 .widget .title {
   margin-top: 0;
   padding-bottom: 7px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #c0a685;
   margin-bottom: 21px;
   position: relative;
 }
 .widget .title:after {
   content: "";
   width: 90px;
-  height: 1px;
+  height: 2px;
   /*background: #505050;*/
-  background: #1d1f21;
+  /*background: #c0a685;*/
   position: absolute;
   left: 0;
   bottom: -1px;
 }
 .widget .tag-cloud a {
-  border: 1px solid #ebebeb;
+  border: 1px solid #c0a685;
   padding: 2px 7px;
-  color: #959595;
+  color: #c0a685;
   font-size: 1em!important;
   line-height: 1.5em;
   display: inline-block;
@@ -964,10 +980,10 @@ pre {
   white-space: nowrap;
 }
 .widget .tag-cloud a:hover {
-  color: #fff;
+  color: #c0a685;
   /*background-color: #505050;*/
   background-color: #1d1f21;
-  border: 1px solid #505050;
+  border: 1px solid #c0a685;
   text-decoration: none;
 }
 .widget .social a {
@@ -976,7 +992,7 @@ pre {
   width: 40px;
   height: 40px;
   line-height: 45px;
-  color: #fff;
+  color: #3d393a;
   background: #808080;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -986,7 +1002,7 @@ pre {
 }
 .widget .social a:hover {
   /*background: #505050;*/
-  background: #1d1f21;
+  background: #3d393a;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -1008,10 +1024,10 @@ pre {
   width: 25%;
   height: 32px;
   /*background: #505050;*/
-  background: #1d1f21;
-  color: #fff;
+  background: #3d393a;
+  color: #c0a685;
   border-radius: 0 4px 4px 0;
-  border: 1px solid #505050;
+  border: 1px solid #c0a685;
 }
 .widget #search-form #result-mask {
   position: fixed;
@@ -1030,7 +1046,7 @@ pre {
   width: 120%;
   padding: 20px;
   color: #333;
-  background: #fff;
+  background: #fafafa;
   border-radius: 4px;
   box-shadow: 1px 2px 2px #ccc;
   border: 1px solid #ccc;
@@ -1051,7 +1067,7 @@ pre {
   display: inline-block;
   border-width: 0 12px 12px 12px;
   border-style: solid;
-  border-color: #fff transparent;
+  border-color: #fafafa transparent;
   right: 80px;
   top: -10px;
 }
@@ -1082,7 +1098,7 @@ pre {
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 0px;
-  color: #333;
+  color: #fafafa;
   border: 0;
 }
 .widget #search-form #result-wrap #search-result .item .title:hover {
@@ -1113,7 +1129,7 @@ pre {
 ====================================================*/
 #article-toc {
   padding-top: 1em;
-  background-color: #fff;
+  background-color: #fafafa;
   top: 0;
   bottom: 70px;
   overflow-y: auto;
@@ -1150,20 +1166,19 @@ pre {
 ====================================================*/
 .copyright {
   /*background: #111;*/
-  background: #1d1f21;
+  background: #fafafa;
   font-size: 13px;
-  text-align: center;
+  text-align: left;
   /*color: #666666;*/
-  color: white;
+  color: #1d1f21;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-top: 1px solid #303030;
 }
 .copyright span {
-  margin: 0 0.5em;
+  margin: 0 ;
 }
 .copyright a {
-  color: white;
+  color: #1d1f21;
 }
 /*====================================================
    back-to-top and toc-btn
@@ -1174,7 +1189,7 @@ pre {
   right: 30px;
   bottom: 30px;
   /*background-color: #959595;*/
-  background-color: #1d1f21;
+  background-color: #c0a77f;
   color: #fff;
   text-align: center;
   -webkit-border-radius: 2px;
@@ -1187,7 +1202,7 @@ pre {
 #toc-btn:hover {
   /*background: #505050;*/
   /*background: #1d1f21;*/
-  background: #1d1f21;
+  background: #c0a77f;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -1308,6 +1323,7 @@ pre {
   padding: 0 20px;
   margin: 20px auto;
   background: url(../img/timeline.gif) repeat-y 207px 0;
+  background-color: white;
   overflow: hidden;
 }
 .timeline h2 {
@@ -1393,9 +1409,9 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  color: #c5c8c6;
+  color: white;
   font-size: 13px;
-  background: #1d1f21;
+  background: #222321;
   line-height: 1.6;
 }
 code {
@@ -1403,15 +1419,15 @@ code {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: #666666;
-  background: #eee;
+  color: white;
+  background: #222321;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
 pre code {
   padding: 0;
-  color: #c5c8c6;
+  color: white;
   background: none;
   text-shadow: none;
 }
@@ -1456,15 +1472,15 @@ pre .comment {
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #888f96;
+  color: #c0a685;
   text-align: right;
-  background-color: #000;
+  background-color: #222321;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #1d1f21;
+  background-color: #222321;
 }
 .highlight .line {
   height: 20px;
@@ -1572,7 +1588,7 @@ pre .javascript .function {
   }
   .main-navigation .menu li:hover > a {
     /*color: #505050;*/
-    color: #1d1f21;
+    color: #c0a685;
     text-decoration: none;
   }
   .main-navigation .menu li a {
@@ -1655,4 +1671,7 @@ pre .javascript .function {
     content: "";
     margin-bottom: 10px;
   }
+}
+.nav-item {
+  margin-left: 0
 }

@@ -9,8 +9,11 @@ comments: false
 date: 2018-11-21 16:42:31
 updated: 2018-11-21 16:42:31
 ---
+<div hidden="true">Supervisor配置uwsgi基础示例，附加进程管理控制台常用命令</div>
+<!-- more -->
+
 ## supervisord.conf
-```
+{% codeblock lang:ini hightlight:true %}
 [unix_http_server]
 file=/tmp/supervisor.sock   ; (the path to the socket file)
 chmod=0700                 ; socket file mode (default 0700)
@@ -58,13 +61,13 @@ autostart=false
 autorestart=true
 stderr_logfile=/tmp/log/program_name_n_error.log
 stdout_logfile=/tmp/log/program_name_n_access.log
-```
+{% endcodeblock %}
 <hr>
 
 
 
 ## 进程管理控制台常用命令
-```
+{% codeblock lang:yaml hightlight:true %}
 - supervisorctl # 进入控制台
 
 - start all   # 启动配置文件中的所有进程
@@ -89,4 +92,4 @@ stdout_logfile=/tmp/log/program_name_n_access.log
 注：start、restartUnlinking stale socket /tmp/supervisor.sock、stop 都不会载入最新的配置文件
 
 - exit # 退出supervisor控制台
-```
+{% endcodeblock %}

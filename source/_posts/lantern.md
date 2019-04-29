@@ -9,6 +9,9 @@ date: 2019-04-24 11:33:53
 updated: 2019-04-26 11:33:53
 img:
 ---
+<div hidden="true">免费使用蓝灯指南</div>
+<!-- more -->
+
 ### 操作界面
 {% asset_img 1.png lantern %}
 

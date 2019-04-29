@@ -9,12 +9,10 @@
                     <a class="navbar-brand" href="<%= config.url %>"><%= config.title %></a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
-
                     <ul class="menu">
-                    <%- image_tag('img/avatar.jpg',{alt:'logo头像',class:'img-ava'}) %>
                         <% theme.menu.forEach(function (item) {%>
-                            <li role="presentation" class="text-center">
-                                <a href="<%- item.url%>"><i class="fa fa-<%- item.icon%>"></i><%= __(item.page+'') %></a>
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="<%- item.url%>" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-<%- item.icon%> nav-item" style="text-align:left; margin-left:0"></i><%= __(item.page+'') %></a>
                             </li>
                         <%})%>
                     </ul>

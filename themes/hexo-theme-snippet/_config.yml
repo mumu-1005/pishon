@@ -8,9 +8,6 @@ menu:
   - page: 飞猪 Go
     url: /
     icon: home
-  - page: 分类导航
-    url: /categories/
-    icon: bars
   - page: 涨点经验
     url: /projects/
     icon: angle-double-up
@@ -23,6 +20,9 @@ menu:
   - page: 工具
     url: /tools/
     icon: cog
+  - page: 标签云
+    url: /tags/
+    icon: bars
   - page: 时间轴
     url: /archives/
     icon: 500px 
@@ -46,8 +46,6 @@ widgets:
   - notification
   - social
   - category
-  - archive
-  - tagcloud
   - friends
 
 
@@ -124,7 +122,7 @@ defaultImgs:
   -
 
 ## 截取文章首页描述字数
-excerptLength: 50
+excerptLength: 320
 
 ## 是否开启文章目录
 toc: true
@@ -146,9 +144,9 @@ warning:
 ## 文章内声明
 declaration:
   enable: true
-  title: '转载声明'
-  tip: |-
-      <img src='/img/wechat.png' style="width:66px;height:66px;float:right">
+  title: '版权声明:本文为Fzg5_Shelling博主的的原创文章，转载请附上本文链接 '
+  # tip: |-
+  #     <img src='/img/wechat.png' style="width:66px;height:66px;float:right">
 
 ## 文章打赏
 reward: 

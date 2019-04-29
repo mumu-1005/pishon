@@ -29,7 +29,7 @@ comments: false
 ERROR: more than one row returned by a subquery used as an expression
 {% endcodeblock %}
 ### SOLUTION
-{% codeblock %}
+{% codeblock lang:sql %}
 SELECT
     field1,field2,
     (select ARRAY_AGG(field3) from b where exp) 

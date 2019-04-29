@@ -12,12 +12,12 @@ date: 2018-02-01 11:28:08
 updated: 2019-03-05 21:16:54
 img:
 ---
-# Help on package mysql.connector in mysql:
+### Help on package mysql.connector in mysql:
 
-## NAME
+### NAME
     mysql.connector - MySQL Connector/Python - MySQL driver written in Python
 
-## PACKAGE CONTENTS
+### PACKAGE CONTENTS
     abstracts
     authentication
     catch23
@@ -41,8 +41,8 @@ img:
     utils
     version
 
-## CLASSES
-### builtins.Exception(builtins.BaseException)
+### CLASSES
+##### builtins.Exception(builtins.BaseException)
 - mysql.connector.errors.Error
     - mysql.connector.errors.DatabaseError
         - mysql.connector.errors.DataError
@@ -54,26 +54,26 @@ img:
         - mysql.connector.errors.InterfaceError
 - mysql.connector.errors.Warning
 
-### builtins.object
+##### builtins.object
 - builtins.bytes
 - datetime.date
     - datetime.datetime
 - datetime.time
 
-### mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
+##### mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
 - mysql.connector.connection.MySQLConnection
 - mysql.connector.connection_cext.CMySQLConnection
 
-### mysql.connector.constants._Constants(builtins.object)
+##### mysql.connector.constants._Constants(builtins.object)
 - mysql.connector.constants.CharacterSet
 - mysql.connector.constants.FieldType
 - mysql.connector.constants.RefreshOption
 
-### mysql.connector.constants._Flags(mysql.connector.constants._Constants)
+##### mysql.connector.constants._Flags(mysql.connector.constants._Constants)
 - mysql.connector.constants.ClientFlag
 - mysql.connector.constants.FieldFlag
     
-### Binary = class bytes(object)
+##### Binary = class bytes(object)
      |  bytes(iterable_of_ints) -> bytes
      |  bytes(string, encoding[, errors]) -> bytes
      |  bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
@@ -3100,7 +3100,7 @@ img:
         
         Returns a dictionary.
 
-## DATA
+### DATA
     BINARY = <mysql.connector.dbapi._DBAPITypeObject object>
     DATETIME = <mysql.connector.dbapi._DBAPITypeObject object>
     HAVE_CEXT = True
@@ -3113,9 +3113,9 @@ img:
     paramstyle = 'pyformat'
     threadsafety = 1
 
-## VERSION
+### VERSION
     8.0.16
 
-## FILE
+### FILE
     /home/shelling/env/lib/python3.7/site-packages/mysql/connector/__init__.py
 

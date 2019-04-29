@@ -1,5 +1,5 @@
 ---
-title: 用Nginx+uWSGI部署多个Django项目
+title: Nginx+uWSGI部署多个Django项目
 categories:
   - 'server'
 tags:
@@ -9,6 +9,7 @@ comments: false
 date: 2018-11-21 11:02:33
 updated: 2018-11-21 11:12:33
 ---
+
 ## uWSGI配置
 ### project_1 的 uWSGI 的配置文件  project_1.ini
 {% codeblock %}

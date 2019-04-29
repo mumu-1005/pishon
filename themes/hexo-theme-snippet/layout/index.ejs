@@ -17,21 +17,16 @@
             <h1 class="post-title">
                 <a href="<%- url_for(post.path) %>"><%- post.title %></a>
             </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
+            <div class="post-meta"> 
+                <time style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
                     <%- date(post.date,"YYYY年MM月DD日") %>
                 </time>
             </div>
         </div>
-        <p class="brief">
-            <% if(post.excerpt) { %>
-                <%= strip_html(post.excerpt) + '…' %>
-            <% } else { %>
-                <%= truncate(strip_html(post.content), {length: theme.excerptLength || 120, separator: ''}) %>
-            <% } %>
-        </p>
-    </div>
-    <% if(theme.homePanel) { %>
+        <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('<%- url_for(post.path) %>')"><%- post.content %></div>
+        </footer>
+
         <footer class="post-footer clearfix">
             <div class="pull-left tag-list">
                 <%- partial('_partial/article-meta', {post: post}) %>
@@ -41,7 +36,11 @@
                 <a href="<%- url_for(post.path) %>" class="btn btn-default"><%= __('read_more') %></a>
             </div>
         </footer>
+        
+        <% if(theme.homePanel) { %>
+        
     <% } %>
+    </div>
 </article>
 <% }) %>
 <%}%>
