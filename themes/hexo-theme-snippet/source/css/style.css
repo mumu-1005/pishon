@@ -413,7 +413,7 @@ pre {
     main post area
 ====================================================*/
 #main {
-  background: #1d1f21;
+  background: #2d2d2d;
   padding: 10px 0;
   margin-bottom: 10px;
 }
@@ -421,10 +421,15 @@ pre {
   padding-left: 20px;
   font-size: 16px;
   line-height: 2em;
+  border: 1px solid #c0a685;
+  color: #c0a685;
+  background: #3d393a;
+  /*background-image: linear-gradient(to bottom right, #202020 , #3f3b3c);*/
 }
 .post {
   padding: 20px;
   background: #2d2d2d;
+  /*background-image: linear-gradient(to bottom right, #202020 , #3f3b3c);*/
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
@@ -907,9 +912,12 @@ pre {
   float: right;
 }
 .sidebar .widget {
-  background: #fafafa;
+  background: #2d2d2d;
   padding: 16px 25px;
   border: 1px solid #c0a685;
+}
+.sidebar .widget a{
+  color: #c0a685;
 }
 .sidebar .widget ul {
   padding: 0;
@@ -924,6 +932,7 @@ pre {
 .sidebar .widget .archive-list-count,
 .sidebar .widget .category-list-count {
   margin-left: 4px;
+  color: #c0a685;
 }
 .sidebar .widget .archive-list-count:before,
 .sidebar .widget .category-list-count:before {
@@ -954,6 +963,10 @@ pre {
   border-bottom: 1px solid #c0a685;
   margin-bottom: 21px;
   position: relative;
+  color: #c0a685;
+}
+.widget p {
+  color: #c0a685;
 }
 .widget .title:after {
   content: "";
@@ -1129,20 +1142,26 @@ pre {
 ====================================================*/
 #article-toc {
   padding-top: 1em;
-  background-color: #fafafa;
+  background-color: #2d2d2d;
   top: 0;
   bottom: 70px;
   overflow-y: auto;
+  list-style: none;
+  padding-left: 2em;
 }
 #article-toc ol {
   list-style: none;
+}
+#article-toc a {
+  list-style: none;
+  color: #c0a685;
 }
 #article-toc .toc {
   padding-left: 2em;
 }
 #article-toc .toc .toc-item .toc-link {
   display: block;
-  color: #333;
+  color: #c0a685;
   text-decoration: none;
   padding: 4px 0;
   line-height: 1.25em;
@@ -1154,7 +1173,7 @@ pre {
 }
 #article-toc .toc .toc-item .toc-link:hover {
   /*color: #505050;*/
-  color: #1d1f21;
+  color: #c0a685;
   -webkit-transition: 0.15s;
   transition: 0.15s;
 }

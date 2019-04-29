@@ -10,7 +10,7 @@ date: 2018-03-19 20:11:35
 updated: 2018-03-19 20:11:35
 ---
 
-## 进制通用转换器 
+### 进制通用转换器 
 {% codeblock 进制通用转换器 lang:python  line_numbers:true hightlight:true wrap:true %}
 def get_num_common(original_num, base_num):
     result = []
@@ -38,7 +38,7 @@ def get_num_common(original_num, base_num):
         return None
 {% endcodeblock %}
 
-## 十进制转换成16进制
+### 十进制转换成16进制
 {% codeblock 十进制转换成16进制 lang:python  line_numbers:true hightlight:true wrap:true %}
 def get_num(original_num):
     '''hex(original_num)'''
@@ -57,8 +57,8 @@ def get_num(original_num):
     return '0x' + ''.join(str(i) for i in result)
 {% endcodeblock %}
 
-## 延伸 
-### Python内置函数转换器
+### 延伸 
+##### Python内置函数转换器
 1、十进制数转换成N进制数
 
 | 内置函数转换器 | 二进制数 | 八进制数 | 十六进制数 |

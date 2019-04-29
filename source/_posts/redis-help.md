@@ -11,6 +11,7 @@ date: 2016-07-05 13:47:18
 updated: 2018-12-25 20:47:18
 img:
 ---
+``` python
 '''Help on class Redis in module redis.client:'''
 
 class Redis(builtins.object)
@@ -1509,4 +1510,4 @@ class Redis(builtins.object)
     '''Data and other attributes defined here:'''
     
     RESPONSE_CALLBACKS = {'AUTH': <class 'bool'>, 'BGREWRITEAOF': <functio...
-
+```

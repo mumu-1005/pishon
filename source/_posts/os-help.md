@@ -6,12 +6,13 @@ categories:
 tags:
   - os
   - help
+comments: false
 ---
 
-## Help on module os:
-### NAME
-    os - OS routines for NT or Posix depending on what system we're on.
+### Help on module OS
+
 ### MODULE REFERENCE
+```
     https://docs.python.org/3.7/library/os
     
     The following documentation is automatically generated from the Python
@@ -19,7 +20,10 @@ tags:
     are considered implementation detail and may vary between Python
     implementations.  When in doubt, consult the module reference at the
     location listed above.
+```
+
 ### DESCRIPTION
+```
     This exports:
       - all functions from posix or nt, e.g. unlink, stat, etc.
       - os.path is either posixpath or ntpath
@@ -39,7 +43,10 @@ tags:
     only use functions that are defined by all platforms (e.g., unlink
     and opendir), and leave all pathname manipulation to os.path
     (e.g., split and join).
+```
+
 ### CLASSES
+```
     builtins.Exception(builtins.BaseException)
         builtins.OSError
     builtins.object
@@ -777,6 +784,7 @@ tags:
      |      Return first index of value.
      |      
      |      Raises ValueError if the value is not present.
+
 FUNCTIONS
     WCOREDUMP(status, /)
         Return True if the process returning status was dumped to a core file.
@@ -2123,7 +2131,10 @@ FUNCTIONS
         
         Returns the total number of bytes written.
         buffers must be a sequence of bytes-like objects.
+```
+
 ### DATA
+```
     CLD_CONTINUED = 6
     CLD_DUMPED = 3
     CLD_EXITED = 1
@@ -2219,3 +2230,4 @@ FUNCTIONS
     sep = '/'
     supports_bytes_environ = True
     sysconf_names = {'SC_2_CHAR_TERM': 20, 'SC_2_C_BIND': 18, 'SC_2_C_DEV'...
+```

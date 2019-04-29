@@ -12,12 +12,14 @@ date: 2018-02-01 11:28:08
 updated: 2019-03-05 21:16:54
 img:
 ---
-### Help on package mysql.connector in mysql:
+### Help on package mysql.connector in mysql
+##### NAME
+{% codeblock lang:sh %}
+# mysql.connector - MySQL Connector/Python - MySQL driver written in Python
+{% endcodeblock%}
 
-### NAME
-    mysql.connector - MySQL Connector/Python - MySQL driver written in Python
-
-### PACKAGE CONTENTS
+##### PACKAGE CONTENTS
+{% codeblock lang:sh %}
     abstracts
     authentication
     catch23
@@ -40,9 +42,11 @@ img:
     protocol
     utils
     version
+{% endcodeblock%}
 
-### CLASSES
-##### builtins.Exception(builtins.BaseException)
+##### CLASSES
+{% codeblock lang:sh %}
+builtins.Exception(builtins.BaseException)
 - mysql.connector.errors.Error
     - mysql.connector.errors.DatabaseError
         - mysql.connector.errors.DataError
@@ -54,26 +58,29 @@ img:
         - mysql.connector.errors.InterfaceError
 - mysql.connector.errors.Warning
 
-##### builtins.object
+builtins.object
 - builtins.bytes
 - datetime.date
     - datetime.datetime
 - datetime.time
 
-##### mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
+mysql.connector.abstracts.MySQLConnectionAbstract(mysql.connector.abstracts.MySQLConnectionAbstract, builtins.object)
 - mysql.connector.connection.MySQLConnection
 - mysql.connector.connection_cext.CMySQLConnection
 
-##### mysql.connector.constants._Constants(builtins.object)
+mysql.connector.constants._Constants(builtins.object)
 - mysql.connector.constants.CharacterSet
 - mysql.connector.constants.FieldType
 - mysql.connector.constants.RefreshOption
 
-##### mysql.connector.constants._Flags(mysql.connector.constants._Constants)
+mysql.connector.constants._Flags(mysql.connector.constants._Constants)
 - mysql.connector.constants.ClientFlag
 - mysql.connector.constants.FieldFlag
-    
-##### Binary = class bytes(object)
+{% endcodeblock%}
+
+##### Binary
+{% codeblock lang:python %}
+Binary = class bytes(object)
      |  bytes(iterable_of_ints) -> bytes
      |  bytes(string, encoding[, errors]) -> bytes
      |  bytes(bytes_or_buffer) -> immutable copy of bytes_or_buffer
@@ -751,7 +758,7 @@ img:
      |      ClientFlag-values. If it is an integer, it will set client_flags
      |      to flags as is.
      |      If flags is a list (or tuple), each flag will be set or unset
-     |      when it's negative.
+     |      when it is negative.
      |      
      |      set_client_flags([ClientFlag.FOUND_ROWS,-ClientFlag.LONG_FLAG])
      |      
@@ -3099,23 +3106,32 @@ img:
             mysql.connector.custom_error_exception({})
         
         Returns a dictionary.
+{% endcodeblock%}
 
 ### DATA
-    BINARY = <mysql.connector.dbapi._DBAPITypeObject object>
-    DATETIME = <mysql.connector.dbapi._DBAPITypeObject object>
-    HAVE_CEXT = True
-    NUMBER = <mysql.connector.dbapi._DBAPITypeObject object>
-    ROWID = <mysql.connector.dbapi._DBAPITypeObject object>
-    STRING = <mysql.connector.dbapi._DBAPITypeObject object>
-    __all__ = ['MySQLConnection', 'Connect', 'custom_error_exception', 'Fi...
-    __version_info__ = (8, 0, 16, '', 1)
-    apilevel = '2.0'
-    paramstyle = 'pyformat'
-    threadsafety = 1
+
+{% codeblock lang:python %}
+BINARY = <mysql.connector.dbapi._DBAPITypeObject object>
+DATETIME = <mysql.connector.dbapi._DBAPITypeObject object>
+HAVE_CEXT = True
+NUMBER = <mysql.connector.dbapi._DBAPITypeObject object>
+ROWID = <mysql.connector.dbapi._DBAPITypeObject object>
+STRING = <mysql.connector.dbapi._DBAPITypeObject object>
+__all__ = ['MySQLConnection', 'Connect', 'custom_error_exception', 'Fi...
+__version_info__ = (8, 0, 16, '', 1)
+apilevel = '2.0'
+paramstyle = 'pyformat'
+threadsafety = 1
+{% endcodeblock%}
 
 ### VERSION
+
+{% codeblock lang:sh %}
     8.0.16
+{% endcodeblock%}
 
 ### FILE
-    /home/shelling/env/lib/python3.7/site-packages/mysql/connector/__init__.py
 
+{% codeblock lang:sh %}
+    /home/shelling/env/lib/python3.7/site-packages/mysql/connector/__init__.py
+{% endcodeblock%}

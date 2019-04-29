@@ -10,12 +10,14 @@ date: 2017-08-05 15:20:04
 updated: 2018-05-19 21:10:39
 img:
 ---
-# SENDMAIL(1)                 General Commands Manual                SENDMAIL(1)
 
-##  NAME
-       sendmail - Postfix to Sendmail compatibility interface
+```
+NAME
+  - sendmail - Postfix to Sendmail compatibility interface
+```
 
-## SYNOPSIS
+### SYNOPSIS
+``` sh
        sendmail [option ...] [recipient ...]
 
        mailq
@@ -23,8 +25,10 @@ img:
 
        newaliases
        sendmail -I
+```
 
-## DESCRIPTION
+### DESCRIPTION
+``` sh
        The Postfix sendmail(1) command implements the Postfix to Sendmail com‐
        patibility interface.  For the  sake  of  compatibility  with  existing
        applications,  some  Sendmail  command-line  options are recognized but
@@ -284,16 +288,22 @@ img:
        -X log_file (ignored)
               Log mailer traffic. Use the debug_peer_list and debug_peer_level
               configuration parameters instead.
+```
 
-## SECURITY
+### SECURITY
+``` sh
        By design, this program is not set-user (or group) id. However, it must
        handle data from untrusted, possibly remote, users.   Thus,  the  usual
        precautions need to be taken against malicious inputs.
+```
 
-## DIAGNOSTICS
+### DIAGNOSTICS
+```
        Problems are logged to syslogd(8) and to the standard error stream.
+```
 
-## ENVIRONMENT
+### ENVIRONMENT
+```
        MAIL_CONFIG
               Directory with Postfix configuration files.
 
@@ -306,20 +316,26 @@ img:
 
        NAME   The sender full name. This is used only with messages that  have
               no From: message header. See also the -F option above.
+```
 
-## CONFIGURATION PARAMETERS
+### CONFIGURATION PARAMETERS
+```
        The  following  main.cf parameters are especially relevant to this pro‐
        gram.  The text below provides only  a  parameter  summary.  See  post‐
        conf(5) for more details including examples.
+```
 
-## COMPATIBILITY CONTROLS
+### COMPATIBILITY CONTROLS
+```
        Available with Postfix 2.9 and later:
 
        sendmail_fix_line_endings (always)
               Controls how the Postfix sendmail command converts email message
               line endings from <CR><LF> into UNIX format (<LF>).
+```
 
-## TROUBLE SHOOTING CONTROLS
+### TROUBLE SHOOTING CONTROLS
+```
        The DEBUG_README file gives examples of how to trouble shoot a  Postfix
        system.
 
@@ -335,8 +351,10 @@ img:
               Optional  list  of  remote  client or server hostname or network
               address  patterns  that  cause  the  verbose  logging  level  to
               increase by the amount specified in $debug_peer_level.
+```
 
-## ACCESS CONTROLS
+### ACCESS CONTROLS
+```
        Available in Postfix version 2.2 and later:
 
        authorized_flush_users (static:anyone)
@@ -349,8 +367,10 @@ img:
               List  of  users who are authorized to submit mail with the send‐
               mail(1) command (and with the privileged postdrop(1) helper com‐
               mand).
+```
 
-## RESOURCE AND RATE CONTROLS
+### RESOURCE AND RATE CONTROLS
+```
        bounce_size_limit (50000)
               The  maximal  amount  of original message text that is sent in a
               non-delivery notification.
@@ -368,16 +388,20 @@ img:
        queue_run_delay (300s)
               The  time  between  deferred  queue  scans by the queue manager;
               prior to Postfix 2.4 the default value was 1000s.
+```
 
-## FAST FLUSH CONTROLS
+### FAST FLUSH CONTROLS
+```
        The ETRN_README file describes configuration and operation details  for
        the Postfix "fast flush" service.
 
        fast_flush_domains ($relay_domains)
               Optional list of destinations that are eligible for per-destina‐
               tion logfiles with mail that is queued to those destinations.
+```
 
-## VERP CONTROLS
+### VERP CONTROLS
+```
        The VERP_README file describes configuration and operation  details  of
        Postfix support for variable envelope return path addresses.
 
@@ -387,8 +411,10 @@ img:
        verp_delimiter_filter (-=+)
               The  characters  Postfix accepts as VERP delimiter characters on
               the Postfix sendmail(1) command line and in SMTP commands.
+```
 
-## MISCELLANEOUS CONTROLS
+### MISCELLANEOUS CONTROLS
+```
        alias_database (see 'postconf -d' output)
               The alias databases for local(8) delivery that are updated  with
               "newaliases" or with "sendmail -bi".
@@ -449,12 +475,16 @@ img:
               that  share  the Postfix executable files and documentation with
               the default Postfix instance, and  that  are  started,  stopped,
               etc., together with the default Postfix instance.
+```
 
-## FILES
+### FILES
+```
        /var/spool/postfix, mail queue
        /etc/postfix, configuration files
+```
 
-## SEE ALSO
+### SEE ALSO
+```
        pickup(8), mail pickup daemon
        qmgr(8), queue manager
        smtpd(8), SMTP server
@@ -465,18 +495,24 @@ img:
        postfix(1), mail system control
        postqueue(1), mail queue control
        syslogd(8), system logging
+```
 
-## README_FILES
+### README_FILES
+```
        Use  "postconf readme_directory" or "postconf html_directory" to locate
        this information.
        DEBUG_README, Postfix debugging howto
        ETRN_README, Postfix ETRN howto
        VERP_README, Postfix VERP howto
+```
 
-## LICENSE
+### LICENSE
+ ```
        The Secure Mailer license must be distributed with this software.
+```
 
-## AUTHOR(S)
+### AUTHOR(S)
+```
        Wietse Venema
        IBM T.J. Watson Research
        P.O. Box 704
@@ -486,5 +522,4 @@ img:
        Google, Inc.
        111 8th Avenue
        New York, NY 10011, USA
-
-                                                                   SENDMAIL(1)
+```

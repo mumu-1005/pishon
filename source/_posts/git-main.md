@@ -6,7 +6,9 @@ categories:
 tags: 
   - git
   - man
+comments: false
 ---
+``` sh
 ## Git Manual                                                                                
 
 ### NAME
@@ -967,3 +969,4 @@ tags:
         6. git-security@googlegroups.com
            mailto:git-security@googlegroups.com
 
+```

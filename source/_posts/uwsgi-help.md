@@ -11,15 +11,14 @@ date: 2018-05-05 11:00:38
 updated: 2019-02-05 21:00:02
 img:
 ---
-# UWSGI-CORE(1)                                User Commands                                
+### UWSGI-CORE                                                               
+``` sh
+NAME
+  - uwsgi-core - fast (pure C), self-healing, developer-friendly WSGI server
+```
 
-## NAME
-       uwsgi-core - fast (pure C), self-healing, developer-friendly WSGI server
-
-## SYNOPSIS（概要）
-       uwsgi-core [options...]
-
-## DESCRIPTION（描述）
+### User Commands
+``` sh
        -s|--socket
               bind to the specified UNIX/TCP socket using default protocol
               指定socket，使用默认协议
@@ -2342,3 +2341,4 @@ img:
               print uWSGI version
               查看当前uwsgi版本
 
+```

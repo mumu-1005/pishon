@@ -11,22 +11,28 @@ date: 2017-06-29 21:36:38
 updated: 2019-04-05 11:52:09
 img:
 ---
-# PS(1)                     BSD General Commands Manual                    PS(1)
-## NAME
-     ps -- process status
-## SYNOPSIS
+```
+NAME
+  - ps -- process status
+```
+
+### SYNOPSIS
+```
      ps [-AaCcEefhjlMmrSTvwXx] [-O fmt | -o fmt] [-G gid[,gid...]] [-g grp[,grp...]] [-u uid[,uid...]] [-p pid[,pid...]] [-t tty[,tty...]] [-U user[,user...]]
      ps [-L]
-## DESCRIPTION
+```
+
+### DESCRIPTION
+``` sh
      The ps utility displays a header line, followed by lines containing information about all of your processes that have controlling terminals.
      A different set of processes can be selected for display by using any combination of the -a, -G, -g, -p, -T, -t, -U, and -u options.  If more than one of these options are given, then ps will select all processes which are matched by at least one of the given options.
      For the processes which have been selected for display, ps will usually display one line per process.  The -M option may result in multiple output lines (one line per thread) for some processes.  By default all of these output lines are sorted first by controlling terminal, then by process ID.  The -m, -r, and -v options will change the sort order.  If more than one sorting option was given, then the selected processes will be sorted by the last sorting option which was specified.
-     For the processes which have been selected for display, the information to display is selected based on a set of keywords (see the -L, -O, and -o options).  The default output format includes, for each process, the process' ID, controlling terminal, CPU time (including both user and system time), state, and associated command.
+     For the processes which have been selected for display, the information to display is selected based on a set of keywords (see the -L, -O, and -o options).  The default output format includes, for each process, the process‘ ID, controlling terminal, CPU time (including both user and system time), state, and associated command.
      The options are as follows:
-     -A      Display information about other users' processes, including those without controlling terminals.
-     -a      Display information about other users' processes as well as your own.  This will skip any processes which do not have a controlling terminal, unless the -x option is also specified.
-     -C      Change the way the CPU percentage is calculated by using a ``raw'' CPU calculation that ignores ``resident'' time (this normally has no effect).
-     -c      Change the ``command'' column output to just contain the executable name, rather than the full command line.
+     -A      Display information about other users‘ processes, including those without controlling terminals.
+     -a      Display information about other users‘ processes as well as your own.  This will skip any processes which do not have a controlling terminal, unless the -x option is also specified.
+     -C      Change the way the CPU percentage is calculated by using a ``raw‘‘ CPU calculation that ignores ``resident‘‘ time (this normally has no effect).
+     -c      Change the ``command‘‘ column output to just contain the executable name, rather than the full command line.
      -d      Like -A, but excludes session leaders.
      -E      Display the environment as well.  This does not reflect changes in the environment after process launch.
      -e      Identical to -A.
@@ -39,8 +45,8 @@ img:
      -l      Display information associated with the following keywords: uid, pid, ppid, flags, cpu, pri, nice, vsz=SZ, rss, wchan, state=S, paddr=ADDR, tty, time, and command=CMD.
      -M      Print the threads corresponding to each task.
      -m      Sort by memory usage, instead of the combination of controlling terminal and process ID.
-     -O      Add the information associated with the space or comma separated list of keywords specified, after the process ID, in the default information display.  Keywords may be appended with an equals (`=') sign and a string.  This causes the printed header to use the specified string instead of the standard header.
-     -o      Display information associated with the space or comma separated list of keywords specified.  Multiple keywords may also be given in the form of more than one -o option.  Keywords may be appended with an equals (`=') sign and a string.  This causes the printed header to use the specified string instead of the standard header.  If all keywords have empty header texts, no header line is written.
+     -O      Add the information associated with the space or comma separated list of keywords specified, after the process ID, in the default information display.  Keywords may be appended with an equals (`=‘) sign and a string.  This causes the printed header to use the specified string instead of the standard header.
+     -o      Display information associated with the space or comma separated list of keywords specified.  Multiple keywords may also be given in the form of more than one -o option.  Keywords may be appended with an equals (`=‘) sign and a string.  This causes the printed header to use the specified string instead of the standard header.  If all keywords have empty header texts, no header line is written.
      -p      Display information about processes which match the specified process IDs.
      -r      Sort by current CPU usage, instead of the combination of controlling terminal and process ID.
      -S      Change the way the process time is calculated by summing all exited children to their parent process.
@@ -75,17 +81,17 @@ img:
                P_WAITING           0x40000      Process has a wait() in progress
                P_KDEBUG            0x80000        Kdebug tracing on for this process
      lim      The soft limit on memory used, specified via a call to setrlimit(2).
-     lstart    The exact time the command started, using the `%c' format described in strftime(3).
+     lstart    The exact time the command started, using the `%c‘ format described in strftime(3).
      nice      The process scheduling increment (see setpriority(2)).
      rss      the real memory (resident set) size of the process (in 1024 byte units).
-     start    The time the command started.  If the command started less than 24 hours ago, the start time is displayed using the ``%l:ps.1p'' format described in strftime(3).  If the command started less than 7 days ago, the start time is displayed using the ``%a6.15p'' format.  Otherwise, the start time is displayed using the ``%e%b%y'' format.
-     state    The state is given by a sequence of characters, for example, ``RWNA''.  The first character indicates the run state of the process:
+     start    The time the command started.  If the command started less than 24 hours ago, the start time is displayed using the ``%l:ps.1p‘‘ format described in strftime(3).  If the command started less than 7 days ago, the start time is displayed using the ``%a6.15p‘‘ format.  Otherwise, the start time is displayed using the ``%e%b%y‘‘ format.
+     state    The state is given by a sequence of characters, for example, ``RWNA‘‘.  The first character indicates the run state of the process:
                I       Marks a process that is idle (sleeping for longer than about 20 seconds).
                R       Marks a runnable process.
                S       Marks a process that is sleeping for less than about 20 seconds.
                T       Marks a stopped process.
                U       Marks a process in uninterruptible wait.
-               Z       Marks a dead process (a ``zombie'').
+               Z       Marks a dead process (a ``zombie‘‘).
                Additional characters after these, if any, indicate additional state information:
                +       The process is in the foreground process group of its control terminal.
                <       The process has raised CPU scheduling priority.
@@ -99,10 +105,13 @@ img:
                V       The process is suspended during a vfork(2).
                W       The process is swapped out.
                X       The process is being traced or debugged.
-     tt        An abbreviation for the pathname of the controlling terminal, if any.  The abbreviation consists of the three letters following /dev/tty, or, for the console, ``con''.  This is followed by a `-' if the process can no longer reach that controlling terminal (i.e., it has been revoked).
+     tt        An abbreviation for the pathname of the controlling terminal, if any.  The abbreviation consists of the three letters following /dev/tty, or, for the console, ``con‘‘.  This is followed by a `-‘ if the process can no longer reach that controlling terminal (i.e., it has been revoked).
      wchan    The event (an address in the system) on which a process waits.  When printed numerically, the initial part of the address is trimmed off and the result is printed in hex, for example, 0x80324000 prints as 324000.
-     When printing using the command keyword, a process that has exited and has a parent that has not yet waited for the process (in other words, a zombie) is listed as ``<defunct>'', and a process which is blocked while trying to exit is listed as ``<exiting>''.  If the arguments cannot be located (usually because it has not been set, as is the case of system processes and/or kernel threads) the command name is printed within square brackets.  The process can change the arguments shown with setproctitle(3).  Otherwise, ps makes an educated guess as to the file name and arguments given when the process was created by examining memory or the swap area.  The method is inherently somewhat unreliable and in any event a process is entitled to destroy this information.  The ucomm (accounting) keyword can, however, be depended on.  If the arguments are unavailable or do not agree with the ucomm keyword, the value for the ucomm keyword is appended to the arguments in parentheses.
-## KEYWORDS
+     When printing using the command keyword, a process that has exited and has a parent that has not yet waited for the process (in other words, a zombie) is listed as ``<defunct>‘‘, and a process which is blocked while trying to exit is listed as ``<exiting>‘‘.  If the arguments cannot be located (usually because it has not been set, as is the case of system processes and/or kernel threads) the command name is printed within square brackets.  The process can change the arguments shown with setproctitle(3).  Otherwise, ps makes an educated guess as to the file name and arguments given when the process was created by examining memory or the swap area.  The method is inherently somewhat unreliable and in any event a process is entitled to destroy this information.  The ucomm (accounting) keyword can, however, be depended on.  If the arguments are unavailable or do not agree with the ucomm keyword, the value for the ucomm keyword is appended to the arguments in parentheses.
+```
+
+### KEYWORDS
+``` sh 
      The following is a complete list of the available keywords and their meanings.  Several of them have aliases (keywords which are synonyms).
      %cpu      percentage CPU usage (alias pcpu)
      %mem      percentage memory usage (alias pmem)
@@ -171,15 +180,24 @@ img:
      wqr        number of running workqueue threads
      wql        workqueue limit status (C = constrained thread limit, T = total thread limit)
      xstat      exit or stop status (valid only for stopped or zombie process)
-## ENVIRONMENT
+```
+
+### ENVIRONMENT
+```
      The following environment variables affect the execution of ps:
-     COLUMNS  If set, specifies the user's preferred output width in column positions.  By default, ps attempts to automatically determine the terminal width.
-## FILES
+     COLUMNS  If set, specifies the user‘s preferred output width in column positions.  By default, ps attempts to automatically determine the terminal width.
+```
+
+### FILES
+```
      /dev                 special files and device names
      /var/run/dev.db      /dev name database
      /var/db/kvm_kernel.db
                           system namelist database
-## LEGACY DESCRIPTION
+```
+
+### LEGACY DESCRIPTION
+```
      In legacy mode, ps functions as described above, with the following differences:
      -e      Display the environment as well. Same as -E.
      -g      Ignored for compatibility. Takes no argument.
@@ -187,14 +205,25 @@ img:
      -u      Display information associated with the following keywords: user, pid, %cpu, %mem, vsz, rss, tt, state, start, time, and command.  The -u option implies the -r option.
      The biggest change is in the interpretation of the -u option, which now displays processes belonging to the specified username(s).  Thus, "ps -aux" will fail (unless you want to know about user "x").  As a convenience, however, "ps aux" still works as it did in Tiger.
      For more information about legacy mode, see compat(5).
-## SEE ALSO
+```
+
+### SEE ALSO
+```
      kill(1), w(1), kvm(3), strftime(3), sysctl(8)
-## STANDARDS
-     The ps utility supports the Version 3 of the Single UNIX Specification (``SUSv3'') standard.
-## HISTORY
+```
+
+### STANDARDS
+```
+     The ps utility supports the Version 3 of the Single UNIX Specification (``SUSv3‘‘) standard.
+```
+
+### HISTORY
+```
      The ps command appeared in Version 4 AT&T UNIX.
-## BUGS
-     Since ps cannot run faster than the system and is run as any other scheduled process, the information it displays can never be exact.
-     The ps utility does not correctly display argument lists containing multibyte characters.
-BSD                             March 20, 2005                             BSD
-### (END)
+```
+
+### BUGS
+```
+Since ps cannot run faster than the system and is run as any other scheduled process, the information it displays can never be exact.
+The ps utility does not correctly display argument lists containing multibyte characters.
+```
