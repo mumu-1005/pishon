@@ -11,5 +11,5 @@ XKZYV-PK9CC-A1Y0X-K5HZL-Y65ZV
 <h3> OmniGraffle 7 Mac </h3> 
 账号：Appked 密码：MFWG-GHEB-HYTW-CGHT-CSXU-QCNC-SXU
 
-<%- list_categories([class=tools]) %>
+<%- list_categories() %>
 
