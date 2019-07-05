@@ -5,9 +5,10 @@ categories:
 tags:
   - Redis
   - nosql
+  - help
 comments: false
 date: 2016-07-05 13:47:18
-updated: 2019-07-05 20:47:18
+updated: 2018-12-25 20:47:18
 img:
 ---
 '''Help on class Redis in module redis.client:'''

@@ -6,9 +6,10 @@ categories:
 tags:
   - server
   - uwsgi
+  - help
 comments: false
 date: 2018-05-05 11:00:38
-updated: 2019-07-05 21:00:02
+updated: 2019-02-05 21:00:02
 img:
 ---
 UWSGI-CORE(1)                                User Commands                                
