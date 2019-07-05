@@ -2,7 +2,6 @@
 title: uwsgi-help
 categories:
   - server
-  - Python
 tags:
   - server
   - uwsgi

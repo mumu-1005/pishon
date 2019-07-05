@@ -1,4 +1,4 @@
 ---
-title: bugs
+title: bug集
 date: 2019-07-05 20:10:19
 ---
