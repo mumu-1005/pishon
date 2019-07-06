@@ -9,7 +9,6 @@ tags:
 comments: false
 date: 2019-01-28 15:05:26
 updated: 2019-01-28 15:05:26
-img:
 ---
 无需安装第三方软件（如：Paragon NTFS、Mounty）实现Mac支持ntfs磁盘读写
 
