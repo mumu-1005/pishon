@@ -1,5 +1,5 @@
 ---
-title: uwsgi命令-帮助（纯手工翻译中）
+title: uwsgi命令
 categories:
   - server
 tags:
