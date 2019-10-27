@@ -1,5 +1,5 @@
 ---
-title: lantern
+title: Lantern
 categories:
   - tools
 tags:
