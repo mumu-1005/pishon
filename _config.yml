@@ -83,8 +83,13 @@ deploy:
   branch: master
   message: "{{ now('YYYY-MM-DD HH:mm:ss') }}"
 
+# plugins
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
 # SEO
 sitemap:
-path: sitemap.xml
+  path: sitemap.xml
 baidusitemap:
-path: baidusitemap.xml
+  path: baidusitemap.xml
