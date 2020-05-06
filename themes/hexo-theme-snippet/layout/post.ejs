@@ -8,7 +8,7 @@
 	            <%= page.title||'NO Title!' %>
             <%}%>
         </h1>
-        <%- partial('_partial/article-meta', {post: page}), {cache: true} %>
+        <%- partial('_partial/article-meta', {post: page}) %>
             <%
                 var diffDays = moment(new Date()).diff(moment(page.date), 'day');
                 var warningTextArr = theme.warning.text.split("%d");
