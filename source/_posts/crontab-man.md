@@ -1,7 +1,7 @@
 ---
 title: crontab-man
 categories:
-  - Linux
+  - LINUX
 tags:
   - crontab
   - Linux

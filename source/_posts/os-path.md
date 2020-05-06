@@ -1,7 +1,7 @@
 ---
 title: OS.PATH
 categories:
-  - Python
+  - PYTHON
 tags:
   - os
 comments: false

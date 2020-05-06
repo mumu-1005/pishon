@@ -1,7 +1,7 @@
 ---
 title: SENDMAIL-General Commands Manual
 categories:
-  - Linux
+  - LINUX
 tags:
   - SENDMAIL
   - Linux

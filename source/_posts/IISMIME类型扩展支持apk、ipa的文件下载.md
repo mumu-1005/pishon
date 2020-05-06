@@ -1,7 +1,7 @@
 ---
 title: IIS MIME类型扩展 支持apk、ipa的文件下载
 categories:
-  - server
+  - SERVER
 tags:
   - server
   - IIS

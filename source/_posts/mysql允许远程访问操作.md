@@ -1,7 +1,7 @@
 ---
 title: mysql允许远程访问操作
 categories:
-  - server
+  - SERVER
 tags:
   - MySQL
   - 服务器配置

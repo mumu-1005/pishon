@@ -2,10 +2,11 @@
 title: Git Manual（已更新）
 date: 2016-02-03 20:26:23
 categories:
-  - tools
+  - TOOLS
 tags: 
   - git
   - man
+  - tools
 comments: false
 ---
 ``` sh

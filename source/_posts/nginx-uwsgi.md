@@ -1,10 +1,10 @@
 ---
 title: Nginx+uWSGI部署多个Django项目
 categories:
-  - 'server'
+  - SERVER
 tags:
-  - 'Nginx'
-  - 'uWSGI'
+  - Nginx
+  - uWSGI
 comments: false
 date: 2018-11-21 11:02:33
 updated: 2018-11-21 11:12:33

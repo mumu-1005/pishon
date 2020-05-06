@@ -43,7 +43,7 @@ carousel:
 ## widgets
 widgets:
   - search
-  - notification
+  # - notification
   - social
   - category
   - friends
@@ -69,12 +69,12 @@ notification: |-
 
 ## 社交设置
 social:
-# - name: Github
-#   icon: github
-#   href: //github.com/shellingshord
-# - name: 邮箱
-#   icon: envelope-o
-#   href: mailto:shelling_@hotmail.com
+- name: Github
+  icon: github
+  href: //github.com/shellingshord
+- name: 邮箱
+  icon: envelope-o
+  href: mailto:shelling_@hotmail.com
 
 ## 文章分类设置
 cate_config:
@@ -111,8 +111,8 @@ links:
 branding:
 
 ## 设置banner背景图片
-banner:
-    img: '/img/banner.jpg'
+# banner:
+#     img: '/img/banner.jpg'
 
 ## 首页列表底部面板
 homePanel: true

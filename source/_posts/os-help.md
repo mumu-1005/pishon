@@ -1,8 +1,8 @@
 ---
 title: os_help（已更新）
-date: 2017-03-04 00:09:52
+date: 2018-03-04 00:09:52
 categories:
-  - Linux
+  - PYTHON
 tags:
   - os
   - help
@@ -12,7 +12,7 @@ comments: false
 ### Help on module OS
 
 ### MODULE REFERENCE
-```
+``` sh
     https://docs.python.org/3.7/library/os
     
     The following documentation is automatically generated from the Python
@@ -23,7 +23,7 @@ comments: false
 ```
 
 ### DESCRIPTION
-```
+``` sh
     This exports:
       - all functions from posix or nt, e.g. unlink, stat, etc.
       - os.path is either posixpath or ntpath
@@ -46,7 +46,7 @@ comments: false
 ```
 
 ### CLASSES
-```
+``` python
     builtins.Exception(builtins.BaseException)
         builtins.OSError
     builtins.object
@@ -2134,7 +2134,7 @@ FUNCTIONS
 ```
 
 ### DATA
-```
+``` python
     CLD_CONTINUED = 6
     CLD_DUMPED = 3
     CLD_EXITED = 1

@@ -1,7 +1,7 @@
 ---
 title: nginx配置首页默认跳转路径
 categories:
-  - Nginx
+  - SERVER
 tags:
   - Nginx
 comments: false

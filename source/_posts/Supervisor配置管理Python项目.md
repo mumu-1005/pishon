@@ -1,10 +1,10 @@
 ---
 title: Supervisor配置管理Python项目
 categories:
-  - 'Server'
+  - SERVER
 tags:
-  - 'Supervisor'
-  - 'Python'
+  - Supervisor
+  - Python
 comments: false
 date: 2018-11-21 16:42:31
 updated: 2018-11-21 16:42:31

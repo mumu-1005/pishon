@@ -1,7 +1,7 @@
 ---
 title: Python进制转换与通用转换器实现
 categories:
-  - Python
+  - PYTHON
 tags:
   - Python
   - 进制转换

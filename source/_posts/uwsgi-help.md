@@ -1,7 +1,7 @@
 ---
 title: uwsgi命令
 categories:
-  - server
+  - SERVER
 tags:
   - server
   - uwsgi

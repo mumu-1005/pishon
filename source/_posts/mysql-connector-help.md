@@ -1,7 +1,7 @@
 ---
 title: MySQL Connector/Python
 categories:
-  - MySQL
+  - SQL
 tags:
   - MySQL
   - help

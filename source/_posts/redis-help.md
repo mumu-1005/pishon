@@ -1,7 +1,7 @@
 ---
 title: Help on class Redis in module redis.client
 categories:
-  - Redis
+  - REDIS
 tags:
   - Redis
   - nosql

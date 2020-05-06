@@ -2,9 +2,9 @@
 title: PSQL序
 categories:
   - SQL
-  - Postgre SQL
 tags:
   - tools
+  - Postgre SQL
 comments: false
 date: 2019-08-26 23:53:18
 updated: 2019-08-26 23:53:18

@@ -4,6 +4,7 @@ categories:
   - SQL
 tags:
   - tools
+  - Postgre SQL
 comments: false
 date: 2019-04-27 22:49:59
 updated: 2019-04-27 22:49:59

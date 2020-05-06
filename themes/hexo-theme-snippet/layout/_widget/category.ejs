@@ -1,6 +1,7 @@
 <% if(site.categories.length){ %>
     <div class="widget">
         <h3 class="title"><%= __('categories') %></h3>
+        <div class="category-list-item-class">
         <%- list_categories({
             showcount: theme.cate_config.show_count,
             transform: function(name){
@@ -8,5 +9,6 @@
             },
             show_current: theme.cate_config.show_current
             }) %>
+        </div>
     </div>
 <% } %>

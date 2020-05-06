@@ -1,7 +1,7 @@
 ---
 title: java sdk 1.8 java.lang.Math
 categories:
-  - Java
+  - JAVA
 tags:
   - Math
 comments: false

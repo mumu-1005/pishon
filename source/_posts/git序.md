@@ -1,9 +1,10 @@
 ---
 title: Git序
 categories:
-  - tools
+  - TOOLS
 tags:
   - git
+  - tools
 comments: false
 date: 2018-04-25 21:05:47
 updated: 2020-04-25 21:05:47
@@ -28,6 +29,7 @@ git commit -m 'update .gitignore'
 
 ### 删除在git add中添加的文件
 {% codeblock lang:sh %}
+git reset HEAD file  
 git rm –cached file  #删除暂存区的文件，工作区的不受影响
 git rm --f file   #删除暂存区与工作区的文件
 {% endcodeblock %}

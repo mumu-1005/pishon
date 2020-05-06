@@ -1,7 +1,7 @@
 ---
 title: 终端nano实现Mac支持ntfs磁盘读写
 categories:
-  - tools
+  - TOOLS
 tags:
   - tools
   - macOS

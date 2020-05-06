@@ -929,6 +929,11 @@ pre {
   width: 50%;
   display: inline-block;
 }
+.category-list-item-class {
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  line-height: 30px;
+}
 .sidebar .widget .archive-list-count,
 .sidebar .widget .category-list-count {
   margin-left: 4px;
@@ -1005,11 +1010,12 @@ pre {
   width: 40px;
   height: 40px;
   line-height: 45px;
-  color: #3d393a;
-  background: #808080;
+  color: #c0a685;
+  background: #3d393a;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  border: 1px solid #c0a685;
   margin-right: 10px;
   margin-bottom: 10px;
 }
@@ -1208,7 +1214,7 @@ pre {
   right: 30px;
   bottom: 30px;
   /*background-color: #959595;*/
-  background-color: #c0a77f;
+  background-color: #c0a685;
   color: #fff;
   text-align: center;
   -webkit-border-radius: 2px;
@@ -1221,7 +1227,8 @@ pre {
 #toc-btn:hover {
   /*background: #505050;*/
   /*background: #1d1f21;*/
-  background: #c0a77f;
+  background: #3d393a;
+  color: #c0a685;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }

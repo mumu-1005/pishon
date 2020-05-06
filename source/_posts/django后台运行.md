@@ -1,10 +1,10 @@
 ---
 title: django后台运行
 categories:
-  - 'Python'
+  - PYTHON
 tags:
-  - 'Python'
-  - 'Django'
+  - Python
+  - Django
 comments: false
 date: 2018-10-21 16:21:25
 updated: 2018-10-21 16:21:25

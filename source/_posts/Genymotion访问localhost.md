@@ -1,10 +1,11 @@
 ---
 title: Genymotion访问localhost
 categories:
-  - Android
+  - TOOLS
 tags:
   - Android
   - 模拟器
+  - tools
 comments: false
 date: 2016-09-30 14:39:47
 updated: 2016-09-30 14:39:47

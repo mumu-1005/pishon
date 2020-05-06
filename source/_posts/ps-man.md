@@ -1,7 +1,7 @@
 ---
 title: ps-man
 categories:
-  - Linux
+  - LINUX
 tags:
   - ps
   - Linux

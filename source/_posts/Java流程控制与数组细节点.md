@@ -1,7 +1,7 @@
 ---
 title: Java流程控制与数组细节点
 categories:
-  - Java
+  - JAVA
 tags:
   - Java
   - 流程控制

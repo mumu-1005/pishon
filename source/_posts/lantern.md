@@ -1,7 +1,7 @@
 ---
 title: Lantern
 categories:
-  - tools
+  - TOOLS
 tags:
   - tools
 comments: false
