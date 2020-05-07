@@ -13,7 +13,7 @@ img:
 <!-- more -->
 
 ### 操作界面
-{% asset_img 1.png lantern %}
+![image](https://uploader.shimo.im/f/0No9avPDIB2H6sfy.png!thumbnail)
 
 ##### 每个月开放免费的高速流量有500M
 足够平常的代码更新下载，Facebook、Twitter、Instagram的使用，如果大量访问YouTube 估计就得升级专业版了
@@ -24,10 +24,10 @@ img:
 结合自己的系统下载对应的版本进行安装即可
 
 ### 设置管理
-{% asset_img 2.png lantern %}
+![image](https://uploader.shimo.im/f/8DWGBRAYeE8Yy6YW.png!thumbnail)
 
 ##### 取消勾选开机自动启动
-{% asset_img 3.png lantern %}
+![image](https://uploader.shimo.im/f/isiijvpe3oXYvZAr.png!thumbnail)
 
 有的时候免费线路信号不好，连接不上，会影响原本网络的正常使用，所以在需要用到的时候再开启蓝灯，点击连接。
 

@@ -20,52 +20,52 @@ updated: 2019-01-28 15:05:26
 ## 先获取三个磁盘的UUID
 
 ### 关于本机
-{% asset_img local-1555860278719.png 关于本机 %}
+![image](https://uploader.shimo.im/f/rRCbnOsb7NlLxOt5.png!thumbnail)
 
 ### 选取 系统报告
-{% asset_img local-1555860306877.png 选取系统报告 %}
+![image](https://uploader.shimo.im/f/391t3hxDKb0soP0Q.png!thumbnail)
 
 ### 记下磁盘对应的UUID
-{% asset_img local-1555860356722.png 记下磁盘对应的UUID %}
+![image](https://uploader.shimo.im/f/dDeR60P1dpbUDTRH.png!thumbnail)
 
 ## 在nano中添加设置
 
 ### 在终端输入sudo nano /etc/fstab 进入编辑界面
 
-{% asset_img local-1555860081256.png 进入nano编辑界面 %}
+![image](https://uploader.shimo.im/f/zgUD21EhXkdk7ibI.png!thumbnail)
 
 ### 现在你看到了一个编辑界面
-{% asset_img local-1555860117975.png %}
+![image](https://uploader.shimo.im/f/64BCAKyfFEWPY03j.png!thumbnail)
 
 ### 分别输入三个磁盘的设置
 
 - UUID=硬盘对应的UUID号码 none ntfs rw,auto,nobrowse
 - 换行回车
 
-{% asset_img local-1555860614792.png %}
+![image](https://uploader.shimo.im/f/R2fQY06KxPkOgFmw.png!thumbnail)
 ### Ctrl+X保存
-{% asset_img 02fa7fd6-cbc7-4880-a1c4-7010ff5c57cb.png %}
+![image](https://uploader.shimo.im/f/Uzuw4RCHaMohtKLD.png!thumbnail)
 ### 确认保存操作 敲击Y
-{% asset_img 63c8e4fa-27eb-4197-812d-41ff57a5f96c.png %}
+![image](https://uploader.shimo.im/f/YCJi5Cef0XDZdVGF.png!thumbnail)
 ### 回车 退出当前编辑窗口
 
-{% asset_img 4d24c25d-393d-4d9a-985d-5cf95932bbba.png %}
+![image](https://uploader.shimo.im/f/T7phDg1zjnbIk8gi.png!thumbnail)
 
 ## 设置成功 查看磁盘读写效果
 ### 推出磁盘，
-{% asset_img 0ec971da-e074-4682-91ac-3f8c0b7a3d51.png %}
+![image](https://uploader.shimo.im/f/o8JlDT4FwcN3fE17.png!thumbnail)
 ### 重新插入，发现Finder中没有显示这几个盘
 
 #### Finder左上角工具栏中选择 前往 -> 前往文件夹
 
 #### 输入/Volumes/
-{% asset_img 9b5ddcde-a262-4f18-a1ef-e3c5c7fc8e78.png %}
+![image](https://uploader.shimo.im/f/mXygxR4jU3bBgfEu.png!thumbnail)
 
 #### 出现所有的磁盘信息
 
-{% asset_img 48d6bfd5-a5aa-41f7-8201-47b953517491.png %}
+![image](https://uploader.shimo.im/f/syKzkIVMVhbjTnWU.png!thumbnail)
 #### 将磁盘拉到左边边栏列表中 设置磁盘快捷访问
-{% asset_img local-1555861146798.png %}
-{% asset_img local-1555861184116.png %}
+![image](https://uploader.shimo.im/f/MGudgYu6pxJ1ml3K.png!thumbnail)
+![image](https://uploader.shimo.im/f/WQyqTOT3W9IjMHiT.png!thumbnail)
 #### 查看效果 已经可以进行写操作了
-{% asset_img 092eee2b-8405-40ce-a4ec-931f5bf99682.png %}
+![image](https://uploader.shimo.im/f/p1RKGPWTfJKnPKZ7.png!thumbnail)

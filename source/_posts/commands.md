@@ -11,7 +11,7 @@ date: 2019-04-27 16:14:59
 <!-- more -->
 
 ### 全览图
-{% asset_img 1.jpg SQLCommands %}
+![image](https://images-cdn.shimo.im/PyJIfll589QGRMAv.jpg)
 
 ### 命令表
 | ABORT | COMMENT | DECLARE | EXECUTE |
