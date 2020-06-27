@@ -6,32 +6,32 @@
 ## menu
 menu:
   - page: 笔记分享
-    url: /
+    url: /blog/
     icon: home
   - page: 涨点经验
-    url: /projects/
+    url: /blog/projects/
     icon: angle-double-up
   - page: 攒点Bug
-    url: /bugs/
+    url: /blog/bugs/
     icon: bomb
   - page: 资源分享
-    url: /share/
+    url: /blog/share/
     icon: book
   - page: 工具
-    url: /tools/
+    url: /blog/tools/
     icon: cog
   - page: 标签云
-    url: /tags/
+    url: /blog/tags/
     icon: bars
   - page: 时间轴
-    url: /archives/
+    url: /blog/archives/
     icon: 500px 
 
 ## favicon
-favicon: /favicon.ico
+favicon: /blog/favicon.ico
 
 ## Feed
-rss: /atom.xml
+rss: /blog/atom.xml
 
 ## Carousel
 carousel:
