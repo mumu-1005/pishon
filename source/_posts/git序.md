@@ -65,7 +65,7 @@ git pull #和git fetch的区别：git pull = git fetch + git merge
 
 git pull --rebase # 相当于 git fetch + git rebase
 
-# 设置rebase为pull时候默认执行的动作：
+# 设置rebase为pull时候默认执行的动作
 git config --global pull.rebase true
 {% endcodeblock %}
 
