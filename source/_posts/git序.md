@@ -70,6 +70,7 @@ git config --global pull.rebase true
 {% endcodeblock %}
 
 ### 改变分支依赖
+{% codeblock lang:sh %}
 #将当前分支基于依赖分支
 git rebase 依赖分支 #对所有涉及的commit（"pick"）执行默认操作，将历史记录回滚到最后一个公共父节点，并重新生成两个分支的commit。
 {% endcodeblock %}
