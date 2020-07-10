@@ -59,6 +59,21 @@ git fetch –all  #下载远程的库的内容不做合并
 git reset –hard origin/master  #把HEAD指向master最新版本
 {% endcodeblock %}
 
+### 取回更新并合并
+{% codeblock lang:sh %}
+git pull #和git fetch的区别：git pull = git fetch + git merge
+
+git pull --rebase # 相当于 git fetch + git rebase
+
+# 设置rebase为pull时候默认执行的动作：
+git config --global pull.rebase true
+{% endcodeblock %}
+
+### 改变分支依赖
+#将当前分支基于依赖分支
+git rebase 依赖分支 #对所有涉及的commit（"pick"）执行默认操作，将历史记录回滚到最后一个公共父节点，并重新生成两个分支的commit。
+{% endcodeblock %}
+
 ### failed to push some refs to git
 {% codeblock lang:sh %}
 # 远程库中部分文件件不在本地库中造成冲突
@@ -97,11 +112,24 @@ git pull
 # 冲突文件修改
 git commit
 git push
+
+# 使用rebase情况下，完成冲突解决
+git rebase --continue
+
+git rebase --skip #忽略此次提交
 {% endcodeblock %}
 
 ### 修改commit注释
 {% codeblock lang:sh %}
-git commit --amend
+# 查看提交的信息
+git show
+
+# 修改最近一次的提交
+git commit --amend #--amend会将更改添加到最近一个提交中
+
+# 修改最近n次提交历史(合并多次提交或拆分提交)
+git rebase -i HEAD~n  # -i表示用交互式打开
+
 {% endcodeblock %}
 
 ### 撤销commit
