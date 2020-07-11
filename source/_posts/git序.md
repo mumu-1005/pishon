@@ -158,6 +158,18 @@ git push origin HEAD --force
 
 ### 恢复已删除commit
 {% codeblock lang:sh %}
-git reflog  #查看带hash值的历史操作
+git reflog  #查看带hash值的历史操作，记录了某分支的每次操作
 git reset --hard hash
 {% endcodeblock %}
+
+### 查询文件中每一行代码的 commit ID、提交者和提交日期
+{% codeblock lang:sh %}
+git blame filename
+{% endcodeblock %}
+
+### 从其它分支抓取指定commit合入当前分支中
+{% codeblock lang:sh %}
+git cherry-pick -x commit_id
+{% endcodeblock %}
+
+
