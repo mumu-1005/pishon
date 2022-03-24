@@ -150,6 +150,54 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
+                    <a href="/pishon/articles/redis4-2-0%E5%8C%85%E5%90%ABaioredis-%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%A1.html">redis 4.2.0 merged aioredis-迁移小计</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2022年03月24日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/pishon/articles/redis4-2-0%E5%8C%85%E5%90%ABaioredis-%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%A1.html')"><h3 id="redis-py-Add-Async-Support-1899"><a href="#redis-py-Add-Async-Support-1899" class="headerlink" title="redis-py Add Async Support #1899"></a>redis-py Add Async Support #1899</h3><p><a target="_blank" rel="noopener" href="https://github.com/redis/redis-py/pull/1899">https://github.com/redis/redis-py/pull/1899</a></p>
+<h3 id="redis-py-Version-4-2-0-rc1"><a href="#redis-py-Version-4-2-0-rc1" class="headerlink" title="redis-py Version 4.2.0-rc1"></a>redis-py Version 4.2.0-rc1</h3><p><a target="_blank" rel="noopener" href="https://github.com/redis/redis-py/releases/tag/v4.2.0rc1">https://github.com/redis/redis-py/releases/tag/v4.2.0rc1</a></p>
+<h3 id="aioredis-py"><a href="#aioredis-py" class="headerlink" title="aioredis-py"></a>aioredis-py</h3><p><a target="_blank" rel="noopener" href="https://github.com/aio-libs/aioredis-py">https://github.com/aio-libs/aioredis-py</a></p>
+<h3 id="代码迁移-—-从调用aioredis迁移到redis"><a href="#代码迁移-—-从调用aioredis迁移到redis" class="headerlink" title="代码迁移 —  从调用aioredis迁移到redis"></a>代码迁移 —  从调用aioredis迁移到redis</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入库</span></span><br><span class="line"><span class="keyword">import</span> aioredis  <span class="comment"># del</span></span><br><span class="line"><span class="keyword">import</span> redis.asyncio <span class="keyword">as</span> redis  <span class="comment"># add</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> aioredis.exceptions <span class="keyword">import</span> DataError, ResponseError  <span class="comment"># old</span></span><br><span class="line"><span class="keyword">from</span> redis.exceptions <span class="keyword">import</span> DataError, ResponseError  <span class="comment"># add</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立连接</span></span><br><span class="line">pool = aioredis.ConnectionPool.from_url(url,  decode_responses=<span class="literal">True</span>)  <span class="comment"># del</span></span><br><span class="line">connection = aioredis.Redis(connection_pool=pool)  <span class="comment"># del</span></span><br><span class="line"></span><br><span class="line">pool = redis.ConnectionPool.from_url(url, decode_responses=<span class="literal">True</span>)  <span class="comment"># add</span></span><br><span class="line">connection = redis.Redis(connection_pool=pool)  <span class="comment"># add</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-none-link" href="/pishon/tags/aioredis/" rel="tag">aioredis</a> <a class="tag-none-link" href="/pishon/tags/asyncio/" rel="tag">asyncio</a> <a class="tag-none-link" href="/pishon/tags/migrate/" rel="tag">migrate</a> <a class="tag-none-link" href="/pishon/tags/nosql/" rel="tag">nosql</a>
+                
+            </span>
+        </span>
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/pishon/articles/redis4-2-0%E5%8C%85%E5%90%ABaioredis-%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%A1.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
                     <a href="/pishon/articles/redis-help.html">Help on class Redis in module redis.client</a>
                 </h1>
                 <div class="post-meta">
@@ -255,7 +303,7 @@
     <div class="widget">
         <h3 class="title">分类</h3>
         <div class="category-list-item-class">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 

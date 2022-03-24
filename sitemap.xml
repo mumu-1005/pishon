@@ -111,6 +111,32 @@
 
     
   <url>
+    <loc>https://mumu-1005.github.io/pishon/articles/redis4-2-0%25E5%258C%2585%25E5%2590%25ABaioredis-%25E8%25BF%2581%25E7%25A7%25BB%25E5%25B0%258F%25E8%25AE%25A1.html</loc>
+    <lastmod>2022-03-24T12:21:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>redis 4.2.0 merged aioredis-迁移小计</title>
+        <pubTime>2022-03-24T12:21:57.000Z</pubTime>
+        
+        <tag>nosql </tag>
+         
+        <tag>migrate </tag>
+         
+        <tag>aioredis </tag>
+         
+        <tag>asyncio </tag>
+         
+         
+           
+             
+              <breadCrumb title="REDIS" url="https://mumu-1005.github.io/pishon/categories/REDIS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://mumu-1005.github.io/pishon/articles/OOP.html</loc>
     <lastmod>2021-10-16T15:35:31.265Z</lastmod>
     <data>
@@ -202,9 +228,9 @@
         <title>排序算法</title>
         <pubTime>2016-05-06T12:38:58.000Z</pubTime>
         
-        <tag>算法 </tag>
-         
         <tag>排序 </tag>
+         
+        <tag>算法 </tag>
          
          
            
@@ -386,9 +412,9 @@
         
         <tag>help </tag>
          
-        <tag>Redis </tag>
-         
         <tag>nosql </tag>
+         
+        <tag>Redis </tag>
          
          
            
@@ -718,9 +744,9 @@
         <title>插入排序</title>
         <pubTime>2016-05-20T05:49:24.000Z</pubTime>
         
-        <tag>算法 </tag>
-         
         <tag>排序 </tag>
+         
+        <tag>算法 </tag>
          
         <tag>插入 </tag>
          
@@ -742,9 +768,9 @@
         <title>选择排序</title>
         <pubTime>2016-05-19T13:13:03.000Z</pubTime>
         
-        <tag>算法 </tag>
-         
         <tag>排序 </tag>
+         
+        <tag>算法 </tag>
          
         <tag>选择 </tag>
          
@@ -766,11 +792,11 @@
         <title>冒泡排序</title>
         <pubTime>2016-05-19T12:52:36.000Z</pubTime>
         
-        <tag>算法 </tag>
-         
         <tag>排序 </tag>
          
         <tag>冒泡 </tag>
+         
+        <tag>算法 </tag>
          
          
            
