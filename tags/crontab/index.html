@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/blog/">
+    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <!--SEO-->
+
+    <meta name="keywords" content="" />
+
+
+    <meta name="description" content="" />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>标签: crontab | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/blog/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/blog/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <ol class="breadcrumb">
+    
+    
+        <li>
+            crontab
+        </li>
+    
+    
+
+</ol>
+
+
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/crontab-man.html">crontab-man</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2017年01月05日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/crontab-man.html')"><h3 id="SYNOPSIS"><a href="#SYNOPSIS" class="headerlink" title="SYNOPSIS"></a>SYNOPSIS</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab [ -u user ] file</span><br><span class="line">crontab [ -u user ] [ -i ] &#123; -e | -l | -r &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DESCRIPTION"><a href="#DESCRIPTION" class="headerlink" title="DESCRIPTION"></a>DESCRIPTION</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">crontab  is  the  program used to install, deinstall or list the tables</span><br><span class="line">used to drive the cron(8) daemon <span class="keyword">in</span> Vixie Cron.   Each  user  can  have</span><br><span class="line">their    own    crontab,    and    though    these    are    files   <span class="keyword">in</span></span><br><span class="line">/var/spool/cron/crontabs, they are not intended to be edited directly.</span><br><span class="line"></span><br><span class="line">If the /etc/cron.allow file exists, <span class="keyword">then</span> you must be listed  (one  user</span><br><span class="line">per  line)  therein <span class="keyword">in</span> order to be allowed to use this <span class="built_in">command</span>.  If the</span><br><span class="line">/etc/cron.allow file does not exist but the  /etc/cron.deny  file  does</span><br><span class="line">exist,  <span class="keyword">then</span> you must not be listed <span class="keyword">in</span> the /etc/cron.deny file <span class="keyword">in</span> order</span><br><span class="line">to use this <span class="built_in">command</span>.</span><br><span class="line"></span><br><span class="line">If neither of these files exists, <span class="keyword">then</span> depending on site-dependent con‐</span><br><span class="line">figuration  parameters, only the super user will be allowed to use this</span><br><span class="line"><span class="built_in">command</span>, or all <span class="built_in">users</span> will be able to use this <span class="built_in">command</span>.</span><br><span class="line"></span><br><span class="line">If both files exist <span class="keyword">then</span> /etc/cron.allow takes precedence. Which  means</span><br><span class="line">that  /etc/cron.deny  is not considered and your user must be listed <span class="keyword">in</span></span><br><span class="line">/etc/cron.allow <span class="keyword">in</span> order to be able to use the crontab.</span><br><span class="line"></span><br><span class="line">Regardless of the existance of any of these files, the root administra‐</span><br><span class="line">tive  user  is  always allowed to setup a crontab.  For standard Debian</span><br><span class="line">systems, all <span class="built_in">users</span> may use this <span class="built_in">command</span>.</span><br><span class="line"></span><br><span class="line">If the -u option is given, it specifies the  name  of  the  user  whose</span><br><span class="line">crontab  is  to  be  used (when listing) or modified (when editing). If</span><br><span class="line">this option is not given, crontab examines <span class="string">&quot;your&quot;</span>  crontab,  i.e.,  the</span><br><span class="line">crontab  of the person executing the <span class="built_in">command</span>.  Note that su(8) can con‐</span><br><span class="line">fuse crontab and that <span class="keyword">if</span> you are running inside  of  su(8)  you  should</span><br><span class="line">always use the -u option <span class="keyword">for</span> safety<span class="string">&#x27;s sake.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The  first  form  of this command is used to install a new crontab from</span></span><br><span class="line"><span class="string">some named file or standard  input  if  the  pseudo-filename  ``-&#x27;</span><span class="string">&#x27;  is</span></span><br><span class="line"><span class="string">given.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The  -l  option  causes the current crontab to be displayed on standard</span></span><br><span class="line"><span class="string">output. See the note under DEBIAN SPECIFIC below.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The -r option causes the current crontab to be removed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The -e option is used to edit the  current  crontab  using  the  editor</span></span><br><span class="line"><span class="string">specified  by  the  VISUAL  or EDITOR environment variables.  After you</span></span><br><span class="line"><span class="string">exit from the editor, the modified crontab will be installed  automati‐</span></span><br><span class="line"><span class="string">cally.  If  neither  of  the environment variables is defined, then the</span></span><br><span class="line"><span class="string">default editor /usr/bin/editor is used.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The -i option modifies the -r option to prompt the  user  for  a  &#x27;</span>y/Y<span class="string">&#x27;</span></span><br><span class="line"><span class="string">response before actually removing the crontab.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="DEBIAN-SPECIFIC"><a href="#DEBIAN-SPECIFIC" class="headerlink" title="DEBIAN SPECIFIC"></a>DEBIAN SPECIFIC</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">The  <span class="string">&quot;out-of-the-box&quot;</span>  behaviour <span class="keyword">for</span> crontab -l is to display the three</span><br><span class="line">line <span class="string">&quot;DO NOT EDIT THIS FILE&quot;</span> header that is placed at the beginning  of</span><br><span class="line">the  crontab  when  it  is  installed. The problem is that it makes the</span><br><span class="line">sequence</span><br><span class="line"></span><br><span class="line">crontab -l | crontab -</span><br><span class="line"></span><br><span class="line">non-idempotent -- you keep adding copies of  the  header.  This  causes</span><br><span class="line">pain  to scripts that use sed to edit a crontab. Therefore, the default</span><br><span class="line">behaviour of the -l option has been changed to not output such  header.</span><br><span class="line">You  may obtain the original behaviour by setting the environment vari‐</span><br><span class="line">able CRONTAB_NOHEADER to <span class="string">&#x27;N&#x27;</span>, <span class="built_in">which</span> will cause the crontab  -l  <span class="built_in">command</span></span><br><span class="line">to emit the extraneous header.</span><br></pre></td></tr></table></figure>
+
+<h3 id="SEE-ALSO"><a href="#SEE-ALSO" class="headerlink" title="SEE ALSO"></a>SEE ALSO</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab(5), cron(8)</span><br></pre></td></tr></table></figure>
+
+<h3 id="FILES"><a href="#FILES" class="headerlink" title="FILES"></a>FILES</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/etc/cron.allow</span><br><span class="line">/etc/cron.deny</span><br><span class="line">/var/spool/cron/crontabs</span><br><span class="line"></span><br><span class="line">There    is    one   file   for   each   user&#x27;s   crontab   under   the</span><br><span class="line">/var/spool/cron/crontabs directory. Users are not allowed to  edit  the</span><br><span class="line">files  under  that directory directly to ensure that only users allowed</span><br><span class="line">by the system to run periodic tasks can add them,  and  only  syntacti‐</span><br><span class="line">cally correct crontabs will be written there.  This is enforced by hav‐</span><br><span class="line">ing the directory writable only by the crontab  group  and  configuring</span><br><span class="line">crontab command with the setgid bid set for that specific group.</span><br></pre></td></tr></table></figure>
+
+<h3 id="STANDARDS"><a href="#STANDARDS" class="headerlink" title="STANDARDS"></a>STANDARDS</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The  crontab command conforms to IEEE Std1003.2-1992 (``POSIX&#x27;&#x27;).  This</span><br><span class="line">new command syntax differs from previous versions  of  Vixie  Cron,  as</span><br><span class="line">well as from the classic SVR3 syntax.</span><br></pre></td></tr></table></figure>
+
+<h3 id="DIAGNOSTICS"><a href="#DIAGNOSTICS" class="headerlink" title="DIAGNOSTICS"></a>DIAGNOSTICS</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A  fairly  informative  usage  message appears if you run it with a bad</span><br><span class="line">command line.</span><br><span class="line"></span><br><span class="line">cron requires that each entry in a crontab end in a newline  character.</span><br><span class="line">If  the  last entry in a crontab is missing the newline, cron will con‐</span><br><span class="line">sider the crontab (at least partially) broken and refuse to install it.</span><br></pre></td></tr></table></figure>
+
+<h3 id="AUTHOR"><a href="#AUTHOR" class="headerlink" title="AUTHOR"></a>AUTHOR</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Paul Vixie &lt;paul@vix.com&gt; is the author of cron and original creator of</span><br><span class="line">this  manual page. This page has also been modified for Debian by Steve</span><br><span class="line">Greenland, Javier Fernandez-Sanguino and Christian Kastner.</span><br></pre></td></tr></table></figure></div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/LINUX/">LINUX</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/crontab-man.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+
+
+
+
+
+
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/shellingshord" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="github fa fa-github" sytle="color:#c0a685"></i>
+			    </a>
+            
+	            <a href="mailto:shelling_@hotmail.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o" sytle="color:#c0a685"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <div class="category-list-item-class">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+<script src="/blog/js/search.js?rev=@@hash.js"></script>
+
+
+
+
+
+
+
+
+<script src="/blog/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/blog/">
+    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <!--SEO-->
+
+    <meta name="keywords" content="" />
+
+
+    <meta name="description" content="" />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>标签: Nginx | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/blog/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/blog/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <ol class="breadcrumb">
+    
+    
+        <li>
+            Nginx
+        </li>
+    
+    
+
+</ol>
+
+
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/nginx-uwsgi.html">Nginx+uWSGI部署多个Django项目</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2018年11月21日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/nginx-uwsgi.html')"><h2 id="uWSGI配置"><a href="#uWSGI配置" class="headerlink" title="uWSGI配置"></a>uWSGI配置</h2><h3 id="project-1-的-uWSGI-的配置文件-project-1-ini"><a href="#project-1-的-uWSGI-的配置文件-project-1-ini" class="headerlink" title="project_1 的 uWSGI 的配置文件  project_1.ini"></a>project_1 的 uWSGI 的配置文件  project_1.ini</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">chdir           = /project_1/</span><br><span class="line"></span><br><span class="line">module          = project_1.wsgi</span><br><span class="line"></span><br><span class="line">master          = true</span><br><span class="line"></span><br><span class="line">processes       = 10</span><br><span class="line"></span><br><span class="line">socket          = /project_1/project_1.sock</span><br><span class="line"></span><br><span class="line">chmod-socket    = 666</span><br><span class="line">chown-socket    = role_1:role_1</span><br><span class="line"></span><br><span class="line">enable-threads=true</span><br><span class="line"></span><br><span class="line">die-on-term = true</span><br></pre></td></tr></table></figure>
+
+<h3 id="project-n-的-uWSGI-的配置文件-project-n-ini"><a href="#project-n-的-uWSGI-的配置文件-project-n-ini" class="headerlink" title="project_n 的 uWSGI 的配置文件  project_n.ini"></a>project_n 的 uWSGI 的配置文件  project_n.ini</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">chdir           = /project_n/</span><br><span class="line"></span><br><span class="line">module          = project_n.wsgi</span><br><span class="line"></span><br><span class="line">master          = true</span><br><span class="line"></span><br><span class="line">processes       = 10</span><br><span class="line"></span><br><span class="line">socket          = /project_n/project_n.sock</span><br><span class="line"></span><br><span class="line">chmod-socket    = 666</span><br><span class="line">chown-socket    = role_n:role_n</span><br><span class="line"></span><br><span class="line">enable-threads=true</span><br><span class="line"></span><br><span class="line">die-on-term = true</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h2><h3 id="nginx-conf"><a href="#nginx-conf" class="headerlink" title="nginx.conf"></a>nginx.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen   80; </span><br><span class="line"></span><br><span class="line">    root /usr/share/nginx/www/public;</span><br><span class="line">    index index.php index.html index.htm;</span><br><span class="line"></span><br><span class="line">    server_name 127.0.0.1 x.x.x.x;</span><br><span class="line">    include blocksip.conf;</span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line"></span><br><span class="line">    location /project_1 &#123;</span><br><span class="line">        include     uwsgi_params; # the uwsgi_params file you installed</span><br><span class="line">        uwsgi_pass  unix:/project_1/project_1.sock;</span><br><span class="line">        uwsgi_param SCRIPT_NAME         /project_1;</span><br><span class="line">        uwsgi_param UWSGI_SCRIPT        project_1.wsgi;</span><br><span class="line">        uwsgi_modifier1                 30;</span><br><span class="line">        uwsgi_read_timeout 1800s;</span><br><span class="line">        uwsgi_send_timeout 1800s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /project_1/media/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_1/media/;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /project_1/static/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_1/;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /apk/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_1/apk/online/;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    location /project_n &#123;</span><br><span class="line">        include     uwsgi_params; # the uwsgi_params file you installed</span><br><span class="line">        uwsgi_pass  unix:/project_n/project_n.sock;</span><br><span class="line">        uwsgi_param SCRIPT_NAME         /project_n;</span><br><span class="line">        uwsgi_param UWSGI_SCRIPT        project_n.wsgi;</span><br><span class="line">        uwsgi_modifier1                 30;</span><br><span class="line">        uwsgi_read_timeout 1800s;</span><br><span class="line">        uwsgi_send_timeout 1800s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /project_n/media/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_n/media/;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /project_n/static/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_n/;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /apk_project_n/ &#123;</span><br><span class="line">        alias /usr/share/nginx/www/django_static/project_n/apk/online/;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/SERVER/">SERVER</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/nginx-uwsgi.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html">nginx配置首页默认跳转路径</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2016年09月09日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html')"><p>https指定路径跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rewrite ^/index.html(.*)$ 指定的跳转路径 permanent;</span><br></pre></td></tr></table></figure>
+
+<p>http跳转到https</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"> listen 80;</span><br><span class="line"> server_name localhost; </span><br><span class="line"> rewrite ^(.*)$ https://$host$1 permanent;</span><br><span class="line"> location / &#123;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/SERVER/">SERVER</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+
+
+
+
+
+
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/shellingshord" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="github fa fa-github" sytle="color:#c0a685"></i>
+			    </a>
+            
+	            <a href="mailto:shelling_@hotmail.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o" sytle="color:#c0a685"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <div class="category-list-item-class">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+<script src="/blog/js/search.js?rev=@@hash.js"></script>
+
+
+
+
+
+
+
+
+<script src="/blog/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

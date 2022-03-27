@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/blog/">
+    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <!--SEO-->
+
+    <meta name="keywords" content="os" />
+
+
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>OS.PATH | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/blog/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/blog/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="OS.PATH">
+            
+	            OS.PATH
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/PYTHON/">PYTHON</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-none-link" href="/blog/tags/os/" rel="tag">os</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/01</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">- __all__</span><br><span class="line">- __builtins__</span><br><span class="line">- __cached__</span><br><span class="line">- __doc__</span><br><span class="line">- __file__</span><br><span class="line">- __loader__</span><br><span class="line">- __name__</span><br><span class="line">- __package__</span><br><span class="line">- __spec__</span><br><span class="line">- _get_sep</span><br><span class="line">- _joinrealpath</span><br><span class="line">- _varprog</span><br><span class="line">- _varprogb</span><br><span class="line">- abspath</span><br><span class="line">- altsep</span><br><span class="line">- basename</span><br><span class="line">- commonpath</span><br><span class="line">- commonprefix</span><br><span class="line">- curdir</span><br><span class="line">- defpath</span><br><span class="line">- devnull</span><br><span class="line">- dirname</span><br><span class="line">- exists</span><br><span class="line">- expanduser</span><br><span class="line">- expandvars</span><br><span class="line">- extsep</span><br><span class="line">- genericpath</span><br><span class="line">- getatime</span><br><span class="line">- getctime</span><br><span class="line">- getmtime</span><br><span class="line">- getsize</span><br><span class="line">- isabs</span><br><span class="line">- isdir</span><br><span class="line">- isfile</span><br><span class="line">- islink</span><br><span class="line">- ismount</span><br><span class="line">- join</span><br><span class="line">- lexists</span><br><span class="line">- normcase</span><br><span class="line">- normpath</span><br><span class="line">- os</span><br><span class="line">- pardir</span><br><span class="line">- pathsep</span><br><span class="line">- realpath</span><br><span class="line">- relpath</span><br><span class="line">- samefile</span><br><span class="line">- sameopenfile</span><br><span class="line">- samestat</span><br><span class="line">- sep</span><br><span class="line">- split</span><br><span class="line">- splitdrive</span><br><span class="line">- splitext</span><br><span class="line">- stat</span><br><span class="line">- supports_unicode_filenames</span><br><span class="line">- sys</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                版权声明:本文为Fzg5_Shelling博主的的原创文章，转载请附上本文链接 <br>https://www.fzg5.com/blog/articles/os-path.html
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/articles/django%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C.html" class="pre-post btn btn-default" title='django后台运行'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">django后台运行</span>
+        </a>
+    
+    
+        <a href="/blog/articles/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html" class="next-post btn btn-default" title='数据分析'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">数据分析</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/blog/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/blog/">
+    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <!--SEO-->
+
+    <meta name="keywords" content="tools" />
+
+
+    <meta name="description" content="SQL所有命令
+
+
+全览图
+命令表
+
+
+ABORT
+COMMENT
+DECLARE
+EXECUTE
+
+
+
+ALTER AGGREGATE
+COMMIT
+DELETE
+EXPLAIN
+
+
+ALTE..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>SQL Commands | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/blog/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/blog/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SQL Commands">
+            
+	            SQL Commands
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/SQL/">SQL</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-none-link" href="/blog/tags/tools/" rel="tag">tools</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/27</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <div hidden="true">SQL所有命令</div>
+<span id="more"></span>
+
+<h3 id="全览图"><a href="#全览图" class="headerlink" title="全览图"></a>全览图</h3><p><img src="https://images-cdn.shimo.im/PyJIfll589QGRMAv.jpg" alt="image"></p>
+<h3 id="命令表"><a href="#命令表" class="headerlink" title="命令表"></a>命令表</h3><table>
+<thead>
+<tr>
+<th>ABORT</th>
+<th>COMMENT</th>
+<th>DECLARE</th>
+<th>EXECUTE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALTER AGGREGATE</td>
+<td>COMMIT</td>
+<td>DELETE</td>
+<td>EXPLAIN</td>
+</tr>
+<tr>
+<td>ALTER COLLATION</td>
+<td>COMMIT PREPARED</td>
+<td>DISCARD</td>
+<td>FETCH</td>
+</tr>
+<tr>
+<td>ALTER CONVERSION</td>
+<td>COPY</td>
+<td>DO</td>
+<td>GRANT</td>
+</tr>
+<tr>
+<td>ALTER DATABASE</td>
+<td>CREATE ACCESS METHOD</td>
+<td>DROP ACCESS METHOD</td>
+<td>IMPORT FOREIGN SCHEMA</td>
+</tr>
+<tr>
+<td>ALTER DEFAULT PRIVILEGES</td>
+<td>CREATE AGGREGATE</td>
+<td>DROP AGGREGATE</td>
+<td>INSERT</td>
+</tr>
+<tr>
+<td>ALTER DOMAIN</td>
+<td>CREATE CAST</td>
+<td>DROP CAST</td>
+<td>LISTEN</td>
+</tr>
+<tr>
+<td>ALTER EVENT TRIGGER</td>
+<td>CREATE COLLATION</td>
+<td>DROP COLLATION</td>
+<td>LOAD</td>
+</tr>
+<tr>
+<td>ALTER EXTENSION</td>
+<td>CREATE CONVERSION</td>
+<td>DROP CONVERSION</td>
+<td>LOCK</td>
+</tr>
+<tr>
+<td>ALTER FOREIGN DATA WRAPPER</td>
+<td>CREATE DATABASE</td>
+<td>DROP DATABASE</td>
+<td>MOVE</td>
+</tr>
+<tr>
+<td>ALTER FOREIGN TABLE</td>
+<td>CREATE DOMAIN</td>
+<td>DROP DOMAIN</td>
+<td>NOTIFY</td>
+</tr>
+<tr>
+<td>ALTER FUNCTION</td>
+<td>CREATE EVENT TRIGGER</td>
+<td>DROP EVENT TRIGGER</td>
+<td>PREPARE</td>
+</tr>
+<tr>
+<td>ALTER GROUP</td>
+<td>CREATE EXTENSION</td>
+<td>DROP EXTENSION</td>
+<td>PREPARE TRANSACTION</td>
+</tr>
+<tr>
+<td>ALTER INDEX</td>
+<td>CREATE FOREIGN DATA WRAPPER</td>
+<td>DROP FOREIGN DATA WRAPPER</td>
+<td>REASSIGN OWNED</td>
+</tr>
+<tr>
+<td>ALTER LANGUAGE</td>
+<td>CREATE FOREIGN TABLE</td>
+<td>DROP FOREIGN TABLE</td>
+<td>REFRESH MATERIALIZED VIEW</td>
+</tr>
+<tr>
+<td>ALTER LARGE OBJECT</td>
+<td>CREATE FUNCTION</td>
+<td>DROP FUNCTION</td>
+<td>REINDEX</td>
+</tr>
+<tr>
+<td>ALTER MATERIALIZED VIEW</td>
+<td>CREATE GROUP</td>
+<td>DROP GROUP</td>
+<td>RELEASE SAVEPOINT</td>
+</tr>
+<tr>
+<td>ALTER OPERATOR</td>
+<td>CREATE INDEX</td>
+<td>DROP INDEX</td>
+<td>RESET</td>
+</tr>
+<tr>
+<td>ALTER OPERATOR CLASS</td>
+<td>CREATE LANGUAGE</td>
+<td>DROP LANGUAGE</td>
+<td>REVOKE</td>
+</tr>
+<tr>
+<td>ALTER OPERATOR FAMILY</td>
+<td>CREATE MATERIALIZED VIEW</td>
+<td>DROP MATERIALIZED VIEW</td>
+<td>ROLLBACK</td>
+</tr>
+<tr>
+<td>ALTER POLICY</td>
+<td>CREATE OPERATOR</td>
+<td>DROP OPERATOR</td>
+<td>ROLLBACK PREPARED</td>
+</tr>
+<tr>
+<td>ALTER ROLE</td>
+<td>CREATE OPERATOR CLASS</td>
+<td>DROP OPERATOR CLASS</td>
+<td>ROLLBACK TO SAVEPOINT</td>
+</tr>
+<tr>
+<td>ALTER RULE</td>
+<td>CREATE OPERATOR FAMILY</td>
+<td>DROP OPERATOR FAMILY</td>
+<td>SAVEPOINT</td>
+</tr>
+<tr>
+<td>ALTER SCHEMA</td>
+<td>CREATE POLICY</td>
+<td>DROP OWNED</td>
+<td>SECURITY LABEL</td>
+</tr>
+<tr>
+<td>ALTER SEQUENCE</td>
+<td>CREATE ROLE</td>
+<td>DROP POLICY</td>
+<td>SELECT</td>
+</tr>
+<tr>
+<td>ALTER SERVER</td>
+<td>CREATE RULE</td>
+<td>DROP ROLE</td>
+<td>SELECT INTO</td>
+</tr>
+<tr>
+<td>ALTER SYSTEM</td>
+<td>CREATE SCHEMA</td>
+<td>DROP RULE</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>ALTER TABLE</td>
+<td>CREATE SEQUENCE</td>
+<td>DROP SCHEMA</td>
+<td>SET CONSTRAINTS</td>
+</tr>
+<tr>
+<td>ALTER TABLESPACE</td>
+<td>CREATE SERVER</td>
+<td>DROP SEQUENCE</td>
+<td>SET ROLE</td>
+</tr>
+<tr>
+<td>ALTER TEXT SEARCH CONFIGURATION</td>
+<td>CREATE TABLE</td>
+<td>DROP SERVER</td>
+<td>SET SESSION AUTHORIZATION</td>
+</tr>
+<tr>
+<td>ALTER TEXT SEARCH DICTIONARY</td>
+<td>CREATE TABLE AS</td>
+<td>DROP TABLE</td>
+<td>SET TRANSACTION</td>
+</tr>
+<tr>
+<td>ALTER TEXT SEARCH PARSER</td>
+<td>CREATE TABLESPACE</td>
+<td>DROP TABLESPACE</td>
+<td>SHOW</td>
+</tr>
+<tr>
+<td>ALTER TEXT SEARCH TEMPLATE</td>
+<td>CREATE TEXT SEARCH CONFIGURATION</td>
+<td>DROP TEXT SEARCH CONFIGURATION</td>
+<td>START TRANSACTION</td>
+</tr>
+<tr>
+<td>ALTER TRIGGER</td>
+<td>CREATE TEXT SEARCH DICTIONARY</td>
+<td>DROP TEXT SEARCH DICTIONARY</td>
+<td>TABLE</td>
+</tr>
+<tr>
+<td>ALTER TYPE</td>
+<td>CREATE TEXT SEARCH PARSER</td>
+<td>DROP TEXT SEARCH PARSER</td>
+<td>TRUNCATE</td>
+</tr>
+<tr>
+<td>ALTER USER</td>
+<td>CREATE TEXT SEARCH TEMPLATE</td>
+<td>DROP TEXT SEARCH TEMPLATE</td>
+<td>UNLISTEN</td>
+</tr>
+<tr>
+<td>ALTER USER MAPPING</td>
+<td>CREATE TRANSFORM</td>
+<td>DROP TRANSFORM</td>
+<td>UPDATE</td>
+</tr>
+<tr>
+<td>ALTER VIEW</td>
+<td>CREATE TRIGGER</td>
+<td>DROP TRIGGER</td>
+<td>VACUUM</td>
+</tr>
+<tr>
+<td>ANALYZE</td>
+<td>CREATE TYPE</td>
+<td>DROP TYPE</td>
+<td>VALUES</td>
+</tr>
+<tr>
+<td>BEGIN</td>
+<td>CREATE USER</td>
+<td>DROP USER</td>
+<td>WITH</td>
+</tr>
+<tr>
+<td>CHECKPOINT</td>
+<td>CREATE USER MAPPING</td>
+<td>DROP USER MAPPING</td>
+<td></td>
+</tr>
+<tr>
+<td>CLOSE</td>
+<td>CREATE VIEW</td>
+<td>DROP VIEW</td>
+<td></td>
+</tr>
+<tr>
+<td>CLUSTER</td>
+<td>DEALLOCATE</td>
+<td>END</td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                版权声明:本文为Fzg5_Shelling博主的的原创文章，转载请附上本文链接 <br>https://www.fzg5.com/blog/articles/commands.html
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/blog/articles/PsqlCommands.html" class="pre-post btn btn-default" title='PSQL COMMANDS'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">PSQL COMMANDS</span>
+        </a>
+    
+    
+        <a href="/blog/articles/lantern.html" class="next-post btn btn-default" title='Lantern'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Lantern</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E8%A7%88%E5%9B%BE"><span class="toc-text">全览图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%A8"><span class="toc-text">命令表</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/blog/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

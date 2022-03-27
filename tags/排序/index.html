@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/blog/">
+    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <!--SEO-->
+
+    <meta name="keywords" content="" />
+
+
+    <meta name="description" content="" />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>标签: 排序 | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/blog/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/blog/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/blog/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <ol class="breadcrumb">
+    
+    
+        <li>
+            排序
+        </li>
+    
+    
+
+</ol>
+
+
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html">插入排序</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2016年05月20日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html')"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>将新元素插入到有序序列中。<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3></li>
+<li>假设序列中第一个元素为有序序列，将其余元素都当做待插入元素处理</li>
+<li>每次当前待插入元素与有序序列最后一个元素开始依次进行比较，如果小于被比较元素，则进行交换，交换后继续进行比较直至有序序列第一个元素</li>
+<li>将列表分为有序区，待插入的无序区</li>
+</ul>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h5 id="Python-插入排序"><a href="#Python-插入排序" class="headerlink" title="Python 插入排序"></a>Python 插入排序</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def sort_cr(v_list):</span><br><span class="line">    for i in range(len(v_list)):</span><br><span class="line">        for j in range(i,0,-1):</span><br><span class="line">            if v_list[j] &lt; v_list[j-1]:</span><br><span class="line">                v_list[j],v_list[j-1] = v_list[j-1],v_list[j]</span><br><span class="line">    return v_list</span><br></pre></td></tr></table></figure>
+
+<h5 id="C-插入排序"><a href="#C-插入排序" class="headerlink" title="C 插入排序"></a>C 插入排序</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void svoid insertion_sort(int array[],int first,int last)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int temp;</span><br><span class="line">    for(i=first+1;i&lt;last;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        temp=array[i];</span><br><span class="line">        j=i-1;</span><br><span class="line">        //与已排序的数逐一比较，大于temp时，该数移后</span><br><span class="line">        while((j&gt;=0)&amp;&amp;(array[j]&gt;temp))</span><br><span class="line">        &#123;</span><br><span class="line">            array[j+1]=array[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        //存在大于temp的数</span><br><span class="line">        if(j!=i-1)</span><br><span class="line">            array[j+1]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>时间复杂度为O(n^2)</p>
+<h5 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h5><ul>
+<li>比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果比它大则直接插入在其后面，否则一直往前找直到找到它该插入的位置。</li>
+<li>如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。</li>
+<li>相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，排序是稳定的。</li>
+</ul>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html">选择排序</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2016年05月19日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html')"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>走访列表长度次，每次选出最小（或最大）的元素，重新排顺序</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>第一次选出最小（或最大）的元素，放在列表的起始位置，即与开头元素交换</li>
+<li>接下来每次选出最小（或最大）的元素，与索引等于当前的循环次数的元素进行交换</li>
+<li>将列表分为已选择出来的有序区，等待选择的无序区</li>
+</ul>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h5 id="Python-选择排序"><a href="#Python-选择排序" class="headerlink" title="Python 选择排序"></a>Python 选择排序</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def sort_xz_1(v_list):</span><br><span class="line">    for i in range(len(v_list)-1):</span><br><span class="line">        min = i</span><br><span class="line">        for j in range(i+1,len(v_list)):</span><br><span class="line">            if v_list[min] &gt; v_list[j]:</span><br><span class="line">                min = j</span><br><span class="line">        v_list[min],v_list[i] = v_list[i],v_list[min]</span><br><span class="line">    return v_list</span><br></pre></td></tr></table></figure>
+
+<h5 id="C选择排序"><a href="#C选择排序" class="headerlink" title="C选择排序"></a>C选择排序</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">void swap(int*a,int*b)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=*a;</span><br><span class="line">    *a=*b;</span><br><span class="line">    *b=temp;</span><br><span class="line">&#125;</span><br><span class="line">void select_sort(int A[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    register int i,j,min,m;</span><br><span class="line">    for(i=0;i&lt;n-1;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;//查找最小值</span><br><span class="line">        for(j=i+1;j&lt;n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(A[min]&gt;A[j])</span><br><span class="line">            &#123;</span><br><span class="line">                min=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(min!=i)</span><br><span class="line">        &#123;</span><br><span class="line">            swap(&amp;A[min],&amp;A[i]);</span><br><span class="line">            printf(&quot;第%d趟排序结果为:\n&quot;,i+1);</span><br><span class="line">            for(m=0;m&lt;n;m++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(m&gt;0)</span><br><span class="line">                &#123;</span><br><span class="line">                    printf(&quot;&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                printf(&quot;%d&quot;,A[m]);</span><br><span class="line">            &#125;</span><br><span class="line">            printf(&quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>比较时间复杂度为O(n^2)<br>交换时间复杂度未O(n)</p>
+<h5 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h5><ul>
+<li>在一趟选择中，如果一个元素比当前元素小，而该小的元素又出现在一个和当前元素相等的元素后面，那么交换后稳定性就被破坏了。</li>
+<li>举个例子，序列5 8 5 2 9，我们知道第一遍选择第1个元素5会和2交换，那么原序列中两个5的相对前后顺序就被破坏了，所以选择排序是一个不稳定的排序算法。</li>
+</ul>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html">冒泡排序</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2016年05月19日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html')"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素列已经排序完成。</li>
+<li>这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>走n-1次，两两相比，当次当前的比较元素的索引最大值为未被比较元素（未冒泡）的索引-1</li>
+<li>每次从第一个元素开始进行两两比较。如果当前元素比下一个元素大，就交换他们两个，接下来有下一个元素与自己的下一个元素进行两两比较。</li>
+<li>当次最后的元素是本轮比较结果中最大的数，已冒好泡，下次无需理会。</li>
+<li>重复对未冒泡好的左区进行冒泡处理</li>
+<li>每轮比较结束后 ，已冒泡元素新增一个</li>
+</ul>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="Python-冒泡排序"><a href="#Python-冒泡排序" class="headerlink" title="Python 冒泡排序"></a>Python 冒泡排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def sort_mp_py(v_list):</span><br><span class="line">    for i in range(len(v_list)-1):</span><br><span class="line">        for j in range(len(v_list)-i-1):</span><br><span class="line">            if v_list[j] &gt; v_list[j+1]:</span><br><span class="line">                v_list[j],v_list[j+1] = v_list[j+1],v_list[j]</span><br><span class="line">    return v_list</span><br></pre></td></tr></table></figure>
+
+<h3 id="C冒泡排序"><a href="#C冒泡排序" class="headerlink" title="C冒泡排序"></a>C冒泡排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void sort_mp_c (elemType arr[], int len) &#123;</span><br><span class="line">    elemType temp;</span><br><span class="line">    int i, j;</span><br><span class="line">    for (i=0; i&lt;len-1; i++) </span><br><span class="line">        for (j=0; j&lt;len-1-i; j++) &#123; </span><br><span class="line">            if (arr[j] &gt; arr[j+1]) &#123;  </span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+1];</span><br><span class="line">                arr[j+1] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>平均时间复杂度为O(n^2)</p>
+<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><ul>
+<li>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。</li>
+<li>如果两个元素相等，是不会再交换的；如果两个相等的元素没有相邻，那么即使通过前面的两两交换把两个相邻起来，这时候也不会交换，所以相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</li>
+</ul>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/blog/articles/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html">排序算法</a>
+                </h1>
+                <div class="post-meta">
+                    <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
+                        2016年05月06日
+                    </time>
+                </div>
+            </div>
+            <footer class="post-footer clearfix">
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/blog/articles/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html')"><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a><a href="../articles/冒泡排序.html">冒泡排序</a></h5></li>
+<li><h5 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a><a href="../articles/选择排序.html">选择排序</a></h5></li>
+<li><h5 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a><a href="../articles/插入排序.html">插入排序</a></h5></li>
+<li><h5 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h5></li>
+<li><h5 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h5></li>
+<li><h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5></li>
+<li><h5 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h5></li>
+<li><h5 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h5></li>
+</ul>
+<hr>
+
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><ul>
+<li><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5></li>
+<li><h5 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h5></li>
+<li><h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5></li>
+<li><h5 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h5></li>
+</ul>
+</div>
+        </footer>
+
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/blog/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        </span>
+    
+
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/blog/articles/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+        </div>
+    </article>
+ 
+
+
+
+
+
+
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/shellingshord" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="github fa fa-github" sytle="color:#c0a685"></i>
+			    </a>
+            
+	            <a href="mailto:shelling_@hotmail.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o" sytle="color:#c0a685"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <div class="category-list-item-class">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+<script src="/blog/js/search.js?rev=@@hash.js"></script>
+
+
+
+
+
+
+
+
+<script src="/blog/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>
