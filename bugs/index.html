@@ -15,8 +15,8 @@
     <meta name="browsermode" content="application">
     <meta name="screen-orientation" content="portrait">
     <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/blog/">
-    <link rel="dns-prefetch" href="https://www.fzg5.com/blog">
+    <meta name="root" content="/root/">
+    <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
     <!--SEO-->
 
     <meta name="keywords" content="" />
@@ -56,9 +56,9 @@
 
 
 
-<link rel="stylesheet" href="/blog/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/blog/css/font-awesome.min.css?rev=4.5.0.css">
-<link rel="stylesheet" href="/blog/css/style.css?rev=@@hash.css">
+<link rel="stylesheet" href="/root/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/root/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/root/css/style.css?rev=@@hash.css">
 
 
 
@@ -100,7 +100,7 @@
                     <span class="sr-only"></span>
                         <i class="fa fa-bars"></i>
                     </span>
-                    <a class="navbar-brand" href="https://www.fzg5.com/blog">飞猪 Go</a>
+                    <a class="navbar-brand" href="https://mumu-1005.github.io/pishon">飞猪 Go</a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
@@ -167,107 +167,99 @@
 
 <h2 id="2019-04-20">2019-04-20</h2> 
 
-<h3 id="ISSUE"><a href="#ISSUE" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: more than one row returned by a subquery used as an expression</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    field1,field2,</span><br><span class="line">    (<span class="keyword">select</span> ARRAY_AGG(field3) <span class="keyword">from</span> b <span class="keyword">where</span> <span class="keyword">exp</span>) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    a </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">     <span class="keyword">exp</span></span><br><span class="line"><span class="keyword">ORDER</span>  <span class="keyword">BY</span></span><br><span class="line">    field1;</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE"><a href="#ISSUE" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: more than one row returned by a subquery used as an expression</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    field1,field2,</span><br><span class="line">    (<span class="keyword">select</span> <span class="built_in">ARRAY_AGG</span>(field3) <span class="keyword">from</span> b <span class="keyword">where</span> exp) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    a </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">     exp</span><br><span class="line"><span class="keyword">ORDER</span>  <span class="keyword">BY</span></span><br><span class="line">    field1;</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2019-03-11">2019-03-11</h2>
 
 <h3 id="ISSUE-1"><a href="#ISSUE-1" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连接中断，返回的相应大小被限制在127.86kb</span></span><br><span class="line">SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) on request /project/api/ !!!</span><br><span class="line">uwsgi_response_write_body_do(): Broken pipe [core/writer.c line <span class="number">341</span>] during GET /project/api/ </span><br><span class="line">IOError: write error</span><br></pre></td></tr></table></figure>
 
-<h3 id="SOLUTION-1"><a href="#SOLUTION-1" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打开Nginx配置文件 调整默认的限制缓存大小 根据实际业务调整</span></span><br><span class="line">uwsgi_buffers 8 512k;   默认为8 4k  8为数量</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-1"><a href="#SOLUTION-1" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开Nginx配置文件 调整默认的限制缓存大小 根据实际业务调整</span></span><br><span class="line">uwsgi_buffers 8 512k;   默认为8 4k  8为数量</span><br></pre></td></tr></table></figure>
 
 <hr>
 
 <h2 id="2019-01-12">2019-01-12</h2>
 
-<h3 id="ISSUE-2"><a href="#ISSUE-2" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Crypto/PublicKey/RSA.py&quot;, line 375, in decrypt</span><br><span class="line">    raise NotImplementedError(&quot;Use module Crypto.Cipher.PKCS1_OAEP instead&quot;)</span><br><span class="line">NotImplementedError: Use module Crypto.Cipher.PKCS1_OAEP instead</span><br></pre></td></tr></table></figure>
-
-<h3 id="SOLUTION-2"><a href="#SOLUTION-2" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pycryptodome</span><br><span class="line">pip uninstall pycrypto</span><br><span class="line">pip install pycrypto</span><br></pre></td></tr></table></figure>
-
+<h3 id="ISSUE-2"><a href="#ISSUE-2" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Crypto/PublicKey/RSA.py&quot;, line 375, in decrypt</span><br><span class="line">    raise NotImplementedError(&quot;Use module Crypto.Cipher.PKCS1_OAEP instead&quot;)</span><br><span class="line">NotImplementedError: Use module Crypto.Cipher.PKCS1_OAEP instead    </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-2"><a href="#SOLUTION-2" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pycryptodome</span><br><span class="line">pip uninstall pycrypto</span><br><span class="line">pip install pycrypto</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-12-28"> 2018-12-28</h2>
 
-<h3 id="ISSUE-dpkg删除-安装未完全安装的软件包"><a href="#ISSUE-dpkg删除-安装未完全安装的软件包" class="headerlink" title="ISSUE-dpkg删除/安装未完全安装的软件包"></a>ISSUE-dpkg删除/安装未完全安装的软件包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">installed python-lockfile package post-installation script subprocess returned error exit status 127</span><br></pre></td></tr></table></figure>
-
-<h3 id="SOLUTION-3"><a href="#SOLUTION-3" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f --reinstall coreutils init-system-helpers</span><br></pre></td></tr></table></figure>
-
+<h3 id="ISSUE-dpkg删除-x2F-安装未完全安装的软件包"><a href="#ISSUE-dpkg删除-x2F-安装未完全安装的软件包" class="headerlink" title="ISSUE-dpkg删除&#x2F;安装未完全安装的软件包"></a>ISSUE-dpkg删除&#x2F;安装未完全安装的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">installed python-lockfile package post-installation script subprocess returned error exit status 127</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-3"><a href="#SOLUTION-3" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f --reinstall coreutils init-system-helpers</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-11-23"> 2018-11-23</h2>
 
-<h3 id="ISSUE-强制关闭Redis快照导致不能持久化"><a href="#ISSUE-强制关闭Redis快照导致不能持久化" class="headerlink" title="ISSUE-强制关闭Redis快照导致不能持久化"></a>ISSUE-强制关闭Redis快照导致不能持久化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MISCONF Redis is configured to save RDB snapshots, but is currently not able to </span><br><span class="line">persist on disk. Commands that may modify the data set are disabled. Please </span><br><span class="line">check Redis logs for details about the error.</span><br></pre></td></tr></table></figure>
-
-<h3 id="SOLUTION-4"><a href="#SOLUTION-4" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config set stop-writes-on-bgsave-error no</span><br></pre></td></tr></table></figure>
-
+<h3 id="ISSUE-强制关闭Redis快照导致不能持久化"><a href="#ISSUE-强制关闭Redis快照导致不能持久化" class="headerlink" title="ISSUE-强制关闭Redis快照导致不能持久化"></a>ISSUE-强制关闭Redis快照导致不能持久化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MISCONF Redis is configured to save RDB snapshots, but is currently not able to </span><br><span class="line">persist on disk. Commands that may modify the data set are disabled. Please </span><br><span class="line">check Redis logs for details about the error.    </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-4"><a href="#SOLUTION-4" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config set stop-writes-on-bgsave-error no</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-07-17">2018-04-24</h2> 
 
-<h3 id="ISSUE-3"><a href="#ISSUE-3" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-5"><a href="#SOLUTION-5" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 将json中的单引号改成双引号</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-3"><a href="#ISSUE-3" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-5"><a href="#SOLUTION-5" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 将json中的单引号改成双引号</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-05-12">2018-04-24</h2> 
 
-<h3 id="ISSUE-4"><a href="#ISSUE-4" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.InvalidSelectorException: Message: Compound class names not permitted</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-6"><a href="#SOLUTION-6" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在selenium元素定位中复合class，取一个class名即可</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-4"><a href="#ISSUE-4" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.InvalidSelectorException: Message: Compound class names not permitted</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-6"><a href="#SOLUTION-6" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在selenium元素定位中复合class，取一个class名即可</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-04-28">2018-04-28</h2> 
 
-<h3 id="ISSUE-5"><a href="#ISSUE-5" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-7"><a href="#SOLUTION-7" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHOW VARIABLES LIKE &apos;validate_password%&apos;;</span><br><span class="line">set global validate_password_policy=LOW; </span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;; </span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-5"><a href="#ISSUE-5" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-7"><a href="#SOLUTION-7" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHOW VARIABLES LIKE &#x27;validate_password%&#x27;;</span><br><span class="line">set global validate_password_policy=LOW; </span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;; </span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-04-24">2018-04-24</h2> 
 
-<h3 id="ISSUE-6"><a href="#ISSUE-6" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NameError: name &apos;__main__&apos; is not defined</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-8"><a href="#SOLUTION-8" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;:</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-6"><a href="#ISSUE-6" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NameError: name &#x27;__main__&#x27; is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-8"><a href="#SOLUTION-8" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-02-22">2018-02-22</h2> 
 
-<h3 id="ISSUE-7"><a href="#ISSUE-7" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; eval(a)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &apos;null&apos; is not defined</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-9"><a href="#SOLUTION-9" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; json.loads(a)</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-7"><a href="#ISSUE-7" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; eval(a)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &#x27;null&#x27; is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-9"><a href="#SOLUTION-9" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; json.loads(a)</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2018-01-23">2018-01-23</h2> 
 
-<h3 id="ISSUE-8"><a href="#ISSUE-8" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &apos;\xe4&apos; in file</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-10"><a href="#SOLUTION-10" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Python将ASCII作为默认的标准编码，要定义源代码编码，必须在源文件中第一行放置一个魔术注释</span><br><span class="line"># -*- coding: utf-8 -*-</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-8"><a href="#ISSUE-8" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &#x27;\xe4&#x27; in file</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-10"><a href="#SOLUTION-10" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Python将ASCII作为默认的标准编码，要定义源代码编码，必须在源文件中第一行放置一个魔术注释</span><br><span class="line"># -*- coding: utf-8 -*-</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2017-12-30">2017-12-30</h2> 
 
-<h3 id="ISSUE-9"><a href="#ISSUE-9" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu安装包时报错 E:Unable to locate package xxx</span><br></pre></td></tr></table></figure>
-<h3 id="SOLUTION-11"><a href="#SOLUTION-11" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-9"><a href="#ISSUE-9" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu安装包时报错 E:Unable to locate package xxx</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-11"><a href="#SOLUTION-11" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2017-08-06">2017-08-06</h2>
 
-<h3 id="ISSUE-refusing-to-merge-unrelated-histories"><a href="#ISSUE-refusing-to-merge-unrelated-histories" class="headerlink" title="ISSUE-refusing to merge unrelated histories"></a>ISSUE-refusing to merge unrelated histories</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure>
-
-<h3 id="SOLUTION-12"><a href="#SOLUTION-12" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
-
+<h3 id="ISSUE-refusing-to-merge-unrelated-histories"><a href="#ISSUE-refusing-to-merge-unrelated-histories" class="headerlink" title="ISSUE-refusing to merge unrelated histories"></a>ISSUE-refusing to merge unrelated histories</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories   </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-12"><a href="#SOLUTION-12" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2016-03-16">2016-03-16</h2>
 
-<h3 id="ISSUE-端口占用无法启动Apache"><a href="#ISSUE-端口占用无法启动Apache" class="headerlink" title="ISSUE-端口占用无法启动Apache"></a>ISSUE-端口占用无法启动Apache</h3><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XAMPP: Starting Apache...fail.</span><br><span class="line">XAMPP:  Another web server is already running.</span><br></pre></td></tr></table></figure></code></pre><h3 id="SOLUTION-13"><a href="#SOLUTION-13" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">in bash：</span><br><span class="line">// killed Apache server that was pre-installed on MAC OS X.</span><br><span class="line">sudo apachectl stop</span><br></pre></td></tr></table></figure>
-
+<h3 id="ISSUE-端口占用无法启动Apache"><a href="#ISSUE-端口占用无法启动Apache" class="headerlink" title="ISSUE-端口占用无法启动Apache"></a>ISSUE-端口占用无法启动Apache</h3><pre><code>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XAMPP: Starting Apache...fail.</span><br><span class="line">XAMPP:  Another web server is already running.    </span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="SOLUTION-13"><a href="#SOLUTION-13" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">in bash：</span><br><span class="line">// killed Apache server that was pre-installed on MAC OS X.</span><br><span class="line">sudo apachectl stop</span><br></pre></td></tr></table></figure>
 <hr>
 
 <h2 id="2014-04-24">2014-04-24</h2>
 
-<h3 id="ISSUE-10"><a href="#ISSUE-10" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E/AndroidRuntime(439): Caused by: java.lang.ClassCastException: </span><br><span class="line">android.app</span><br></pre></td></tr></table></figure>
+<h3 id="ISSUE-10"><a href="#ISSUE-10" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E/AndroidRuntime(439): Caused by: java.lang.ClassCastException: </span><br><span class="line">android.app</span><br></pre></td></tr></table></figure>
 
 <h3 id="SOLUTION-14"><a href="#SOLUTION-14" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><ul>
 <li>原因：应用的程序名称没指定具体的Application的类</li>
 <li>步骤<ul>
-<li>在AndroidManifest.xml中的Application标签中添加名字<br><code>&lt;application
-  android:name=&quot;com.shelling.ans.AnsApplication&quot;</code></li>
+<li>在AndroidManifest.xml中的Application标签中添加名字<br><code>&lt;application   android:name=&quot;com.shelling.ans.AnsApplication&quot;</code></li>
 <li>Progject-&gt;clean</li>
 <li>重新运行</li>
 </ul>
@@ -334,7 +326,7 @@
     <div class="widget">
         <h3 class="title">分类</h3>
         <div class="category-list-item-class">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/root/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -367,7 +359,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <span>Copyright &copy; 2020  <a href="https://www.fzg5.com">Fzg5_Shelling</a>
+                <span>Copyright &copy; 2020  <a target="_blank" rel="noopener" href="https://www.fzg5.com">Fzg5_Shelling</a>
                 </span> |  
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
@@ -385,7 +377,7 @@
 
 
 	
-<script src="/blog/js/search.js?rev=@@hash.js"></script>
+<script src="/root/js/search.js?rev=@@hash.js"></script>
 
 
 
@@ -394,7 +386,7 @@
 
 
 
-<script src="/blog/js/app.js?rev=@@hash.js"></script>
+<script src="/root/js/app.js?rev=@@hash.js"></script>
 
 
 </body>
