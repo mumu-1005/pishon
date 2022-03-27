@@ -15,7 +15,7 @@
     <meta name="browsermode" content="application">
     <meta name="screen-orientation" content="portrait">
     <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/root/">
+    <meta name="root" content="/">
     <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
     <!--SEO-->
 
@@ -47,9 +47,9 @@
 
 
 
-<link rel="stylesheet" href="/root/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/root/css/font-awesome.min.css?rev=4.5.0.css">
-<link rel="stylesheet" href="/root/css/style.css?rev=@@hash.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
 
 
 
@@ -151,7 +151,7 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/root/articles/nginx-uwsgi.html">Nginx+uWSGI部署多个Django项目</a>
+                    <a href="/articles/nginx-uwsgi.html">Nginx+uWSGI部署多个Django项目</a>
                 </h1>
                 <div class="post-meta">
                     <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
@@ -160,7 +160,7 @@
                 </div>
             </div>
             <footer class="post-footer clearfix">
-        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/root/articles/nginx-uwsgi.html')"><h2 id="uWSGI配置"><a href="#uWSGI配置" class="headerlink" title="uWSGI配置"></a>uWSGI配置</h2><h3 id="project-1-的-uWSGI-的配置文件-project-1-ini"><a href="#project-1-的-uWSGI-的配置文件-project-1-ini" class="headerlink" title="project_1 的 uWSGI 的配置文件  project_1.ini"></a>project_1 的 uWSGI 的配置文件  project_1.ini</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">chdir           = /project_1/</span><br><span class="line"></span><br><span class="line">module          = project_1.wsgi</span><br><span class="line"></span><br><span class="line">master          = true</span><br><span class="line"></span><br><span class="line">processes       = 10</span><br><span class="line"></span><br><span class="line">socket          = /project_1/project_1.sock</span><br><span class="line"></span><br><span class="line">chmod-socket    = 666</span><br><span class="line">chown-socket    = role_1:role_1</span><br><span class="line"></span><br><span class="line">enable-threads=true</span><br><span class="line"></span><br><span class="line">die-on-term = true</span><br></pre></td></tr></table></figure>
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/articles/nginx-uwsgi.html')"><h2 id="uWSGI配置"><a href="#uWSGI配置" class="headerlink" title="uWSGI配置"></a>uWSGI配置</h2><h3 id="project-1-的-uWSGI-的配置文件-project-1-ini"><a href="#project-1-的-uWSGI-的配置文件-project-1-ini" class="headerlink" title="project_1 的 uWSGI 的配置文件  project_1.ini"></a>project_1 的 uWSGI 的配置文件  project_1.ini</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">chdir           = /project_1/</span><br><span class="line"></span><br><span class="line">module          = project_1.wsgi</span><br><span class="line"></span><br><span class="line">master          = true</span><br><span class="line"></span><br><span class="line">processes       = 10</span><br><span class="line"></span><br><span class="line">socket          = /project_1/project_1.sock</span><br><span class="line"></span><br><span class="line">chmod-socket    = 666</span><br><span class="line">chown-socket    = role_1:role_1</span><br><span class="line"></span><br><span class="line">enable-threads=true</span><br><span class="line"></span><br><span class="line">die-on-term = true</span><br></pre></td></tr></table></figure>
 
 <h3 id="project-n-的-uWSGI-的配置文件-project-n-ini"><a href="#project-n-的-uWSGI-的配置文件-project-n-ini" class="headerlink" title="project_n 的 uWSGI 的配置文件  project_n.ini"></a>project_n 的 uWSGI 的配置文件  project_n.ini</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"></span><br><span class="line">chdir           = /project_n/</span><br><span class="line"></span><br><span class="line">module          = project_n.wsgi</span><br><span class="line"></span><br><span class="line">master          = true</span><br><span class="line"></span><br><span class="line">processes       = 10</span><br><span class="line"></span><br><span class="line">socket          = /project_n/project_n.sock</span><br><span class="line"></span><br><span class="line">chmod-socket    = 666</span><br><span class="line">chown-socket    = role_n:role_n</span><br><span class="line"></span><br><span class="line">enable-threads=true</span><br><span class="line"></span><br><span class="line">die-on-term = true</span><br></pre></td></tr></table></figure>
 <hr>
@@ -175,7 +175,7 @@
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/root/categories/SERVER/">SERVER</a>
+            <a class="category-link" href="/categories/SERVER/">SERVER</a>
         </span>
     
 
@@ -186,7 +186,7 @@
             </div>
 
             <div class="post-permalink">
-                <a href="/root/articles/nginx-uwsgi.html" class="btn btn-default">阅读全文</a>
+                <a href="/articles/nginx-uwsgi.html" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
         </div>
@@ -197,7 +197,7 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/root/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html">nginx配置首页默认跳转路径</a>
+                    <a href="/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html">nginx配置首页默认跳转路径</a>
                 </h1>
                 <div class="post-meta">
                     <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <footer class="post-footer clearfix">
-        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/root/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html')"><p>https指定路径跳转</p>
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html')"><p>https指定路径跳转</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rewrite ^/index.html(.*)$ 指定的跳转路径 permanent;</span><br></pre></td></tr></table></figure>
 
 <p>http跳转到https</p>
@@ -219,7 +219,7 @@
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/root/categories/SERVER/">SERVER</a>
+            <a class="category-link" href="/categories/SERVER/">SERVER</a>
         </span>
     
 
@@ -230,7 +230,7 @@
             </div>
 
             <div class="post-permalink">
-                <a href="/root/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html" class="btn btn-default">阅读全文</a>
+                <a href="/articles/nginx%E9%85%8D%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%BB%98%E8%AE%A4%E8%B7%B3%E8%BD%AC%E8%B7%AF%E5%BE%84.html" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
         </div>
@@ -298,7 +298,7 @@
     <div class="widget">
         <h3 class="title">分类</h3>
         <div class="category-list-item-class">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/root/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/root/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -349,7 +349,7 @@
 
 
 	
-<script src="/root/js/search.js?rev=@@hash.js"></script>
+<script src="/js/search.js?rev=@@hash.js"></script>
 
 
 
@@ -358,7 +358,7 @@
 
 
 
-<script src="/root/js/app.js?rev=@@hash.js"></script>
+<script src="/js/app.js?rev=@@hash.js"></script>
 
 
 </body>
