@@ -3,7 +3,7 @@
   <title>飞猪 Go</title>
   
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/pishon/atom.xml" rel="self"/>
   
   <link href="https://mumu-1005.github.io/pishon/"/>
   <updated>2021-03-22T09:23:59.000Z</updated>
@@ -465,9 +465,9 @@
       <category term="SQL" scheme="https://mumu-1005.github.io/pishon/categories/SQL/"/>
     
     
-      <category term="Python" scheme="https://mumu-1005.github.io/pishon/tags/Python/"/>
-    
       <category term="help" scheme="https://mumu-1005.github.io/pishon/tags/help/"/>
+    
+      <category term="Python" scheme="https://mumu-1005.github.io/pishon/tags/Python/"/>
     
       <category term="MySQL" scheme="https://mumu-1005.github.io/pishon/tags/MySQL/"/>
     

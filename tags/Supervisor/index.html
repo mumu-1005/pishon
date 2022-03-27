@@ -15,7 +15,7 @@
     <meta name="browsermode" content="application">
     <meta name="screen-orientation" content="portrait">
     <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
+    <meta name="root" content="/pishon/">
     <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
     <!--SEO-->
 
@@ -47,9 +47,9 @@
 
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+<link rel="stylesheet" href="/pishon/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/pishon/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/pishon/css/style.css?rev=@@hash.css">
 
 
 
@@ -151,7 +151,7 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html">Supervisor配置管理Python项目</a>
+                    <a href="/pishon/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html">Supervisor配置管理Python项目</a>
                 </h1>
                 <div class="post-meta">
                     <time class="post-date" style="font-size:12px; font-family:Microsoft Yahei" datetime="" title="">
@@ -160,7 +160,7 @@
                 </div>
             </div>
             <footer class="post-footer clearfix">
-        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html')"><div hidden="true">Supervisor配置uwsgi基础示例，附加进程管理控制台常用命令</div>
+        <div style="width:100%;height:300px;overflow:hidden" onclick="window.open('/pishon/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html')"><div hidden="true">Supervisor配置uwsgi基础示例，附加进程管理控制台常用命令</div>
 <span id="more"></span>
 
 <h2 id="supervisord-conf"><a href="#supervisord-conf" class="headerlink" title="supervisord.conf"></a>supervisord.conf</h2><figure class="highlight ini"><figcaption><span>hightlight:true</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[unix_http_server]</span></span><br><span class="line"><span class="attr">file</span>=/tmp/supervisor.sock   <span class="comment">; (the path to the socket file)</span></span><br><span class="line"><span class="attr">chmod</span>=<span class="number">0700</span>                 <span class="comment">; socket file mode (default 0700)</span></span><br><span class="line"></span><br><span class="line"><span class="section">[inet_http_server]</span>         <span class="comment">; inet (TCP) server disabled by default</span></span><br><span class="line"><span class="attr">port</span>=*:<span class="number">8001</span></span><br><span class="line"><span class="attr">username</span>=your_username              <span class="comment">; (default is no username (open server))</span></span><br><span class="line"><span class="attr">password</span>=your_password              <span class="comment">; (default is no password (open server))</span></span><br><span class="line"></span><br><span class="line"><span class="section">[supervisord]</span></span><br><span class="line"><span class="attr">logfile</span>=/tmp/supervisord.log <span class="comment">; (main log file;default $CWD/supervisord.log)</span></span><br><span class="line"><span class="attr">logfile_maxbytes</span>=<span class="number">50</span>MB        <span class="comment">; (max main logfile bytes b4 rotation;default 50MB)</span></span><br><span class="line"><span class="attr">logfile_backups</span>=<span class="number">10</span>           <span class="comment">; (num of main logfile rotation backups;default 10)</span></span><br><span class="line"><span class="attr">loglevel</span>=info                <span class="comment">; (log level;default info; others: debug,warn,trace)</span></span><br><span class="line"><span class="attr">pidfile</span>=/tmp/supervisord.pid <span class="comment">; (supervisord pidfile;default supervisord.pid)</span></span><br><span class="line"><span class="attr">nodaemon</span>=<span class="literal">false</span>               <span class="comment">; (start in foreground if true;default false)</span></span><br><span class="line"><span class="attr">minfds</span>=<span class="number">1024</span>                  <span class="comment">; (min. avail startup file descriptors;default 1024)</span></span><br><span class="line"><span class="attr">minprocs</span>=<span class="number">200</span>                 <span class="comment">; (min. avail process descriptors;default 200)</span></span><br><span class="line"><span class="attr">environment</span>=MONGO_URL=<span class="string">&quot;mongodb://reminder:geN-aud-veff@127.0.0.1:27017/reminder&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[rpcinterface:supervisor]</span></span><br><span class="line"><span class="attr">supervisor.rpcinterface_factory</span> = supervisor.rpcinterface:make_main_rpcinterface</span><br><span class="line"></span><br><span class="line"><span class="section">[supervisorctl]</span></span><br><span class="line"><span class="attr">serverurl</span>=unix:///tmp/supervisor.sock <span class="comment">; use a unix:// URL  for a unix socket</span></span><br><span class="line"></span><br><span class="line"><span class="section">[program:program_name]</span></span><br><span class="line"><span class="attr">directory</span>=/program_dir</span><br><span class="line"><span class="attr">command</span>=uwsgi -w program_name_product --ini program_name.ini --uid role</span><br><span class="line"><span class="attr">startsecs</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">numproces</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">stopasgroup</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">autostart</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">autorestart</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">stderr_logfile</span>=/tmp/log/program_name_error.log</span><br><span class="line"><span class="attr">stdout_logfile</span>=/tmp/log/program_name_access.log</span><br><span class="line"></span><br><span class="line"><span class="section">[program:program_name_n]</span></span><br><span class="line"><span class="attr">directory</span>=/program_n_dir</span><br><span class="line"><span class="attr">command</span>=command_n</span><br><span class="line"><span class="attr">startsecs</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">numproces</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">stopasgroup</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">autostart</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">autorestart</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">stderr_logfile</span>=/tmp/log/program_name_n_error.log</span><br><span class="line"><span class="attr">stdout_logfile</span>=/tmp/log/program_name_n_access.log</span><br></pre></td></tr></table></figure>
@@ -177,7 +177,7 @@
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/SERVER/">SERVER</a>
+            <a class="category-link" href="/pishon/categories/SERVER/">SERVER</a>
         </span>
     
 
@@ -188,7 +188,7 @@
             </div>
 
             <div class="post-permalink">
-                <a href="/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html" class="btn btn-default">阅读全文</a>
+                <a href="/pishon/articles/Supervisor%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86Python%E9%A1%B9%E7%9B%AE.html" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
         </div>
@@ -256,7 +256,7 @@
     <div class="widget">
         <h3 class="title">分类</h3>
         <div class="category-list-item-class">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -307,7 +307,7 @@
 
 
 	
-<script src="/js/search.js?rev=@@hash.js"></script>
+<script src="/pishon/js/search.js?rev=@@hash.js"></script>
 
 
 
@@ -316,7 +316,7 @@
 
 
 
-<script src="/js/app.js?rev=@@hash.js"></script>
+<script src="/pishon/js/app.js?rev=@@hash.js"></script>
 
 
 </body>
