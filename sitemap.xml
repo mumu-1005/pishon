@@ -76,9 +76,9 @@
         
         <tag>tools </tag>
          
-        <tag>man </tag>
-         
         <tag>git </tag>
+         
+        <tag>man </tag>
          
          
            
@@ -266,9 +266,9 @@
         <title>ps-man</title>
         <pubTime>2017-06-29T13:36:38.000Z</pubTime>
         
-        <tag>Linux </tag>
-         
         <tag>man </tag>
+         
+        <tag>Linux </tag>
          
         <tag>ps </tag>
          
@@ -290,9 +290,9 @@
         <title>MySQL Connector/Python</title>
         <pubTime>2018-02-01T03:28:08.000Z</pubTime>
         
-        <tag>Python </tag>
-         
         <tag>help </tag>
+         
+        <tag>Python </tag>
          
         <tag>MySQL </tag>
          
@@ -408,9 +408,9 @@
         <title>Supervisor配置管理Python项目</title>
         <pubTime>2018-11-21T08:42:31.000Z</pubTime>
         
-        <tag>Supervisor </tag>
-         
         <tag>Python </tag>
+         
+        <tag>Supervisor </tag>
          
          
            
@@ -560,11 +560,11 @@
         <title>crontab-man</title>
         <pubTime>2017-01-05T13:07:52.000Z</pubTime>
         
+        <tag>man </tag>
+         
         <tag>crontab </tag>
          
         <tag>Linux </tag>
-         
-        <tag>man </tag>
          
          
            

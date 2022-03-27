@@ -168,9 +168,9 @@
       <category term="SERVER" scheme="https://mumu-1005.github.io/pishon/categories/SERVER/"/>
     
     
-      <category term="Supervisor" scheme="https://mumu-1005.github.io/pishon/tags/Supervisor/"/>
-    
       <category term="Python" scheme="https://mumu-1005.github.io/pishon/tags/Python/"/>
+    
+      <category term="Supervisor" scheme="https://mumu-1005.github.io/pishon/tags/Supervisor/"/>
     
   </entry>
   
@@ -465,9 +465,9 @@
       <category term="SQL" scheme="https://mumu-1005.github.io/pishon/categories/SQL/"/>
     
     
-      <category term="Python" scheme="https://mumu-1005.github.io/pishon/tags/Python/"/>
-    
       <category term="help" scheme="https://mumu-1005.github.io/pishon/tags/help/"/>
+    
+      <category term="Python" scheme="https://mumu-1005.github.io/pishon/tags/Python/"/>
     
       <category term="MySQL" scheme="https://mumu-1005.github.io/pishon/tags/MySQL/"/>
     
