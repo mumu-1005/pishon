@@ -165,24 +165,39 @@
 
 <p>无需安装第三方软件（如：Paragon NTFS、Mounty）实现Mac支持ntfs磁盘读写</p>
 <p>之前已经实现了cc盘的可读写挂载，现在进行另外三个盘的修改</p>
-<h2 id="先获取三个磁盘的UUID"><a href="#先获取三个磁盘的UUID" class="headerlink" title="先获取三个磁盘的UUID"></a>先获取三个磁盘的UUID</h2><h3 id="关于本机"><a href="#关于本机" class="headerlink" title="关于本机"></a>关于本机</h3><p><img src="https://uploader.shimo.im/f/rRCbnOsb7NlLxOt5.png!thumbnail" alt="image"></p>
-<h3 id="选取-系统报告"><a href="#选取-系统报告" class="headerlink" title="选取 系统报告"></a>选取 系统报告</h3><p><img src="https://uploader.shimo.im/f/391t3hxDKb0soP0Q.png!thumbnail" alt="image"></p>
-<h3 id="记下磁盘对应的UUID"><a href="#记下磁盘对应的UUID" class="headerlink" title="记下磁盘对应的UUID"></a>记下磁盘对应的UUID</h3><p><img src="https://uploader.shimo.im/f/dDeR60P1dpbUDTRH.png!thumbnail" alt="image"></p>
-<h2 id="在nano中添加设置"><a href="#在nano中添加设置" class="headerlink" title="在nano中添加设置"></a>在nano中添加设置</h2><h3 id="在终端输入sudo-nano-x2F-etc-x2F-fstab-进入编辑界面"><a href="#在终端输入sudo-nano-x2F-etc-x2F-fstab-进入编辑界面" class="headerlink" title="在终端输入sudo nano &#x2F;etc&#x2F;fstab 进入编辑界面"></a>在终端输入sudo nano &#x2F;etc&#x2F;fstab 进入编辑界面</h3><p><img src="https://uploader.shimo.im/f/zgUD21EhXkdk7ibI.png!thumbnail" alt="image"></p>
-<h3 id="现在你看到了一个编辑界面"><a href="#现在你看到了一个编辑界面" class="headerlink" title="现在你看到了一个编辑界面"></a>现在你看到了一个编辑界面</h3><p><img src="https://uploader.shimo.im/f/64BCAKyfFEWPY03j.png!thumbnail" alt="image"></p>
+<h2 id="先获取三个磁盘的UUID"><a href="#先获取三个磁盘的UUID" class="headerlink" title="先获取三个磁盘的UUID"></a>先获取三个磁盘的UUID</h2><h3 id="关于本机"><a href="#关于本机" class="headerlink" title="关于本机"></a>关于本机</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860278719.png" class="" title="关于本机">
+
+<h3 id="选取-系统报告"><a href="#选取-系统报告" class="headerlink" title="选取 系统报告"></a>选取 系统报告</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860306877.png" class="" title="选取 系统报告">
+
+<h3 id="记下磁盘对应的UUID"><a href="#记下磁盘对应的UUID" class="headerlink" title="记下磁盘对应的UUID"></a>记下磁盘对应的UUID</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860356722.png" class="" title="记下磁盘对应的UUID">
+
+<h2 id="在nano中添加设置"><a href="#在nano中添加设置" class="headerlink" title="在nano中添加设置"></a>在nano中添加设置</h2><h3 id="在终端输入sudo-nano-x2F-etc-x2F-fstab-进入编辑界面"><a href="#在终端输入sudo-nano-x2F-etc-x2F-fstab-进入编辑界面" class="headerlink" title="在终端输入sudo nano &#x2F;etc&#x2F;fstab 进入编辑界面"></a>在终端输入sudo nano &#x2F;etc&#x2F;fstab 进入编辑界面</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860081256.png" class="" title="在终端输入sudo nano &#x2F;etc&#x2F;fstab 进入编辑界面">
+
+<h3 id="现在你看到了一个编辑界面"><a href="#现在你看到了一个编辑界面" class="headerlink" title="现在你看到了一个编辑界面"></a>现在你看到了一个编辑界面</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860117975.png" class="" title="现在你看到了一个编辑界面">
+
 <h3 id="分别输入三个磁盘的设置"><a href="#分别输入三个磁盘的设置" class="headerlink" title="分别输入三个磁盘的设置"></a>分别输入三个磁盘的设置</h3><ul>
 <li>UUID&#x3D;硬盘对应的UUID号码 none ntfs rw,auto,nobrowse</li>
 <li>换行回车</li>
 </ul>
-<p><img src="https://uploader.shimo.im/f/R2fQY06KxPkOgFmw.png!thumbnail" alt="image"></p>
-<h3 id="Ctrl-X保存"><a href="#Ctrl-X保存" class="headerlink" title="Ctrl+X保存"></a>Ctrl+X保存</h3><p><img src="https://uploader.shimo.im/f/Uzuw4RCHaMohtKLD.png!thumbnail" alt="image"></p>
-<h3 id="确认保存操作-敲击Y"><a href="#确认保存操作-敲击Y" class="headerlink" title="确认保存操作 敲击Y"></a>确认保存操作 敲击Y</h3><p><img src="https://uploader.shimo.im/f/YCJi5Cef0XDZdVGF.png!thumbnail" alt="image"></p>
-<h3 id="回车-退出当前编辑窗口"><a href="#回车-退出当前编辑窗口" class="headerlink" title="回车 退出当前编辑窗口"></a>回车 退出当前编辑窗口</h3><p><img src="https://uploader.shimo.im/f/T7phDg1zjnbIk8gi.png!thumbnail" alt="image"></p>
-<h2 id="设置成功-查看磁盘读写效果"><a href="#设置成功-查看磁盘读写效果" class="headerlink" title="设置成功 查看磁盘读写效果"></a>设置成功 查看磁盘读写效果</h2><h3 id="推出磁盘，"><a href="#推出磁盘，" class="headerlink" title="推出磁盘，"></a>推出磁盘，</h3><p><img src="https://uploader.shimo.im/f/o8JlDT4FwcN3fE17.png!thumbnail" alt="image"></p>
-<h3 id="重新插入，发现Finder中没有显示这几个盘"><a href="#重新插入，发现Finder中没有显示这几个盘" class="headerlink" title="重新插入，发现Finder中没有显示这几个盘"></a>重新插入，发现Finder中没有显示这几个盘</h3><h4 id="Finder左上角工具栏中选择-前往-gt-前往文件夹"><a href="#Finder左上角工具栏中选择-前往-gt-前往文件夹" class="headerlink" title="Finder左上角工具栏中选择 前往 -&gt; 前往文件夹"></a>Finder左上角工具栏中选择 前往 -&gt; 前往文件夹</h4><h4 id="输入-x2F-Volumes-x2F"><a href="#输入-x2F-Volumes-x2F" class="headerlink" title="输入&#x2F;Volumes&#x2F;"></a>输入&#x2F;Volumes&#x2F;</h4><p><img src="https://uploader.shimo.im/f/mXygxR4jU3bBgfEu.png!thumbnail" alt="image"></p>
-<h4 id="出现所有的磁盘信息"><a href="#出现所有的磁盘信息" class="headerlink" title="出现所有的磁盘信息"></a>出现所有的磁盘信息</h4><p><img src="https://uploader.shimo.im/f/syKzkIVMVhbjTnWU.png!thumbnail" alt="image"></p>
-<h4 id="将磁盘拉到左边边栏列表中-设置磁盘快捷访问"><a href="#将磁盘拉到左边边栏列表中-设置磁盘快捷访问" class="headerlink" title="将磁盘拉到左边边栏列表中 设置磁盘快捷访问"></a>将磁盘拉到左边边栏列表中 设置磁盘快捷访问</h4><p><img src="https://uploader.shimo.im/f/MGudgYu6pxJ1ml3K.png!thumbnail" alt="image"><br><img src="https://uploader.shimo.im/f/WQyqTOT3W9IjMHiT.png!thumbnail" alt="image"></p>
-<h4 id="查看效果-已经可以进行写操作了"><a href="#查看效果-已经可以进行写操作了" class="headerlink" title="查看效果 已经可以进行写操作了"></a>查看效果 已经可以进行写操作了</h4><p><img src="https://uploader.shimo.im/f/p1RKGPWTfJKnPKZ7.png!thumbnail" alt="image"></p>
+<img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555860614792.png" class="" title="分别输入三个磁盘的设置">
+
+<h3 id="Ctrl-X保存"><a href="#Ctrl-X保存" class="headerlink" title="Ctrl+X保存"></a>Ctrl+X保存</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/02fa7fd6-cbc7-4880-a1c4-7010ff5c57cb.png" class="" title="Ctrl+X保存">
+
+<h3 id="确认保存操作-敲击Y"><a href="#确认保存操作-敲击Y" class="headerlink" title="确认保存操作 敲击Y"></a>确认保存操作 敲击Y</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/63c8e4fa-27eb-4197-812d-41ff57a5f96c.png" class="" title="确认保存操作 敲击Y">
+
+<h3 id="回车-退出当前编辑窗口"><a href="#回车-退出当前编辑窗口" class="headerlink" title="回车 退出当前编辑窗口"></a>回车 退出当前编辑窗口</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/4d24c25d-393d-4d9a-985d-5cf95932bbba.png" class="" title="回车 退出当前编辑窗口">
+
+<h2 id="设置成功-查看磁盘读写效果"><a href="#设置成功-查看磁盘读写效果" class="headerlink" title="设置成功 查看磁盘读写效果"></a>设置成功 查看磁盘读写效果</h2><h3 id="推出磁盘"><a href="#推出磁盘" class="headerlink" title="推出磁盘"></a>推出磁盘</h3><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/0ec971da-e074-4682-91ac-3f8c0b7a3d51.png" class="" title="推出磁盘">
+
+<h3 id="重新插入，发现Finder中没有显示这几个盘"><a href="#重新插入，发现Finder中没有显示这几个盘" class="headerlink" title="重新插入，发现Finder中没有显示这几个盘"></a>重新插入，发现Finder中没有显示这几个盘</h3><h4 id="Finder左上角工具栏中选择-前往-gt-前往文件夹"><a href="#Finder左上角工具栏中选择-前往-gt-前往文件夹" class="headerlink" title="Finder左上角工具栏中选择 前往 -&gt; 前往文件夹"></a>Finder左上角工具栏中选择 前往 -&gt; 前往文件夹</h4><h4 id="输入-x2F-Volumes-x2F"><a href="#输入-x2F-Volumes-x2F" class="headerlink" title="输入&#x2F;Volumes&#x2F;"></a>输入&#x2F;Volumes&#x2F;</h4><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/9b5ddcde-a262-4f18-a1ef-e3c5c7fc8e78.png" class="" title="输入&#x2F;Volumes&#x2F;">
+
+<h4 id="出现所有的磁盘信息"><a href="#出现所有的磁盘信息" class="headerlink" title="出现所有的磁盘信息"></a>出现所有的磁盘信息</h4><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/48d6bfd5-a5aa-41f7-8201-47b953517491.png" class="" title="出现所有的磁盘信息">
+
+<h4 id="将磁盘拉到左边边栏列表中-设置磁盘快捷访问"><a href="#将磁盘拉到左边边栏列表中-设置磁盘快捷访问" class="headerlink" title="将磁盘拉到左边边栏列表中 设置磁盘快捷访问"></a>将磁盘拉到左边边栏列表中 设置磁盘快捷访问</h4>
+
+<img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/local-1555861184116.png" class="" title="将磁盘拉到左边边栏列表中 设置磁盘快捷访问">
+
+<h4 id="查看效果-已经可以进行写操作了"><a href="#查看效果-已经可以进行写操作了" class="headerlink" title="查看效果 已经可以进行写操作了"></a>查看效果 已经可以进行写操作了</h4><img src="/pishon/articles/%E7%BB%88%E7%AB%AFnano%E5%AE%9E%E7%8E%B0Mac%E6%94%AF%E6%8C%81ntfs%E7%A3%81%E7%9B%98%E8%AF%BB%E5%86%99/092eee2b-8405-40ce-a4ec-931f5bf99682.png" class="" title="查看效果 已经可以进行写操作了">
 </div>
         </footer>
 
