@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/pishon/">
+    <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
+    <!--SEO-->
+
+    <meta name="keywords" content="tools,Postgre SQL" />
+
+
+    <meta name="description" content="psql控制台所有命令
+
+
+General1234567891011121314151617181920212223\copyright             # show PostgreSQ..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>PSQL COMMANDS | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/pishon/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/pishon/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/pishon/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/pishon/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/pishon/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://mumu-1005.github.io/pishon">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="PSQL COMMANDS">
+            
+	            PSQL COMMANDS
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/pishon/categories/SQL/">SQL</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-none-link" href="/pishon/tags/Postgre-SQL/" rel="tag">Postgre SQL</a> <a class="tag-none-link" href="/pishon/tags/tools/" rel="tag">tools</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/27</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <div hidden="true">psql控制台所有命令</div>
+<span id="more"></span>
+
+<h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">\copyright             </span><br><span class="line"><span class="comment"># show PostgreSQL usage and distribution terms</span></span><br><span class="line"></span><br><span class="line">\errverbose            </span><br><span class="line"><span class="comment"># show most recent error message at maximum verbosity</span></span><br><span class="line"></span><br><span class="line">\g [FILE] or ;         </span><br><span class="line"><span class="comment"># execute query (and send results to file or |pipe)</span></span><br><span class="line"></span><br><span class="line">\gexec                 </span><br><span class="line"><span class="comment"># execute query, then execute each value in its result</span></span><br><span class="line"></span><br><span class="line">\gset [PREFIX]         </span><br><span class="line"><span class="comment"># execute query and store results in psql variables</span></span><br><span class="line"></span><br><span class="line">\q                     </span><br><span class="line"><span class="comment"># quit psql</span></span><br><span class="line"></span><br><span class="line">\crosstabview [COLUMNS] </span><br><span class="line"><span class="comment"># execute query and display results in crosstab</span></span><br><span class="line"></span><br><span class="line">\watch [SEC]           </span><br><span class="line"><span class="comment"># execute query every SEC seconds</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\? [commands]          </span><br><span class="line"><span class="comment"># show help on backslash commands</span></span><br><span class="line"></span><br><span class="line">\? options             </span><br><span class="line"><span class="comment"># show help on psql command-line options</span></span><br><span class="line"></span><br><span class="line">\? variables           </span><br><span class="line"><span class="comment"># show help on special variables</span></span><br><span class="line"></span><br><span class="line">\h [NAME]              </span><br><span class="line"><span class="comment"># help on syntax of SQL commands, * for all commands</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Query-Buffer"><a href="#Query-Buffer" class="headerlink" title="Query Buffer"></a>Query Buffer</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">\e [FILE] [LINE]       </span><br><span class="line"><span class="comment"># edit the query buffer (or file) with external editor</span></span><br><span class="line"></span><br><span class="line">\ef [FUNCNAME [LINE]]  </span><br><span class="line"><span class="comment"># edit function definition with external editor</span></span><br><span class="line"></span><br><span class="line">\ev [VIEWNAME [LINE]]  </span><br><span class="line"><span class="comment"># edit view definition with external editor</span></span><br><span class="line"></span><br><span class="line">\p                     </span><br><span class="line"><span class="comment"># show the contents of the query buffer</span></span><br><span class="line"></span><br><span class="line">\r                     </span><br><span class="line"><span class="comment"># reset (clear) the query buffer</span></span><br><span class="line"></span><br><span class="line">\s [FILE]              </span><br><span class="line"><span class="comment"># display history or save it to file</span></span><br><span class="line"></span><br><span class="line">\w FILE                </span><br><span class="line"><span class="comment"># write query buffer to file</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Input-x2F-Output"><a href="#Input-x2F-Output" class="headerlink" title="Input&#x2F;Output"></a>Input&#x2F;Output</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\copy ...              </span><br><span class="line"><span class="comment"># perform SQL COPY with data stream to the client host</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">echo</span> [STRING]         </span><br><span class="line"><span class="comment"># write string to standard output</span></span><br><span class="line"></span><br><span class="line">\i FILE                </span><br><span class="line"><span class="comment"># execute commands from file</span></span><br><span class="line"></span><br><span class="line">\ir FILE               </span><br><span class="line"><span class="comment"># as \i, but relative to location of current script</span></span><br><span class="line"></span><br><span class="line">\o [FILE]              </span><br><span class="line"><span class="comment"># send all query results to file or |pipe</span></span><br><span class="line"></span><br><span class="line">\qecho [STRING]        </span><br><span class="line"><span class="comment"># write string to query output stream (see \o)</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Informational"><a href="#Informational" class="headerlink" title="Informational"></a>Informational</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">(options: S = show system objects, + = additional detail)</span><br><span class="line"></span><br><span class="line">\d[S+]                 </span><br><span class="line"><span class="comment"># list tables, views, and sequences</span></span><br><span class="line"></span><br><span class="line">\d[S+]  NAME           </span><br><span class="line"><span class="comment"># describe table, view, sequence, or index</span></span><br><span class="line"></span><br><span class="line">\da[S]  [PATTERN]      </span><br><span class="line"><span class="comment"># list aggregates</span></span><br><span class="line"></span><br><span class="line">\dA[+]  [PATTERN]      </span><br><span class="line"><span class="comment"># list access methods</span></span><br><span class="line"></span><br><span class="line">\db[+]  [PATTERN]      </span><br><span class="line"><span class="comment"># list tablespaces</span></span><br><span class="line"></span><br><span class="line">\dc[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list conversions</span></span><br><span class="line"></span><br><span class="line">\dC[+]  [PATTERN]      </span><br><span class="line"><span class="comment"># list casts</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">dd</span>[S]  [PATTERN]      </span><br><span class="line"><span class="comment"># show object descriptions not displayed elsewhere</span></span><br><span class="line"></span><br><span class="line">\ddp    [PATTERN]      </span><br><span class="line"><span class="comment"># list default privileges</span></span><br><span class="line"></span><br><span class="line">\dD[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list domains</span></span><br><span class="line"></span><br><span class="line">\det[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list foreign tables</span></span><br><span class="line"></span><br><span class="line">\des[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list foreign servers</span></span><br><span class="line"></span><br><span class="line">\deu[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list user mappings</span></span><br><span class="line"></span><br><span class="line">\dew[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list foreign-data wrappers</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">df</span>[antw][S+] [PATRN]  </span><br><span class="line"><span class="comment"># list [only agg/normal/trigger/window] functions</span></span><br><span class="line"></span><br><span class="line">\dF[+]  [PATTERN]      </span><br><span class="line"><span class="comment"># list text search configurations</span></span><br><span class="line"></span><br><span class="line">\dFd[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list text search dictionaries</span></span><br><span class="line"></span><br><span class="line">\dFp[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list text search parsers</span></span><br><span class="line"></span><br><span class="line">\dFt[+] [PATTERN]      </span><br><span class="line"><span class="comment"># list text search templates</span></span><br><span class="line"></span><br><span class="line">\dg[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list roles</span></span><br><span class="line"></span><br><span class="line">\di[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list indexes</span></span><br><span class="line"></span><br><span class="line">\dl                    </span><br><span class="line"><span class="comment"># list large objects, same as \lo_list</span></span><br><span class="line"></span><br><span class="line">\dL[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list procedural languages</span></span><br><span class="line"></span><br><span class="line">\dm[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list materialized views</span></span><br><span class="line"></span><br><span class="line">\dn[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list schemas</span></span><br><span class="line"></span><br><span class="line">\<span class="keyword">do</span>[S]  [PATTERN]      </span><br><span class="line"><span class="comment"># list operators</span></span><br><span class="line"></span><br><span class="line">\dO[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list collations</span></span><br><span class="line"></span><br><span class="line">\dp     [PATTERN]      </span><br><span class="line"><span class="comment"># list table, view, and sequence access privileges</span></span><br><span class="line"></span><br><span class="line">\drds [PATRN1 [PATRN2]] </span><br><span class="line"><span class="comment"># list per-database role settings</span></span><br><span class="line"></span><br><span class="line">\ds[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list sequences</span></span><br><span class="line"></span><br><span class="line">\dt[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list tables</span></span><br><span class="line"></span><br><span class="line">\dT[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list data types</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">du</span>[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list roles</span></span><br><span class="line"></span><br><span class="line">\dv[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list views</span></span><br><span class="line"></span><br><span class="line">\dE[S+] [PATTERN]      </span><br><span class="line"><span class="comment"># list foreign tables</span></span><br><span class="line"></span><br><span class="line">\dx[+]  [PATTERN]      </span><br><span class="line"><span class="comment"># list extensions</span></span><br><span class="line"></span><br><span class="line">\dy     [PATTERN]      </span><br><span class="line"><span class="comment"># list event triggers</span></span><br><span class="line"></span><br><span class="line">\l[+]   [PATTERN]      </span><br><span class="line"><span class="comment"># list databases</span></span><br><span class="line"></span><br><span class="line">\sf[+]  FUNCNAME       </span><br><span class="line"><span class="comment"># show a function&#x27;s definition</span></span><br><span class="line"></span><br><span class="line">\sv[+]  VIEWNAME       </span><br><span class="line"><span class="comment"># show a view&#x27;s definition</span></span><br><span class="line"></span><br><span class="line">\z      [PATTERN]      </span><br><span class="line"><span class="comment"># same as \dp</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Formatting"><a href="#Formatting" class="headerlink" title="Formatting"></a>Formatting</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\a                     </span><br><span class="line"><span class="comment"># toggle between unaligned and aligned output mode</span></span><br><span class="line"></span><br><span class="line">\C [STRING]            </span><br><span class="line"><span class="comment"># set table title, or unset if none</span></span><br><span class="line"></span><br><span class="line">\f [STRING]            </span><br><span class="line"><span class="comment"># show or set field separator for unaligned query output</span></span><br><span class="line"></span><br><span class="line">\H                     </span><br><span class="line"><span class="comment"># toggle HTML output mode (currently off)</span></span><br><span class="line"></span><br><span class="line">\pset [NAME [VALUE]]   </span><br><span class="line"><span class="comment"># set table output option</span></span><br><span class="line"><span class="comment"># (NAME := &#123;border|columns|expanded|fieldsep|fieldsep_zero|</span></span><br><span class="line"><span class="comment"># footer|format|linestyle|null|numericlocale|pager|</span></span><br><span class="line"><span class="comment"># pager_min_lines|recordsep|recordsep_zero|tableattr|title|</span></span><br><span class="line"><span class="comment"># tuples_only|unicode_border_linestyle|</span></span><br><span class="line"><span class="comment"># unicode_column_linestyle|unicode_header_linestyle&#125;)</span></span><br><span class="line"></span><br><span class="line">\t [on|off]            </span><br><span class="line"><span class="comment"># show only rows (currently off)</span></span><br><span class="line"></span><br><span class="line">\T [STRING]            </span><br><span class="line"><span class="comment"># set HTML &lt;table&gt; tag attributes, or unset if none</span></span><br><span class="line"></span><br><span class="line">\x [on|off|auto]       </span><br><span class="line"><span class="comment"># toggle expanded output (currently off)</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\c[onnect] &#123;[DBNAME|- USER|- HOST|- PORT|-] | conninfo&#125;</span><br><span class="line"><span class="comment"># connect to new database (currently &quot;crm_online_test&quot;)</span></span><br><span class="line"></span><br><span class="line">\encoding [ENCODING]   </span><br><span class="line"><span class="comment"># show or set client encoding</span></span><br><span class="line"></span><br><span class="line">\password [USERNAME]   </span><br><span class="line"><span class="comment"># securely change the password for a user</span></span><br><span class="line"></span><br><span class="line">\conninfo              </span><br><span class="line"><span class="comment"># display information about current connection</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\<span class="built_in">cd</span> [DIR]              </span><br><span class="line"><span class="comment"># change the current working directory</span></span><br><span class="line"></span><br><span class="line">\setenv NAME [VALUE]   </span><br><span class="line"><span class="comment"># set or unset environment variable</span></span><br><span class="line"></span><br><span class="line">\timing [on|off]       </span><br><span class="line"><span class="comment"># toggle timing of commands (currently on)</span></span><br><span class="line"></span><br><span class="line">\! [COMMAND]           </span><br><span class="line"><span class="comment"># execute command in shell or start interactive shell</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\prompt [TEXT] NAME    </span><br><span class="line"><span class="comment"># prompt user to set internal variable</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">set</span> [NAME [VALUE]]    </span><br><span class="line"><span class="comment"># set internal variable, or list all if no parameters</span></span><br><span class="line"></span><br><span class="line">\<span class="built_in">unset</span> NAME            </span><br><span class="line"><span class="comment"># unset (delete) internal variable</span></span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="Large-Objects"><a href="#Large-Objects" class="headerlink" title="Large Objects"></a>Large Objects</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\lo_export LOBOID FILE</span><br><span class="line"></span><br><span class="line">\lo_import FILE [COMMENT]</span><br><span class="line"></span><br><span class="line">\lo_list</span><br><span class="line"></span><br><span class="line">\lo_unlink LOBOID      </span><br><span class="line"><span class="comment"># large object operations</span></span><br></pre></td></tr></table></figure>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                版权声明:本文为Fzg5_Shelling博主的的原创文章，转载请附上本文链接 <br>https://mumu-1005.github.io/pishon/articles/PsqlCommands.html
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/pishon/articles/psql%E5%BA%8F.html" class="pre-post btn btn-default" title='PSQL序'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">PSQL序</span>
+        </a>
+    
+    
+        <a href="/pishon/articles/commands.html" class="next-post btn btn-default" title='SQL Commands'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">SQL Commands</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#General"><span class="toc-text">General</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Help"><span class="toc-text">Help</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Query-Buffer"><span class="toc-text">Query Buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-x2F-Output"><span class="toc-text">Input&#x2F;Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Informational"><span class="toc-text">Informational</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Formatting"><span class="toc-text">Formatting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Connection"><span class="toc-text">Connection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Operating-System"><span class="toc-text">Operating System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variables"><span class="toc-text">Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Large-Objects"><span class="toc-text">Large Objects</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a target="_blank" rel="noopener" href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/pishon/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

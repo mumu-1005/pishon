@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/pishon/">
+    <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
+    <!--SEO-->
+
+    <meta name="keywords" content="Java,流程控制,数组" />
+
+
+    <meta name="description" content="1、使用if。。。else时，一定要先处理包含范围更小的情况2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java.lang.String​3、do w..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>Java流程控制与数组细节点 | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/pishon/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/pishon/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/pishon/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/pishon/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/pishon/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://mumu-1005.github.io/pishon">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Java流程控制与数组细节点">
+            
+	            Java流程控制与数组细节点
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/pishon/categories/JAVA/">JAVA</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-none-link" href="/pishon/tags/Java/" rel="tag">Java</a> <a class="tag-none-link" href="/pishon/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a> <a class="tag-none-link" href="/pishon/tags/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" rel="tag">流程控制</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/04/22</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="1、使用if。。。else时，一定要先处理包含范围更小的情况"><a href="#1、使用if。。。else时，一定要先处理包含范围更小的情况" class="headerlink" title="1、使用if。。。else时，一定要先处理包含范围更小的情况"></a>1、使用if。。。else时，一定要先处理包含范围更小的情况</h3><h3 id="2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java-lang-String​"><a href="#2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java-lang-String​" class="headerlink" title="2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java.lang.String​"></a>2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java.lang.String​</h3><h3 id="3、do-while-循环条件后必须有一个分号，表明循环结束"><a href="#3、do-while-循环条件后必须有一个分号，表明循环结束" class="headerlink" title="3、do while 循环条件后必须有一个分号，表明循环结束"></a>3、do while 循环条件后必须有一个分号，表明循环结束</h3><h3 id="4、for循环中，continue结束本次循环，循环跌代体一样会得到执行​"><a href="#4、for循环中，continue结束本次循环，循环跌代体一样会得到执行​" class="headerlink" title="4、for循环中，continue结束本次循环，循环跌代体一样会得到执行​"></a>4、for循环中，continue结束本次循环，循环跌代体一样会得到执行​</h3><h3 id="5、break结束循环-return-结束整个方法-两者都会结束循环"><a href="#5、break结束循环-return-结束整个方法-两者都会结束循环" class="headerlink" title="5、break结束循环,return 结束整个方法 两者都会结束循环"></a>5、break结束循环,return 结束整个方法 两者都会结束循环</h3><h3 id="6、java中的标签只有放在循环语句之前才有作用，放在break所在的循环的外层循环之前才有意义"><a href="#6、java中的标签只有放在循环语句之前才有作用，放在break所在的循环的外层循环之前才有意义" class="headerlink" title="6、java中的标签只有放在循环语句之前才有作用，放在break所在的循环的外层循环之前才有意义"></a>6、java中的标签只有放在循环语句之前才有作用，放在break所在的循环的外层循环之前才有意义</h3><h3 id="7、break-标签：结束标签指定的循环-而不是break所在的循环"><a href="#7、break-标签：结束标签指定的循环-而不是break所在的循环" class="headerlink" title="7、break 标签：结束标签指定的循环 而不是break所在的循环"></a>7、break 标签：结束标签指定的循环 而不是break所在的循环</h3><h3 id="8、continue加标签如break一样"><a href="#8、continue加标签如break一样" class="headerlink" title="8、continue加标签如break一样"></a>8、continue加标签如break一样</h3><h3 id="9、java的数组要求所有的数组元素具有相同的数据类型"><a href="#9、java的数组要求所有的数组元素具有相同的数据类型" class="headerlink" title="9、java的数组要求所有的数组元素具有相同的数据类型"></a>9、java的数组要求所有的数组元素具有相同的数据类型</h3><h3 id="10、定义数组时不能指定数组的长度，经过初始化才可以使用，实际开发过程中定义和初始化同时完成"><a href="#10、定义数组时不能指定数组的长度，经过初始化才可以使用，实际开发过程中定义和初始化同时完成" class="headerlink" title="10、定义数组时不能指定数组的长度，经过初始化才可以使用，实际开发过程中定义和初始化同时完成"></a>10、定义数组时不能指定数组的长度，经过初始化才可以使用，实际开发过程中定义和初始化同时完成</h3><h3 id="11、不要同时使用静态初始化（分配初始值）和动态初始化（指定数组的长度）"><a href="#11、不要同时使用静态初始化（分配初始值）和动态初始化（指定数组的长度）" class="headerlink" title="11、不要同时使用静态初始化（分配初始值）和动态初始化（指定数组的长度）"></a>11、不要同时使用静态初始化（分配初始值）和动态初始化（指定数组的长度）</h3><h3 id="12、​数组索引越界异常（索引值小于0或大于等于长度）："><a href="#12、​数组索引越界异常（索引值小于0或大于等于长度）：" class="headerlink" title="12、​数组索引越界异常（索引值小于0或大于等于长度）："></a>12、​数组索引越界异常（索引值小于0或大于等于长度）：</h3><h3 id="13、foreach循环自动遍历数组和集合的每个元素，通常用于遍历输出，通常不要对循环变量进行赋值，没有太大意义且极容易引起错误，如果希望改变数组元素的值不要用foreach循环"><a href="#13、foreach循环自动遍历数组和集合的每个元素，通常用于遍历输出，通常不要对循环变量进行赋值，没有太大意义且极容易引起错误，如果希望改变数组元素的值不要用foreach循环" class="headerlink" title="13、foreach循环自动遍历数组和集合的每个元素，通常用于遍历输出，通常不要对循环变量进行赋值，没有太大意义且极容易引起错误，如果希望改变数组元素的值不要用foreach循环"></a>13、foreach循环自动遍历数组和集合的每个元素，通常用于遍历输出，通常不要对循环变量进行赋值，没有太大意义且极容易引起错误，如果希望改变数组元素的值不要用foreach循环</h3><h3 id="14、数组元素（堆内存）和数组变量（栈内存）再内存里是分开​存放的"><a href="#14、数组元素（堆内存）和数组变量（栈内存）再内存里是分开​存放的" class="headerlink" title="14、数组元素（堆内存）和数组变量（栈内存）再内存里是分开​存放的"></a>14、数组元素（堆内存）和数组变量（栈内存）再内存里是分开​存放的</h3><h3 id="15、方法结束，存放着-方法中定义的局部变量的内存栈都会被自然销毁"><a href="#15、方法结束，存放着-方法中定义的局部变量的内存栈都会被自然销毁" class="headerlink" title="15、方法结束，存放着 方法中定义的局部变量的内存栈都会被自然销毁"></a>15、方法结束，存放着 方法中定义的局部变量的内存栈都会被自然销毁</h3><h3 id="16、数组元素（对象）没有任何引用变量引用它时，系统垃圾回收机制会在合适时回收它"><a href="#16、数组元素（对象）没有任何引用变量引用它时，系统垃圾回收机制会在合适时回收它" class="headerlink" title="16、数组元素（对象）没有任何引用变量引用它时，系统垃圾回收机制会在合适时回收它"></a>16、数组元素（对象）没有任何引用变量引用它时，系统垃圾回收机制会在合适时回收它</h3><h3 id="17、让机制回收数组所占内存空间：将数组变量赋值为null，切断变量和元素的引用关系​"><a href="#17、让机制回收数组所占内存空间：将数组变量赋值为null，切断变量和元素的引用关系​" class="headerlink" title="17、让机制回收数组所占内存空间：将数组变量赋值为null，切断变量和元素的引用关系​"></a>17、让机制回收数组所占内存空间：将数组变量赋值为null，切断变量和元素的引用关系​</h3><h3 id="18、a数组变量赋值给​b数组变量，并没有改变b的数组长度（直到消失），而是改变了b的指引，b原先指向的数组元素失去了引用，成为垃圾，等待回收"><a href="#18、a数组变量赋值给​b数组变量，并没有改变b的数组长度（直到消失），而是改变了b的指引，b原先指向的数组元素失去了引用，成为垃圾，等待回收" class="headerlink" title="18、a数组变量赋值给​b数组变量，并没有改变b的数组长度（直到消失），而是改变了b的指引，b原先指向的数组元素失去了引用，成为垃圾，等待回收"></a>18、a数组变量赋值给​b数组变量，并没有改变b的数组长度（直到消失），而是改变了b的指引，b原先指向的数组元素失去了引用，成为垃圾，等待回收</h3><h3 id="19、定义一个Object-类型的数组可以拓展到多维数组"><a href="#19、定义一个Object-类型的数组可以拓展到多维数组" class="headerlink" title="19、定义一个Object[]类型的数组可以拓展到多维数组"></a>19、定义一个Object[]类型的数组可以拓展到多维数组</h3><h3 id="20、从数组底层的运行机制上看，java​没有多维数组，只是提供了支持多维数组的语法，多维数组本质上都是以为数组。（三维数组每个数组元素是二维数组）"><a href="#20、从数组底层的运行机制上看，java​没有多维数组，只是提供了支持多维数组的语法，多维数组本质上都是以为数组。（三维数组每个数组元素是二维数组）" class="headerlink" title="20、从数组底层的运行机制上看，java​没有多维数组，只是提供了支持多维数组的语法，多维数组本质上都是以为数组。（三维数组每个数组元素是二维数组）"></a>20、从数组底层的运行机制上看，java​没有多维数组，只是提供了支持多维数组的语法，多维数组本质上都是以为数组。（三维数组每个数组元素是二维数组）</h3><h3 id="21、char类型转换成int类型数字，直接减去48，他们的ASCII码值恰好相差48"><a href="#21、char类型转换成int类型数字，直接减去48，他们的ASCII码值恰好相差48" class="headerlink" title="21、char类型转换成int类型数字，直接减去48，他们的ASCII码值恰好相差48"></a>21、char类型转换成int类型数字，直接减去48，他们的ASCII码值恰好相差48</h3>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                版权声明:本文为Fzg5_Shelling博主的的原创文章，转载请附上本文链接 <br>https://mumu-1005.github.io/pishon/articles/Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%95%B0%E7%BB%84%E7%BB%86%E8%8A%82%E7%82%B9.html
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/pishon/articles/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6%E7%BB%86%E8%8A%82%E7%82%B9.html" class="pre-post btn btn-default" title='Java数据类型与运算符细节点'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Java数据类型与运算符细节点</span>
+        </a>
+    
+    
+        <a href="/pishon/articles/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AA%E7%B3%BB%E7%BB%9F%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D.html" class="next-post btn btn-default" title='虚拟主机配置多个系统多个域名'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">虚拟主机配置多个系统多个域名</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E4%BD%BF%E7%94%A8if%E3%80%82%E3%80%82%E3%80%82else%E6%97%B6%EF%BC%8C%E4%B8%80%E5%AE%9A%E8%A6%81%E5%85%88%E5%A4%84%E7%90%86%E5%8C%85%E5%90%AB%E8%8C%83%E5%9B%B4%E6%9B%B4%E5%B0%8F%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">1、使用if。。。else时，一定要先处理包含范围更小的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81switch%E6%8E%A7%E5%88%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9Abyte%E3%80%81short%E3%80%81char%E3%80%81int%E3%80%81%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E3%80%81java-lang-String%E2%80%8B"><span class="toc-text">2、switch控制表达式的数据类型：byte、short、char、int、枚举类型、java.lang.String​</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81do-while-%E5%BE%AA%E7%8E%AF%E6%9D%A1%E4%BB%B6%E5%90%8E%E5%BF%85%E9%A1%BB%E6%9C%89%E4%B8%80%E4%B8%AA%E5%88%86%E5%8F%B7%EF%BC%8C%E8%A1%A8%E6%98%8E%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9D%9F"><span class="toc-text">3、do while 循环条件后必须有一个分号，表明循环结束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81for%E5%BE%AA%E7%8E%AF%E4%B8%AD%EF%BC%8Ccontinue%E7%BB%93%E6%9D%9F%E6%9C%AC%E6%AC%A1%E5%BE%AA%E7%8E%AF%EF%BC%8C%E5%BE%AA%E7%8E%AF%E8%B7%8C%E4%BB%A3%E4%BD%93%E4%B8%80%E6%A0%B7%E4%BC%9A%E5%BE%97%E5%88%B0%E6%89%A7%E8%A1%8C%E2%80%8B"><span class="toc-text">4、for循环中，continue结束本次循环，循环跌代体一样会得到执行​</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81break%E7%BB%93%E6%9D%9F%E5%BE%AA%E7%8E%AF-return-%E7%BB%93%E6%9D%9F%E6%95%B4%E4%B8%AA%E6%96%B9%E6%B3%95-%E4%B8%A4%E8%80%85%E9%83%BD%E4%BC%9A%E7%BB%93%E6%9D%9F%E5%BE%AA%E7%8E%AF"><span class="toc-text">5、break结束循环,return 结束整个方法 两者都会结束循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81java%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E5%8F%AA%E6%9C%89%E6%94%BE%E5%9C%A8%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E4%B9%8B%E5%89%8D%E6%89%8D%E6%9C%89%E4%BD%9C%E7%94%A8%EF%BC%8C%E6%94%BE%E5%9C%A8break%E6%89%80%E5%9C%A8%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%A4%96%E5%B1%82%E5%BE%AA%E7%8E%AF%E4%B9%8B%E5%89%8D%E6%89%8D%E6%9C%89%E6%84%8F%E4%B9%89"><span class="toc-text">6、java中的标签只有放在循环语句之前才有作用，放在break所在的循环的外层循环之前才有意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81break-%E6%A0%87%E7%AD%BE%EF%BC%9A%E7%BB%93%E6%9D%9F%E6%A0%87%E7%AD%BE%E6%8C%87%E5%AE%9A%E7%9A%84%E5%BE%AA%E7%8E%AF-%E8%80%8C%E4%B8%8D%E6%98%AFbreak%E6%89%80%E5%9C%A8%E7%9A%84%E5%BE%AA%E7%8E%AF"><span class="toc-text">7、break 标签：结束标签指定的循环 而不是break所在的循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81continue%E5%8A%A0%E6%A0%87%E7%AD%BE%E5%A6%82break%E4%B8%80%E6%A0%B7"><span class="toc-text">8、continue加标签如break一样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81java%E7%9A%84%E6%95%B0%E7%BB%84%E8%A6%81%E6%B1%82%E6%89%80%E6%9C%89%E7%9A%84%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%85%B7%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">9、java的数组要求所有的数组元素具有相同的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84%E6%97%B6%E4%B8%8D%E8%83%BD%E6%8C%87%E5%AE%9A%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6%EF%BC%8C%E7%BB%8F%E8%BF%87%E5%88%9D%E5%A7%8B%E5%8C%96%E6%89%8D%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8C%E6%97%B6%E5%AE%8C%E6%88%90"><span class="toc-text">10、定义数组时不能指定数组的长度，经过初始化才可以使用，实际开发过程中定义和初始化同时完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E3%80%81%E4%B8%8D%E8%A6%81%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E5%88%86%E9%85%8D%E5%88%9D%E5%A7%8B%E5%80%BC%EF%BC%89%E5%92%8C%E5%8A%A8%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E6%8C%87%E5%AE%9A%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6%EF%BC%89"><span class="toc-text">11、不要同时使用静态初始化（分配初始值）和动态初始化（指定数组的长度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E3%80%81%E2%80%8B%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E8%B6%8A%E7%95%8C%E5%BC%82%E5%B8%B8%EF%BC%88%E7%B4%A2%E5%BC%95%E5%80%BC%E5%B0%8F%E4%BA%8E0%E6%88%96%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%E9%95%BF%E5%BA%A6%EF%BC%89%EF%BC%9A"><span class="toc-text">12、​数组索引越界异常（索引值小于0或大于等于长度）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E3%80%81foreach%E5%BE%AA%E7%8E%AF%E8%87%AA%E5%8A%A8%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%E5%92%8C%E9%9B%86%E5%90%88%E7%9A%84%E6%AF%8F%E4%B8%AA%E5%85%83%E7%B4%A0%EF%BC%8C%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E9%81%8D%E5%8E%86%E8%BE%93%E5%87%BA%EF%BC%8C%E9%80%9A%E5%B8%B8%E4%B8%8D%E8%A6%81%E5%AF%B9%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E8%BF%9B%E8%A1%8C%E8%B5%8B%E5%80%BC%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%A4%AA%E5%A4%A7%E6%84%8F%E4%B9%89%E4%B8%94%E6%9E%81%E5%AE%B9%E6%98%93%E5%BC%95%E8%B5%B7%E9%94%99%E8%AF%AF%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%B8%8C%E6%9C%9B%E6%94%B9%E5%8F%98%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E5%80%BC%E4%B8%8D%E8%A6%81%E7%94%A8foreach%E5%BE%AA%E7%8E%AF"><span class="toc-text">13、foreach循环自动遍历数组和集合的每个元素，通常用于遍历输出，通常不要对循环变量进行赋值，没有太大意义且极容易引起错误，如果希望改变数组元素的值不要用foreach循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14%E3%80%81%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%EF%BC%88%E5%A0%86%E5%86%85%E5%AD%98%EF%BC%89%E5%92%8C%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%EF%BC%88%E6%A0%88%E5%86%85%E5%AD%98%EF%BC%89%E5%86%8D%E5%86%85%E5%AD%98%E9%87%8C%E6%98%AF%E5%88%86%E5%BC%80%E2%80%8B%E5%AD%98%E6%94%BE%E7%9A%84"><span class="toc-text">14、数组元素（堆内存）和数组变量（栈内存）再内存里是分开​存放的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E3%80%81%E6%96%B9%E6%B3%95%E7%BB%93%E6%9D%9F%EF%BC%8C%E5%AD%98%E6%94%BE%E7%9D%80-%E6%96%B9%E6%B3%95%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%86%85%E5%AD%98%E6%A0%88%E9%83%BD%E4%BC%9A%E8%A2%AB%E8%87%AA%E7%84%B6%E9%94%80%E6%AF%81"><span class="toc-text">15、方法结束，存放着 方法中定义的局部变量的内存栈都会被自然销毁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16%E3%80%81%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%EF%BC%88%E5%AF%B9%E8%B1%A1%EF%BC%89%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E5%BC%95%E7%94%A8%E5%8F%98%E9%87%8F%E5%BC%95%E7%94%A8%E5%AE%83%E6%97%B6%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E4%BC%9A%E5%9C%A8%E5%90%88%E9%80%82%E6%97%B6%E5%9B%9E%E6%94%B6%E5%AE%83"><span class="toc-text">16、数组元素（对象）没有任何引用变量引用它时，系统垃圾回收机制会在合适时回收它</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17%E3%80%81%E8%AE%A9%E6%9C%BA%E5%88%B6%E5%9B%9E%E6%94%B6%E6%95%B0%E7%BB%84%E6%89%80%E5%8D%A0%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%9A%E5%B0%86%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E4%B8%BAnull%EF%BC%8C%E5%88%87%E6%96%AD%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%83%E7%B4%A0%E7%9A%84%E5%BC%95%E7%94%A8%E5%85%B3%E7%B3%BB%E2%80%8B"><span class="toc-text">17、让机制回收数组所占内存空间：将数组变量赋值为null，切断变量和元素的引用关系​</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18%E3%80%81a%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E7%BB%99%E2%80%8Bb%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E6%94%B9%E5%8F%98b%E7%9A%84%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%EF%BC%88%E7%9B%B4%E5%88%B0%E6%B6%88%E5%A4%B1%EF%BC%89%EF%BC%8C%E8%80%8C%E6%98%AF%E6%94%B9%E5%8F%98%E4%BA%86b%E7%9A%84%E6%8C%87%E5%BC%95%EF%BC%8Cb%E5%8E%9F%E5%85%88%E6%8C%87%E5%90%91%E7%9A%84%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%A4%B1%E5%8E%BB%E4%BA%86%E5%BC%95%E7%94%A8%EF%BC%8C%E6%88%90%E4%B8%BA%E5%9E%83%E5%9C%BE%EF%BC%8C%E7%AD%89%E5%BE%85%E5%9B%9E%E6%94%B6"><span class="toc-text">18、a数组变量赋值给​b数组变量，并没有改变b的数组长度（直到消失），而是改变了b的指引，b原先指向的数组元素失去了引用，成为垃圾，等待回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19%E3%80%81%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AAObject-%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E7%BB%84%E5%8F%AF%E4%BB%A5%E6%8B%93%E5%B1%95%E5%88%B0%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">19、定义一个Object[]类型的数组可以拓展到多维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20%E3%80%81%E4%BB%8E%E6%95%B0%E7%BB%84%E5%BA%95%E5%B1%82%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%E4%B8%8A%E7%9C%8B%EF%BC%8Cjava%E2%80%8B%E6%B2%A1%E6%9C%89%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%8C%E5%8F%AA%E6%98%AF%E6%8F%90%E4%BE%9B%E4%BA%86%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95%EF%BC%8C%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E6%9C%AC%E8%B4%A8%E4%B8%8A%E9%83%BD%E6%98%AF%E4%BB%A5%E4%B8%BA%E6%95%B0%E7%BB%84%E3%80%82%EF%BC%88%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84%E6%AF%8F%E4%B8%AA%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E6%98%AF%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%89"><span class="toc-text">20、从数组底层的运行机制上看，java​没有多维数组，只是提供了支持多维数组的语法，多维数组本质上都是以为数组。（三维数组每个数组元素是二维数组）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21%E3%80%81char%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%88%90int%E7%B1%BB%E5%9E%8B%E6%95%B0%E5%AD%97%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%87%8F%E5%8E%BB48%EF%BC%8C%E4%BB%96%E4%BB%AC%E7%9A%84ASCII%E7%A0%81%E5%80%BC%E6%81%B0%E5%A5%BD%E7%9B%B8%E5%B7%AE48"><span class="toc-text">21、char类型转换成int类型数字，直接减去48，他们的ASCII码值恰好相差48</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a target="_blank" rel="noopener" href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/pishon/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>

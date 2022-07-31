@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="飞猪 Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/pishon/">
+    <link rel="dns-prefetch" href="https://mumu-1005.github.io/pishon">
+    <!--SEO-->
+
+    <meta name="keywords" content="" />
+
+
+    <meta name="description" content="2019-04-20
+2019-03-11
+2019-01-12
+2018-12-28
+2018-11-23
+
+2018-07-17
+2018-05-12
+2018-04-28
+2018-04-..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>攒点BUG | 飞猪 Go</title>
+
+
+    <link rel="alternate" href="/pishon/atom.xml" title="飞猪 Go" type="application/atom+xml">
+
+
+    <link rel="icon" href="/pishon/favicon.ico">
+
+    
+
+
+
+
+<link rel="stylesheet" href="/pishon/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/pishon/css/font-awesome.min.css?rev=4.5.0.css">
+<link rel="stylesheet" href="/pishon/css/style.css?rev=@@hash.css">
+
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1277780817 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1277780817%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://mumu-1005.github.io/pishon">飞猪 Go</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-home nav-item" style="text-align:left; margin-left:0"></i>笔记分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/projects/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-angle-double-up nav-item" style="text-align:left; margin-left:0"></i>涨点经验</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/bugs/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bomb nav-item" style="text-align:left; margin-left:0"></i>攒点Bug</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/share/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-book nav-item" style="text-align:left; margin-left:0"></i>资源分享</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tools/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-cog nav-item" style="text-align:left; margin-left:0"></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/tags/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-bars nav-item" style="text-align:left; margin-left:0"></i>标签云</a>
+                            </li>
+                        
+                            <li role="presentation" style="text-align:left; margin-left:0">
+                                <a href="/pishon/archives/" style="padding-left:0;margin-right:20px;font-size:16px;"><i class="fa fa-500px nav-item" style="text-align:left; margin-left:0"></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <article class="post">
+    <h1 class="post-head">攒点BUG</h1>
+    <div class="post-body">
+        <div style="display: inline-block;"><li><a href="#2019-04-20">2019-04-20</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2019-03-11">2019-03-11</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2019-01-12">2019-01-12</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-12-28">2018-12-28</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-11-23">2018-11-23</a></li></div>
+<br>
+<div style="display: inline-block;"><li><a href="#2018-07-17">2018-07-17</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-05-12">2018-05-12</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-04-28">2018-04-28</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-04-24">2018-04-24</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2018-02-22">2018-02-22</a></li></div>
+<br>
+<div style="display: inline-block;"><li><a href="#2018-01-23">2018-01-23</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2017-12-30">2017-12-30</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2017-08-06">2017-08-06</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2016-03-16">2016-03-16</a></li></div>
+<div style="display: inline-block; margin-left: 20px;"><li><a href="#2014-04-24">2014-04-24</a></li></div>
+<br>
+
+<h2 id="2019-04-20">2019-04-20</h2> 
+
+<h3 id="ISSUE"><a href="#ISSUE" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR: more than one row returned by a subquery used as an expression</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION"><a href="#SOLUTION" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    field1,field2,</span><br><span class="line">    (<span class="keyword">select</span> <span class="built_in">ARRAY_AGG</span>(field3) <span class="keyword">from</span> b <span class="keyword">where</span> exp) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    a </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">     exp</span><br><span class="line"><span class="keyword">ORDER</span>  <span class="keyword">BY</span></span><br><span class="line">    field1;</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2019-03-11">2019-03-11</h2>
+
+<h3 id="ISSUE-1"><a href="#ISSUE-1" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连接中断，返回的相应大小被限制在127.86kb</span></span><br><span class="line">SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) on request /project/api/ !!!</span><br><span class="line">uwsgi_response_write_body_do(): Broken pipe [core/writer.c line <span class="number">341</span>] during GET /project/api/ </span><br><span class="line">IOError: write error</span><br></pre></td></tr></table></figure>
+
+<h3 id="SOLUTION-1"><a href="#SOLUTION-1" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开Nginx配置文件 调整默认的限制缓存大小 根据实际业务调整</span></span><br><span class="line">uwsgi_buffers 8 512k;   默认为8 4k  8为数量</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+<h2 id="2019-01-12">2019-01-12</h2>
+
+<h3 id="ISSUE-2"><a href="#ISSUE-2" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Crypto/PublicKey/RSA.py&quot;, line 375, in decrypt</span><br><span class="line">    raise NotImplementedError(&quot;Use module Crypto.Cipher.PKCS1_OAEP instead&quot;)</span><br><span class="line">NotImplementedError: Use module Crypto.Cipher.PKCS1_OAEP instead    </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-2"><a href="#SOLUTION-2" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pycryptodome</span><br><span class="line">pip uninstall pycrypto</span><br><span class="line">pip install pycrypto</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-12-28"> 2018-12-28</h2>
+
+<h3 id="ISSUE-dpkg删除-x2F-安装未完全安装的软件包"><a href="#ISSUE-dpkg删除-x2F-安装未完全安装的软件包" class="headerlink" title="ISSUE-dpkg删除&#x2F;安装未完全安装的软件包"></a>ISSUE-dpkg删除&#x2F;安装未完全安装的软件包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">installed python-lockfile package post-installation script subprocess returned error exit status 127</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-3"><a href="#SOLUTION-3" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f --reinstall coreutils init-system-helpers</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-11-23"> 2018-11-23</h2>
+
+<h3 id="ISSUE-强制关闭Redis快照导致不能持久化"><a href="#ISSUE-强制关闭Redis快照导致不能持久化" class="headerlink" title="ISSUE-强制关闭Redis快照导致不能持久化"></a>ISSUE-强制关闭Redis快照导致不能持久化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MISCONF Redis is configured to save RDB snapshots, but is currently not able to </span><br><span class="line">persist on disk. Commands that may modify the data set are disabled. Please </span><br><span class="line">check Redis logs for details about the error.    </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-4"><a href="#SOLUTION-4" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config set stop-writes-on-bgsave-error no</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-07-17">2018-04-24</h2> 
+
+<h3 id="ISSUE-3"><a href="#ISSUE-3" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-5"><a href="#SOLUTION-5" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 将json中的单引号改成双引号</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-05-12">2018-04-24</h2> 
+
+<h3 id="ISSUE-4"><a href="#ISSUE-4" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.InvalidSelectorException: Message: Compound class names not permitted</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-6"><a href="#SOLUTION-6" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在selenium元素定位中复合class，取一个class名即可</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-04-28">2018-04-28</h2> 
+
+<h3 id="ISSUE-5"><a href="#ISSUE-5" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your password does not satisfy the current policy requirements</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-7"><a href="#SOLUTION-7" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SHOW VARIABLES LIKE &#x27;validate_password%&#x27;;</span><br><span class="line">set global validate_password_policy=LOW; </span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;123456&#x27;; </span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-04-24">2018-04-24</h2> 
+
+<h3 id="ISSUE-6"><a href="#ISSUE-6" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NameError: name &#x27;__main__&#x27; is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-8"><a href="#SOLUTION-8" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-02-22">2018-02-22</h2> 
+
+<h3 id="ISSUE-7"><a href="#ISSUE-7" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; eval(a)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &#x27;null&#x27; is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-9"><a href="#SOLUTION-9" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; json.loads(a)</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2018-01-23">2018-01-23</h2> 
+
+<h3 id="ISSUE-8"><a href="#ISSUE-8" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &#x27;\xe4&#x27; in file</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-10"><a href="#SOLUTION-10" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Python将ASCII作为默认的标准编码，要定义源代码编码，必须在源文件中第一行放置一个魔术注释</span><br><span class="line"># -*- coding: utf-8 -*-</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2017-12-30">2017-12-30</h2> 
+
+<h3 id="ISSUE-9"><a href="#ISSUE-9" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu安装包时报错 E:Unable to locate package xxx</span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-11"><a href="#SOLUTION-11" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2017-08-06">2017-08-06</h2>
+
+<h3 id="ISSUE-refusing-to-merge-unrelated-histories"><a href="#ISSUE-refusing-to-merge-unrelated-histories" class="headerlink" title="ISSUE-refusing to merge unrelated histories"></a>ISSUE-refusing to merge unrelated histories</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories   </span><br></pre></td></tr></table></figure>
+<h3 id="SOLUTION-12"><a href="#SOLUTION-12" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2016-03-16">2016-03-16</h2>
+
+<h3 id="ISSUE-端口占用无法启动Apache"><a href="#ISSUE-端口占用无法启动Apache" class="headerlink" title="ISSUE-端口占用无法启动Apache"></a>ISSUE-端口占用无法启动Apache</h3><pre><code>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XAMPP: Starting Apache...fail.</span><br><span class="line">XAMPP:  Another web server is already running.    </span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="SOLUTION-13"><a href="#SOLUTION-13" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">in bash：</span><br><span class="line">// killed Apache server that was pre-installed on MAC OS X.</span><br><span class="line">sudo apachectl stop</span><br></pre></td></tr></table></figure>
+<hr>
+
+<h2 id="2014-04-24">2014-04-24</h2>
+
+<h3 id="ISSUE-10"><a href="#ISSUE-10" class="headerlink" title="ISSUE"></a>ISSUE</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E/AndroidRuntime(439): Caused by: java.lang.ClassCastException: </span><br><span class="line">android.app</span><br></pre></td></tr></table></figure>
+
+<h3 id="SOLUTION-14"><a href="#SOLUTION-14" class="headerlink" title="SOLUTION"></a>SOLUTION</h3><ul>
+<li>原因：应用的程序名称没指定具体的Application的类</li>
+<li>步骤<ul>
+<li>在AndroidManifest.xml中的Application标签中添加名字<br><code>&lt;application   android:name=&quot;com.shelling.ans.AnsApplication&quot;</code></li>
+<li>Progject-&gt;clean</li>
+<li>重新运行</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+
+    </div>
+</article>
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/mumu-1005" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="github fa fa-github" sytle="color:#c0a685"></i>
+			    </a>
+            
+	            <a href="mailto:shelling_@hotmail.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o" sytle="color:#c0a685"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <div class="category-list-item-class">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/JAVA/"><i class="fa" aria-hidden="true">JAVA</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/LINUX/"><i class="fa" aria-hidden="true">LINUX</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PHP/"><i class="fa" aria-hidden="true">PHP</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/PYTHON/"><i class="fa" aria-hidden="true">PYTHON</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/REDIS/"><i class="fa" aria-hidden="true">REDIS</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SERVER/"><i class="fa" aria-hidden="true">SERVER</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/SQL/"><i class="fa" aria-hidden="true">SQL</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/TOOLS/"><i class="fa" aria-hidden="true">TOOLS</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E7%AE%97%E6%B3%95/"><i class="fa" aria-hidden="true">算法</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/pishon/categories/%E8%88%AA%E5%A4%A9/"><i class="fa" aria-hidden="true">航天</i></a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2020  <a target="_blank" rel="noopener" href="https://www.fzg5.com">Fzg5_Shelling</a>
+                </span> |  
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |  
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |  
+                <span>
+                    Deploys by <a href="//netlify.com" class="copyright-links" target="_blank" rel="nofollow">Netlify</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	
+<script src="/pishon/js/search.js?rev=@@hash.js"></script>
+
+
+
+
+
+
+
+
+<script src="/pishon/js/app.js?rev=@@hash.js"></script>
+
+
+</body>
+</html>
